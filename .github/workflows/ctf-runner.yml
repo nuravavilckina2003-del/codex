@@ -1,0 +1,15 @@
+name: ctf-runner
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "target base url"
+        required: true
+        default: "http://fbubouflcmz6cnrc.instances.ctfcup.online"
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m pip install --quiet requests
+      - run: python3 ker_quest/task1/exploit.py "${{ inputs.target }}"
