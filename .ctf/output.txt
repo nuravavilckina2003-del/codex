@@ -1,10 +1,10 @@
 
-========================= CONVERT /etc/passwd TO txt BYTES 1668
+========================= CONVERT /etc/passwd TO txt FIELDS {'infilterOptions': 'UpdateDocMode=1'} BYTES 1668
 STATUS 200 HEADERS Cache-Control: max-age=11059200
 Content-Disposition: attachment; filename="probe.txt"
 Content-Length: 4
 Content-Type: application/octet-stream
-Date: Sat, 31 Oct 2026 13:28:10
+Date: Sat, 31 Oct 2026 13:29:51
 Etag: "cc5614c67e"
 Server: 
 X-Content-Type-Options: nosniff
@@ -14,12 +14,12 @@ Connection: close
 RESPONSE ﻿
 
 
-========================= CONVERT /flag TO txt BYTES 1666
+========================= CONVERT /flag TO txt FIELDS {'infilterOptions': 'UpdateDocMode=1'} BYTES 1666
 STATUS 200 HEADERS Cache-Control: max-age=11059200
 Content-Disposition: attachment; filename="probe.txt"
 Content-Length: 4
 Content-Type: application/octet-stream
-Date: Sat, 31 Oct 2026 13:28:11
+Date: Sat, 31 Oct 2026 13:29:53
 Etag: "cc5614c67e"
 Server: 
 X-Content-Type-Options: nosniff
@@ -29,12 +29,12 @@ Connection: close
 RESPONSE ﻿
 
 
-========================= CONVERT /flag.txt TO txt BYTES 1668
+========================= CONVERT /flag.txt TO txt FIELDS {'infilterOptions': 'UpdateDocMode=1'} BYTES 1668
 STATUS 200 HEADERS Cache-Control: max-age=11059200
 Content-Disposition: attachment; filename="probe.txt"
 Content-Length: 4
 Content-Type: application/octet-stream
-Date: Sat, 31 Oct 2026 13:28:12
+Date: Sat, 31 Oct 2026 13:29:54
 Etag: "cc5614c67e"
 Server: 
 X-Content-Type-Options: nosniff
@@ -44,12 +44,42 @@ Connection: close
 RESPONSE ﻿
 
 
-========================= CONVERT /proc/1/environ TO txt BYTES 1671
+========================= CONVERT /etc/passwd TO txt FIELDS {'infilterOptions': 'UpdateDocMode=3'} BYTES 1668
 STATUS 200 HEADERS Cache-Control: max-age=11059200
 Content-Disposition: attachment; filename="probe.txt"
 Content-Length: 4
 Content-Type: application/octet-stream
-Date: Sat, 31 Oct 2026 13:28:12
+Date: Sat, 31 Oct 2026 13:29:55
+Etag: "cc5614c67e"
+Server: 
+X-Content-Type-Options: nosniff
+Connection: close
+
+
+RESPONSE ﻿
+
+
+========================= CONVERT /flag TO txt FIELDS {'infilterOptions': 'UpdateDocMode=3'} BYTES 1666
+STATUS 200 HEADERS Cache-Control: max-age=11059200
+Content-Disposition: attachment; filename="probe.txt"
+Content-Length: 4
+Content-Type: application/octet-stream
+Date: Sat, 31 Oct 2026 13:30:00
+Etag: "cc5614c67e"
+Server: 
+X-Content-Type-Options: nosniff
+Connection: close
+
+
+RESPONSE ﻿
+
+
+========================= CONVERT /flag.txt TO txt FIELDS {'infilterOptions': 'UpdateDocMode=3'} BYTES 1668
+STATUS 200 HEADERS Cache-Control: max-age=11059200
+Content-Disposition: attachment; filename="probe.txt"
+Content-Length: 4
+Content-Type: application/octet-stream
+Date: Sat, 31 Oct 2026 13:30:02
 Etag: "cc5614c67e"
 Server: 
 X-Content-Type-Options: nosniff
