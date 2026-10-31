@@ -1,21 +1,303 @@
-HTTP POST /login STATUS 200 BYTES 13121 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/
-HTTP POST /docs/create STATUS 200 BYTES 10706 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d4
+HTTP POST /login STATUS 200 BYTES 14996 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/
 HTTP GET /edit/d4 STATUS 200 BYTES 10706 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d4
-HTTP POST /wopi/files/d4/contents?access_token=3RQZmYoLPO2UnsrXonbzTrGFEE5aErLKXe6mtXFbyi8 STATUS 200 BYTES 3 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d4/contents?access_token=3RQZmYoLPO2UnsrXonbzTrGFEE5aErLKXe6mtXFbyi8
-ODB root-flat DOCID d4 DIRECTORY / PUT_STATUS 200 PUT_BODY {}
-
-HTTP POST /docs/create STATUS 200 BYTES 10705 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d5
 HTTP GET /edit/d5 STATUS 200 BYTES 10705 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d5
-HTTP POST /wopi/files/d5/contents?access_token=O7R39gJv_X6V1wAV3ziOP5IGf8qCxvY_8MXT0KzT_kg STATUS 200 BYTES 3 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d5/contents?access_token=O7R39gJv_X6V1wAV3ziOP5IGf8qCxvY_8MXT0KzT_kg
-ODB etc-flat DOCID d5 DIRECTORY /etc PUT_STATUS 200 PUT_BODY {}
-
-HTTP POST /docs/create STATUS 200 BYTES 10704 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d6
 HTTP GET /edit/d6 STATUS 200 BYTES 10704 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d6
-HTTP POST /wopi/files/d6/contents?access_token=kw6mYTjweGExxIvmPrzktbZTY1o30_zl08xdbIbQgD0 STATUS 200 BYTES 3 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d6/contents?access_token=kw6mYTjweGExxIvmPrzktbZTY1o30_zl08xdbIbQgD0
-ODB lo-flat DOCID d6 DIRECTORY /lo/program PUT_STATUS 200 PUT_BODY {}
+HTTP POST /docs/create STATUS 200 BYTES 10705 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d7
+HTTP GET /edit/d7 STATUS 200 BYTES 10705 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d7
+HTTP POST /wopi/files/d7/contents?access_token=dgJfKMio2Tm49KhAWuwv-PkTVijImvIfsc9wWGLBYH0 STATUS 200 BYTES 3 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d7/contents?access_token=dgJfKMio2Tm49KhAWuwv-PkTVijImvIfsc9wWGLBYH0
+PAYLOAD refresh.fods DOCID d7 PUT_STATUS 200 PUT_BODY {}
 
-HTTP POST /cool/convert-to/csv STATUS 200 BYTES 1 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/cool/convert-to/csv
+WS_CONNECT ws://njwqato3tpdz0t6k.instances.ctfcup.online/cool/ws?WOPISrc=http%3A%2F%2Fwebapp%3A8000%2Fwopi%2Ffiles%2Fd7&access_token=dgJfKMio2Tm49KhAWuwv-PkTVijImvIfsc9wWGLBYH0&permission=edit&compat=
+WS progress: { "id":"find" }
+WS progress: { "id":"connect" }
+WS progress: { "id":"ready" }
+WS perm: edit
+WS filemode:{"readOnly": false, "editComment": true, "manageRedlines": false, "viewModeExtensions": ""}
+WS wopi: {"AIConfigured":false,"AIEthicalRating":"U","BaseFileName":"refresh.fods.txt","DisableAISettings":true,"DisableCopy":true,"DisableExport":true,"DisableInactiveMessages":false,"DisableInsertLocalImage":false,"DisablePresentation":true,"DisablePrint":true,"DownloadAsPostMessage":false,"EnableInsertRemoteFile":false,"EnableInsertRemoteImage":false,"EnableRemoteAIContent":false,"EnableRemoteLinkPicker":false,"EnableShare":false,"FileUrl":"","HideExportOption":true,"HidePrintOption":true,"HideRepairOption":false,"HideSaveOption":false,"HideUserList":"false","IsAnonymousUser":false,"IsOwner":true,"SupportsRename":false,"UserCanNotWriteRelative":true,"UserCanRename":false,"UserCanWrite":true}
+WS lastmodtime: 2026-10-31T14:08:47.418532Z
+WS stats: wopiloadduration 0.001000
+WS commandresult: { "command": "load", "success": true, "result": "", "errorMsg": ""}
+WS coolserver { "Version":     "26.04.3.2", "Hash":        "cc5614c67e", "BuildConfig": " '--build=x86_64-redhat-linux-gnu' '--host=x86_64-redhat-linux-gnu' '--program-prefix=' '--disable-dependency-tracking' '--prefix=/usr' '--exec-prefix=/usr' '--bindir=/usr/bin' '--sbindir=/usr/sbin' '--sysconfdir=/etc' '--datadir=/usr/share' '--includedir=/usr/include' '--libdir=/usr/lib64' '--libexecdir=/usr/libexec' '--localstatedir=/var' '--sharedstatedir=/var/lib' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--with-lokit-path=bundled/include' '--disable-tests' '--with-infobar-url=https://rating.collaboraonline.com/UpdateCheck/updatecheck2.html' '--with-welcome-url=https://rating.collaboraonline.com/Welcome/welcome.html' '--with-feedback-url=https://rating.collaboraonline.com/Rate/feedback.html' '--with-lo-builddir=/home/collabora/jenkins/workspace/build_core_co-26.04_for_online_release_amd64' '--with-lo-path=/opt/collaboraoffice' '--with-max-documents=1000000' '--with-max-connections=1000000' '--with-vendor=Collabora Productivity Limited' '--with-app-name=Collabora Online Development Edition' '--enable-experimental' 'build_alias=x86_64-redhat-linux-gnu' 'host_alias=x86_64-redhat-linu
+WS lokitversion {"BuildConfig":"'--disable-dbus' '--disable-dconf' '--disable-evolution2' '--disable-gio' '--disable-gtk3' '--disable-gui' '--disable-librelogo' '--disable-randr' '--disable-sdremote' '--disable-xmlhelp' '--enable-cairo-rgba' '--enable-hardening-flags' '--enable-ld' '--enable-mergelibs' '--enable-quickjs' '--enable-symbols' '--with-branding=icon-themes/galaxy/brand_cp' '--with-buildconfig-recorded' '--with-docrepair-fonts' '--with-fonts' '--with-galleries=no' '--with-linker-hash-style=both' '--with-theme=colibre colibre_svg' '--with-vendor=Collabora Productivity Limited' '--without-help' '--without-junit' '--with-system-dicts' '--with-system-zlib' '--without-system-cairo' '--without-system-jpeg' '--without-templates' '--with-lang=ar bg ca cs cy da de el en-US en-GB eo es eu fi fr ga gl he hr hu hy id is it ja kk ko lo nb nl oc pl pt pt-BR ro ru sk sl sq sv tr uk vi zh-CN zh-TW' '--enable-noto-font' '--enable-sal-log' '--enable-epm' '--with-package-format=deb rpm' '--with-myspell-dicts' '--with-external-dict-dir=/usr/share/hunspell' '--with-external-hyph-dir=/usr/share/hyphen' '--with-external-thes-dir=/usr/share/mythes' '--without-gssapi' '--enable-python=internal' '--
+WS osinfo unknown
+WS clipboardkey: 3ACC8BBB9FEAE01B
+WS progress: { "id":"start", "text": "Importing document..." }
+WS progress: { "id":"setvalue", "value": 100 }
+WS progress: { "id":"finish" }
+WS canonicalidchange: viewid=4 canonicalid=1000 viewrenderedstate=S;Light
+WS status: {"mode": 0,"pagerectangles": [ [284, 284, 12240, 15840] ],"readonly": false,"partHasComments": false,"viewid": 4,"height": 16408,"externallinksdisabled": false,"width": 12808,"selectedpart": 0,"partscount": 1,"type": "text"}
+WS_LOADED True
+WS viewinfo: [{"id":4,"userid":"arena-93aa1301@corp","username":"arena","readonly":"0","color":411298}]
+WS adminuser: null
+WS serveraudit: {"serverAudit": [{"code": "bindmounted", "status": "not_recommended"}, {"code": "certwarning", "status": "ok"}, {"code": "contained", "status": "ok"}, {"code": "hardwarewarning", "status": "ok"}, {"code": "info_namespaces", "status": "false"}, {"code": "info_setup_ms", "status": "1250"}, {"code": "is_admin", "status": "missing"}, {"code": "seccomp", "status": "ok"}, {"code": "wsurl", "status": "ok"}]}
+WS editor: -1
+WS loaded: viewid=4 views=1 isfirst=true
+WS signaturestatus: 0
+WS corelog: info:sfx.view:sfx2/source/view/viewsh.cxx:3436: SfxViewShell::afterCallbackRegistered invoked
+WS corelog: info:sfx.view:sfx2/source/view/viewsh.cxx:3436: SfxViewShell::afterCallbackRegistered invoked
+WS corelog: info:sfx.view:sfx2/source/view/viewsh.cxx:3436: SfxViewShell::afterCallbackRegistered invoked
+WS corelog: info:sfx.view:sfx2/source/view/viewsh.cxx:3436: SfxViewShell::afterCallbackRegistered invoked
+WS corelog: info:kit.a11y:sfx2/source/view/kithelper.cxx:457: KitHelper::setAccessibilityState: view id: 4, nEnabled: 0
+WS corelog: info:sfx.view:sfx2/source/view/viewsh.cxx:3436: SfxViewShell::afterCallbackRegistered invoked
+WS colorpalettes: { "ThemeColors": [ [ { "Value": "000000", "Name": "Dark 1", "Data": { "ThemeIndex": 0, "Transformations": [ { "Type": "LumMod", "Value": 10000}, { "Type": "LumOff", "Value": 0}]}}, { "Value": "ffffff", "Name": "Light 1", "Data": { "ThemeIndex": 1, "Transformations": [ { "Type": "LumMod", "Value": 10000}, { "Type": "LumOff", "Value": 0}]}}, { "Value": "2e2706", "Name": "Dark 2", "Data": { "ThemeIndex": 2, "Transformations": [ { "Type": "LumMod", "Value": 10000}, { "Type": "LumOff", "Value": 0}]}}, { "Value": "eeeeee", "Name": "Light 2", "Data": { "ThemeIndex": 3, "Transformations": [ { "Type": "LumMod", "Value": 10000}, { "Type": "LumOff", "Value": 0}]}}, { "Value": "3465a4", "Name": "Accent 1", "Data": { "ThemeIndex": 4, "Transformations": [ { "Type": "LumMod", "Value": 10000}, { "Type": "LumOff", "Value": 0}]}}, { "Value": "168253", "Name": "Accent 2", "Data": { "ThemeIndex": 5, "Transformations": [ { "Type": "LumMod", "Value": 10000}, { "Type": "LumOff", "Value": 0}]}}, { "Value": "d62e4e", "Name": "Accent 3", "Data": { "ThemeIndex": 6, "Transformations": [ { "Type": "LumMod", "Value": 10000}, { "Type": "LumOff", "Value": 0}]}}, { "Value": "729fcf", "Name": "Accent
+WS invalidatecursor: { "viewId": "4", "editorViewId": "4", "rectangle": "1418, 1418, 0, 227", "mispelledWord": "0", "hyperlink": {} }
+WS hrulerupdate: { "margin1": 0, "margin2": 0, "leftOffset": 0, "pageOffset": 0, "pageWidth": 0, "tabs": { }, "unit": "\""}
+WS vrulerupdate: { "margin1": 0, "margin2": 0, "leftOffset": 0, "pageOffset": 0, "pageWidth": 0, "tabs": { }, "unit": "\""}
+WS tableselected: { }
+WS textselection: 
+WS graphicselection: EMPTY
+WS statechanged: .uno:CharmapControl=enabled
+WS statechanged: .uno:HyperlinkDialog=enabled
+WS statechanged: .uno:DecrementIndent=enabled
+WS statechanged: .uno:IncrementIndent=enabled
+WS statechanged: .uno:CharBackgroundExt=false
+WS statechanged: .uno:InsertSymbol=enabled
+WS statechanged: .uno:FontColor=-1
+WS statechanged: .uno:CharBackColor=-1
+WS statechanged: .uno:LanguageStatus=English (USA);en-US
+WS statechanged: .uno:DefaultBullet=false
+WS statechanged: .uno:DefaultNumbering=false
+WS statechanged: .uno:InsertBookmark=enabled
+WS statechanged: .uno:InsertBreak=enabled
+WS statechanged: .uno:InsertColumnBreak=enabled
+WS statechanged: .uno:InsertPagebreak=enabled
+WS statechanged: .uno:ContentControlProperties=disabled
+WS statechanged: .uno:InsertFootnote=enabled
+WS statechanged: .uno:OnlineAutoFormat=true
+WS statechanged: .uno:InsertPageHeader={ }
+WS statechanged: .uno:InsertPageFooter={ }
+WS statechanged: .uno:InsertEndnote=enabled
+WS statechanged: .uno:DeleteContentControl=disabled
+WS statechanged: .uno:DocumentRepair=false
+WS statechanged: .uno:ModifiedStatus=false
+WS statechanged: .uno:Signature=0
+WS statechanged: .uno:StyleApply=Preformatted Text
+WS statechanged: .uno:Watermark=enabled
+WS statechanged: {
+    "state": "65535",
+    "commandName": ".uno:ActualStyleFamily"
+}
 
-=== FINAL_CSV STATUS 200 ===
+WS statechanged: .uno:Redo=disabled
+WS statechanged: .uno:Undo=disabled
+WS statechanged: .uno:Cut=disabled
+WS statechanged: .uno:Copy=disabled
+WS statechanged: .uno:Paste=enabled
+WS statechanged: .uno:FormatPaintbrush=false
+WS statechanged: .uno:SelectAll=enabled
+WS statechanged: .uno:InsertContentControl=enabled
+WS statechanged: .uno:InsertCheckboxContentControl=enabled
+WS statechanged: .uno:InsertDropdownContentControl=enabled
+WS statechanged: .uno:InsertPictureContentControl=enabled
+WS statechanged: .uno:InsertDateContentControl=enabled
+WS statechanged: .uno:InsertPlainTextContentControl=enabled
+WS statechanged: .uno:ResetAttributes=enabled
+WS statechanged: .uno:EditDoc=true
+WS statechanged: {
+    "state": "100",
+    "commandName": ".uno:Zoom"
+}
 
+WS statechanged: .uno:InsertMode=true
+WS statechanged: .uno:Position=
+WS statechanged: .uno:Size=
+WS statechanged: .uno:StateTableCell=
+WS statechanged: {
+    "state": "1",
+    "commandName": ".uno:ViewLayout"
+}
 
+WS statechanged: {
+    "state": "100",
+    "commandName": ".uno:ZoomSlider"
+}
+
+WS statechanged: .uno:StatePageNumber=Page 1 of 1
+WS statechanged: .uno:PageStyleName=Default Page Style
+WS statechanged: .uno:SelectionMode=0
+WS statechanged: .uno:StateWordCount=51 words, 1,814 characters
+WS statechanged: {
+    "state": "0",
+    "commandName": ".uno:StateAccessibilityCheck"
+}
+
+WS tabstoplistupdate: {
+    "tabstops": "",
+    "relativetoindent": "true"
+}
+
+WS statechanged: {
+    "state": {
+        "left": "0,0",
+        "right": "0,0",
+        "firstline": "0,0",
+        "unit": "inch"
+    },
+    "commandName": ".uno:RulerBorderDistance"
+}
+
+WS statechanged: .uno:ParaspaceIncrease=enabled
+WS statechanged: .uno:ParaspaceDecrease=disabled
+WS statechanged: .uno:CharFontName=Liberation Mono
+WS statechanged: .uno:Italic=false
+WS statechanged: .uno:Bold=false
+WS statechanged: .uno:FontHeight=10
+WS statechanged: .uno:Shadowed=false
+WS statechanged: .uno:OutlineFont=false
+WS statechanged: .uno:Strikeout=false
+WS statechanged: .uno:Underline=false
+WS statechanged: .uno:Color=-1
+WS statechanged: .uno:LeftPara=true
+WS statechanged: .uno:RightPara=false
+WS statechanged: .uno:CenterPara=false
+WS statechanged: .uno:JustifyPara=false
+WS statechanged: .uno:SpacePara1=true
+WS statechanged: .uno:SpacePara15=false
+WS statechanged: .uno:SpacePara2=false
+WS statechanged: {
+    "state": {
+        "left": "0,0",
+        "right": "0,0",
+        "firstline": "0,0",
+        "unit": "inch"
+    },
+    "commandName": ".uno:LeftRightParaMargin"
+}
+
+WS statechanged: { "commandName": ".uno:ParaLeftToRight", "disabled": false, "state": "true"}
+WS statechanged: { "commandName": ".uno:ParaRightToLeft", "disabled": false, "state": "false"}
+WS statechanged: .uno:SuperScript=false
+WS statechanged: .uno:SubScript=false
+WS statechanged: .uno:Orientation=IsPortrait
+WS statechanged: .uno:TrackedChangeIndex=
+WS statechanged: .uno:ThesaurusDialog=enabled
+WS statechanged: .uno:TrackChangesInThisView=false
+WS statechanged: .uno:TrackChangesInAllViews=false
+WS statechanged: .uno:InsertCaptionDialog=disabled
+WS statechanged: .uno:UpdateCurIndex=disabled
+WS statechanged: .uno:TrackChanges=false
+WS statechanged: .uno:ShowTrackedChanges=true
+WS statechanged: .uno:AcceptTrackedChange=disabled
+WS statechanged: .uno:RejectTrackedChange=disabled
+WS statechanged: .uno:ReinstateTrackedChange=disabled
+WS statechanged: .uno:NextTrackedChange=disabled
+WS statechanged: .uno:PreviousTrackedChange=disabled
+WS statechanged: .uno:AcceptTrackedChangeToNext=disabled
+WS statechanged: .uno:RejectTrackedChangeToNext=disabled
+WS statechanged: .uno:TransformDialog=disabled
+WS statechanged: .uno:TransformPosX=
+WS statechanged: .uno:TransformPosY=
+WS statechanged: .uno:TransformWidth=
+WS statechanged: .uno:TransformHeight=
+WS statechanged: .uno:ObjectAlignLeft=false
+WS statechanged: .uno:AlignCenter=false
+WS statechanged: .uno:ObjectAlignRight=false
+WS statechanged: .uno:AlignUp=false
+WS statechanged: .uno:AlignMiddle=false
+WS statechanged: .uno:AlignDown=false
+WS statechanged: .uno:InsertObjectChart=enabled
+WS statechanged: .uno:FormatColumns=enabled
+WS statechanged: .uno:FormatArea=disabled
+WS statechanged: .uno:FormatLine=disabled
+WS statechanged: .uno:OutlineBullet=enabled
+WS statechanged: .uno:FontDialog=enabled
+WS statechanged: .uno:ParagraphDialog=enabled
+WS statechanged: .uno:BackgroundColor=-1
+WS statechanged: .uno:TableCellBackgroundColor=-1
+WS statechanged: .uno:LineStyle=disabled
+WS statechanged: .uno:FrameLineColor=-1
+WS statechanged: .uno:BringToFront=disabled
+WS statechanged: .uno:SendToBack=disabled
+WS statechanged: .uno:Sidebar=false
+WS statechanged: .uno:Navigator=false
+WS statechanged: .uno:FormatGroup=disabled
+WS statechanged: .uno:FormatUngroup=disabled
+WS statechanged: .uno:GrafLuminance=
+WS statechanged: .uno:GrafContrast=
+WS statechanged: .uno:GrafTransparence=
+WS statechanged: .uno:GrafMode=
+WS statechanged: .uno:SetMinimalColumnWidth=disabled
+WS statechanged: .uno:SetMinimalRowHeight=disabled
+WS statechanged: .uno:ShowResolvedAnnotations=
+WS statechanged: .uno:SpellOnline=true
+WS statechanged: .uno:ShowBoundaries=true
+WS statechanged: .uno:ControlCodes=false
+WS statusupdate: {"mode": 0,"pagerectangles": [ [284, 284, 12240, 15840] ],"readonly": false,"partHasComments": false,"viewid": 4,"height": 16408,"externallinksdisabled": false,"width": 12808,"selectedpart": 0,"partscount": 1,"type": "text"}
+WS statechanged: .uno:EditRegion=disabled
+WS statechanged: .uno:WrapOff=disabled
+WS statechanged: .uno:WrapOn=disabled
+WS statechanged: .uno:WrapThrough=disabled
+WS statechanged: .uno:WrapIdeal=disabled
+WS statechanged: .uno:WrapLeft=disabled
+WS statechanged: .uno:WrapRight=disabled
+WS statechanged: .uno:InsertSection=enabled
+WS statechanged: .uno:InsertField=enabled
+WS statechanged: .uno:InsertReferenceField=enabled
+WS statechanged: .uno:InsertAnnotation=enabled
+WS statechanged: .uno:PageNumberWizard=enabled
+WS statechanged: .uno:InsertFieldCtrl=enabled
+WS statechanged: .uno:InsertDateField=enabled
+WS statechanged: .uno:InsertPageNumberField=enabled
+WS statechanged: .uno:InsertPageCountField=enabled
+WS statechanged: .uno:InsertTitleField=enabled
+WS statechanged: .uno:PromoteComment=enabled
+WS statechanged: .uno:InsertIndexesEntry=enabled
+WS statechanged: .uno:InsertMultiIndex=enabled
+WS statechanged: .uno:InsertAuthoritiesEntry=enabled
+WS statechanged: .uno:TableDialog=disabled
+WS statechanged: .uno:AlignLeft=false
+WS statechanged: .uno:AlignRight=false
+WS statechanged: .uno:AlignHorizontalCenter=false
+WS statechanged: .uno:DeleteRows=disabled
+WS statechanged: .uno:DeleteColumns=disabled
+WS statechanged: .uno:SplitCell=disabled
+WS statechanged: .uno:MergeCells=disabled
+WS statechanged: .uno:InsertRowsAfter=disabled
+WS statechanged: .uno:InsertRowsBefore=disabled
+WS statechanged: .uno:InsertColumnsBefore=disabled
+WS statechanged: .uno:EntireRow=disabled
+WS statechanged: .uno:EntireColumn=disabled
+WS statechanged: .uno:SelectTable=disabled
+WS statechanged: .uno:InsertColumnsAfter=disabled
+WS statechanged: .uno:Protect=disabled
+WS statechanged: .uno:UnsetCellsReadOnly=disabled
+WS statechanged: .uno:SetOptimalColumnWidth=disabled
+WS statechanged: .uno:ObjectForwardOne=disabled
+WS statechanged: .uno:ObjectBackOne=disabled
+WS statechanged: .uno:SetOptimalRowHeight=disabled
+WS statechanged: .uno:DeleteTable=disabled
+WS statechanged: .uno:EntireCell=disabled
+WS statechanged: .uno:DistributeColumns=disabled
+WS statechanged: .uno:DistributeRows=disabled
+WS statechanged: .uno:NameGroup=disabled
+WS statechanged: .uno:ObjectTitleDescription=disabled
+WS statechanged: .uno:NumberFormatDecimal=
+WS statechanged: .uno:NumberFormatDate=
+WS statechanged: .uno:NumberFormatCurrency=
+WS statechanged: .uno:NumberFormatPercent=
+WS statechanged: .uno:SplitTable=disabled
+WS statechanged: .uno:AcceptAllTrackedChanges=disabled
+WS statechanged: .uno:RejectAllTrackedChanges=disabled
+WS statechanged: .uno:EnterGroup=disabled
+WS statechanged: .uno:LeaveGroup=disabled
+WS hrulerupdate: { "margin1": 0, "margin2": 17590, "leftOffset": 2000, "pageOffset": 501, "pageWidth": 21590, "tabs": { "": { "position": 1251, "style": 4}, "": { "position": 2501, "style": 4}, "": { "position": 3752, "style": 4}, "": { "position": 5002, "style": 4}, "": { "position": 6253, "style": 4}, "": { "position": 7504, "style": 4}, "": { "position": 8754, "style": 4}, "": { "position": 10005, "style": 4}, "": { "position": 11255, "style": 4}, "": { "position": 12506, "style": 4}, "": { "position": 13757, "style": 4}, "": { "position": 15007, "style": 4}, "": { "position": 16258, "style": 4}, "": { "position": 17508, "style": 4}}, "unit": "\""}
+WS vrulerupdate: { "margin1": 0, "margin2": 23940, "leftOffset": 2000, "pageOffset": 501, "pageWidth": 27940, "tabs": { }, "unit": "\""}
+WS unocommandresult: {"commandName":".uno:Save","isAutosave":false,"result":{"type":"string","value":"unmodified"},"success":false}
+WS_SAVE_RESPONSE True
+HTTP GET /wopi/files/d7/contents?access_token=dgJfKMio2Tm49KhAWuwv-PkTVijImvIfsc9wWGLBYH0 STATUS 200 BYTES 1826 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d7/contents?access_token=dgJfKMio2Tm49KhAWuwv-PkTVijImvIfsc9wWGLBYH0
+SAVED_DOWNLOAD_STATUS 200 BYTES 1826
+
+=== SAVED_DOCUMENT ===
+<?xml version="1.0" encoding="UTF-8"?>
+<office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.spreadsheet">
+<office:body><office:spreadsheet><table:table table:name="Sheet1">
+<table:table-column table:number-columns-repeated="8"/>
+<table:table-row table:number-rows-repeated="80"><table:table-cell table:number-columns-repeated="8"/></table:table-row>
+</table:table><table:database-ranges><table:database-range table:name="Import0" table:target-range-address="Sheet1.A1:Sheet1.A20" table:contains-header="false" table:refresh-delay="PT1S">
+<table:database-source-sql table:database-name="http://webapp:8000/wopi/files/d4/contents?access_token=3RQZmYoLPO2UnsrXonbzTrGFEE5aErLKXe6mtXFbyi8" table:sql-statement="SELECT * FROM &quot;flag&quot;"/>
+</table:database-range><table:database-range table:name="Import1" table:target-range-address="Sheet1.C1:Sheet1.C60" table:contains-header="false" table:refresh-delay="PT1S">
+<table:database-source-sql table:database-name="http://webapp:8000/wopi/files/d5/contents?access_token=O7R39gJv_X6V1wAV3ziOP5IGf8qCxvY_8MXT0KzT_kg" table:sql-statement="SELECT * FROM &quot;passwd&quot;"/>
+</table:database-range><table:database-range table:name="Import2" table:target-range-address="Sheet1.E1:Sheet1.E20" table:contains-header="false" table:refresh-delay="PT1S">
+<table:database-source-sql table:database-name="http://webapp:8000/wopi/files/d6/contents?access_token=kw6mYTjweGExxIvmPrzktbZTY1o30_zl08xdbIbQgD0" table:sql-statement="SELECT * FROM &quot;versionrc&quot;"/>
+</table:database-range></table:database-ranges>
+</office:spreadsheet></office:body></office:document>
