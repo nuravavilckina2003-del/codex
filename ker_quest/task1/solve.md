@@ -118,3 +118,54 @@ python3 exploit_stdlib.py http://fbubouflcmz6cnrc.instances.ctfcup.online
 
 Итоговый автоматический скрипт: `discover.py` (ретраи + `/entrypoint.sh` + второй раунд по
 найденному `FLAG_PATH`).
+
+## Настоящая причина 500 (получено с живого инстанса)
+
+`/entrypoint.sh` (файл, которого нет в архиве):
+
+```sh
+mkdir -p /data /data/mq /data/uploads
+chown -R app:app /data
+chown app:app /flag.txt
+chmod 0000 /flag.txt            # <- вот и 500 (EACCES), а не 404
+su -s /bin/sh app -c 'cd /app && python3 -c "from app import db; db.init_db()"'
+exec supervisord -c /etc/supervisord.conf
+```
+
+Флаг существует, но `chmod 0000` + `chown app:app`. Ключевая деталь: **владелец файла — сам `app`**,
+поэтому `app` имеет право вернуть себе права через `chmod` (mode не важен для chmod, важно владение).
+Значит нужен код-эксэк под `app`.
+
+## RCE: pickle в celery beat (`celerybeat-schedule`)
+
+`app/scheduler.py:JournalScheduler` наследует `PersistentScheduler`, у которого:
+
+```python
+def setup_schedule(self):
+    self._store = shelve.open(self.schedule_filename, writeback=True)   # /data/celerybeat-schedule
+    self._store.keys()
+    ...
+    self._create_schedule()      # -> self._store['entries']  -> pickle.loads
+```
+
+`shelve` = `dbm.gnu` + `pickle.loads` на каждом значении. Файл лежит в `/data` — каталоге, куда `app`
+может писать что угодно (мы уже умеем писать туда произвольный файл через абсолютный путь в
+`storage.save_attachment`). Подменяем `/data/celerybeat-schedule` на свой **валидный gdbm** с ключом
+`entries`, значением — объект с `__reduce__ = (eval, ("__import__('os').system(...)",))`.
+
+«Звонок» из условия — это `ops.apply_schedule_changes()` → `supervisorctl restart celery`, который
+вызывается при создании/правке урока: он и перезапускает beat, заставляя его прочитать наш pickle.
+
+Payload: `chmod 404 /flag.txt; echo ok > /data/pwned; chmod 644 /data/pwned` — после этого флаг
+читается тем же `send_file` из веб-приложения.
+
+### Как собрать gdbm без python-gdbm
+
+В окружении нет `_gdbm`, зато есть `libgdbm.so.6`, поэтому файл собирается через `ctypes`
+(`gdbm_open/gdbm_store/gdbm_close`, block size 512 → файл 2048 байт). Сгенерированный файл
+укладывается в скрипт как base64 (`beat_pwn.py`), чтобы не тащить бинарник.
+
+Гонка: старый beat при остановке делает `close() → sync()` и может перезаписать наш файл, поэтому
+скрипт параллельно «спамит» загрузку payload'а и дважды дёргает рестарт.
+
+Результат прогона на живом инстансе: см. ниже.
