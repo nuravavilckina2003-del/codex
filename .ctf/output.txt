@@ -2,7 +2,7 @@
 ============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/register
 STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/register
 HEADERS
-Date: Sat, 31 Oct 2026 13:23:30 GMT
+Date: Sat, 31 Oct 2026 13:26:01 GMT
 Content-Type: text/html; charset=utf-8
 Connection: close
 Transfer-Encoding: chunked
@@ -49,7 +49,7 @@ PARSED {'forms': [{'action': '/register', 'method': 'post', 'inputs': [{'tag': '
 
 ============================== REQUEST POST http://njwqato3tpdz0t6k.instances.ctfcup.online/register
 FORM {'email': 'arena-93aa1301@corp', 'name': 'arena', 'password': '<redacted>'}
-HTTP ERROR 409 Date: Sat, 31 Oct 2026 13:23:31 GMT
+HTTP ERROR 409 Date: Sat, 31 Oct 2026 13:26:02 GMT
 Content-Type: text/html; charset=utf-8
 Connection: close
 Transfer-Encoding: chunked
@@ -322,7 +322,7 @@ PARSED {'forms': [{'action': '/register', 'method': 'post', 'inputs': [{'tag': '
 ============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/login
 STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/login
 HEADERS
-Date: Sat, 31 Oct 2026 13:23:31 GMT
+Date: Sat, 31 Oct 2026 13:26:02 GMT
 Content-Type: text/html; charset=utf-8
 Connection: close
 Transfer-Encoding: chunked
@@ -367,7 +367,7 @@ PARSED {'forms': [{'action': '/login', 'method': 'post', 'inputs': [{'tag': 'inp
 FORM {'email': 'arena-93aa1301@corp', 'password': '<redacted>'}
 STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/
 HEADERS
-Date: Sat, 31 Oct 2026 13:23:32 GMT
+Date: Sat, 31 Oct 2026 13:26:03 GMT
 Content-Type: text/html; charset=utf-8
 Connection: close
 Transfer-Encoding: chunked
@@ -427,13 +427,13 @@ BODY
 </body>
 </html>
 
-COOKIES [('docus_session', 'GYVW1J8KJWH9NQGkaVp2xo7xBA6FJ3mW')]
+COOKIES [('docus_session', 'BJlV_9OhkdN6o0qzWGEhgQuuQiuau6J2')]
 PARSED {'forms': [{'action': '/logout', 'method': 'post', 'inputs': []}, {'action': '/folders/create', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'text', 'name': 'name', 'placeholder': 'Новая папка…', 'autocomplete': 'off'}]}, {'action': '/docs/create', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'hidden', 'name': 'folder', 'value': ''}, {'tag': 'input', 'type': 'text', 'name': 'title', 'placeholder': 'Новый документ…', 'autocomplete': 'off'}]}, {'action': '/docs/delete', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'hidden', 'name': 'id', 'value': 'd1'}, {'tag': 'input', 'type': 'hidden', 'name': 'folder', 'value': ''}]}], 'assets': ["data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"], 'links': ['/', '/shared', '/edit/d1', '/share?doc=d1']}
 
 ============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/
 STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/
 HEADERS
-Date: Sat, 31 Oct 2026 13:23:32 GMT
+Date: Sat, 31 Oct 2026 13:26:04 GMT
 Content-Type: text/html; charset=utf-8
 Connection: close
 Transfer-Encoding: chunked
@@ -493,13 +493,14 @@ BODY
 </body>
 </html>
 
-COOKIES [('docus_session', 'GYVW1J8KJWH9NQGkaVp2xo7xBA6FJ3mW')]
+COOKIES [('docus_session', 'BJlV_9OhkdN6o0qzWGEhgQuuQiuau6J2')]
 PARSED {'forms': [{'action': '/logout', 'method': 'post', 'inputs': []}, {'action': '/folders/create', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'text', 'name': 'name', 'placeholder': 'Новая папка…', 'autocomplete': 'off'}]}, {'action': '/docs/create', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'hidden', 'name': 'folder', 'value': ''}, {'tag': 'input', 'type': 'text', 'name': 'title', 'placeholder': 'Новый документ…', 'autocomplete': 'off'}]}, {'action': '/docs/delete', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'hidden', 'name': 'id', 'value': 'd1'}, {'tag': 'input', 'type': 'hidden', 'name': 'folder', 'value': ''}]}], 'assets': ["data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"], 'links': ['/', '/shared', '/edit/d1', '/share?doc=d1']}
 
-============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/shared
-STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/shared
+============================== REQUEST POST http://njwqato3tpdz0t6k.instances.ctfcup.online/docs/create
+FORM {'folder': '', 'title': 'second-<b>probe</b>'}
+STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d2
 HEADERS
-Date: Sat, 31 Oct 2026 13:23:33 GMT
+Date: Sat, 31 Oct 2026 13:26:05 GMT
 Content-Type: text/html; charset=utf-8
 Connection: close
 Transfer-Encoding: chunked
@@ -510,62 +511,32 @@ BODY
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<title>Docus — Документы</title>
+<title>Docus — редактор</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
 <style>/* omitted */</style>
 </head>
 <body>
-<header class="topbar"><div class="tb-main">
-  <div class="brand"><span class="brand-badge anim-glow">D</span>Docus <small>корпоративный портал документов</small></div>
-  <div class="tb-actions">
-    <span class="userbox"><span class="avatar">a</span>arena · arena-93aa1301@corp</span>
-    <form method="post" action="/logout" style="margin:0"><button class="btn" type="submit">Выйти</button></form>
-  </div>
-</div></header>
-<div class="layout">
-  <nav class="sidebar">
-    <h3>Папки</h3>
-<a class="nav-item" href="/"><span class="icon">▣</span>Все документы</a><a class="nav-item active" href="/shared"><span class="icon">✦</span>Мне расшарено</a>
-    <form class="newfolder" method="post" action="/folders/create">
-      <input type="text" name="name" placeholder="Новая папка…" autocomplete="off">
-      <button class="btn" type="submit" title="Создать папку">+</button>
-    </form>
-  </nav>
-  <main class="content">
-    <div class="content-head">
-      <h2>Мне расшарено</h2>
-      <form style="display:none">
-        <input type="hidden" name="folder" value="">
-        <input type="text" name="title" placeholder="Новый документ…" autocomplete="off">
-        <button class="btn primary" type="submit">Создать</button>
-      </form>
-    </div>
-    
-    <div class="docs anim-fade">
-<div class="empty">Никто пока не поделился с вами документами</div>
-    </div>
-  </main>
+<div class="editbar">
+  <span class="crumbs"><a href="/">Все документы</a> / <span class="doc-title">second-&lt;b&gt;probe&lt;/b&gt;.txt</span></span>
 </div>
-<footer class="statusbar">
-  <span class="saved">Все изменения сохранены</span>
-  <span class="sep">|</span>
-  <span>Русский (Россия)</span>
-  <div class="right">
-    <span>Совместное редактирование: включено</span>
-    <span class="sep">|</span>
-    <span>100%</span>
-  </div>
-</footer>
+<iframe src="/browser/cc5614c67e/cool.html?WOPISrc=http%3A%2F%2Fwebapp%3A8000%2Fwopi%2Ffiles%2Fd2&access_token=KwCE-bJcqRbeTFpwBXLPEPgW2ZFZAiJytijx2OxfTIM&permission=edit&closebutton=true" allow="clipboard-read; clipboard-write"></iframe>
+<script>
+window.addEventListener("message", function (e) {
+  var msg = e.data;
+  if (typeof msg === "string") { try { msg = JSON.parse(msg); } catch (err) { return; } }
+  if (msg && msg.MessageId === "close") { location.href = "/"; }
+});
+</script>
 </body>
 </html>
 
-COOKIES [('docus_session', 'GYVW1J8KJWH9NQGkaVp2xo7xBA6FJ3mW')]
-PARSED {'forms': [{'action': '/logout', 'method': 'post', 'inputs': []}, {'action': '/folders/create', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'text', 'name': 'name', 'placeholder': 'Новая папка…', 'autocomplete': 'off'}]}, {'action': '', 'method': 'get', 'inputs': [{'tag': 'input', 'type': 'hidden', 'name': 'folder', 'value': ''}, {'tag': 'input', 'type': 'text', 'name': 'title', 'placeholder': 'Новый документ…', 'autocomplete': 'off'}]}], 'assets': ["data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"], 'links': ['/', '/shared']}
+COOKIES [('docus_session', 'BJlV_9OhkdN6o0qzWGEhgQuuQiuau6J2')]
+SECOND_DOC http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d2
 
 ============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d1
 STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d1
 HEADERS
-Date: Sat, 31 Oct 2026 13:23:34 GMT
+Date: Sat, 31 Oct 2026 13:26:05 GMT
 Content-Type: text/html; charset=utf-8
 Connection: close
 Transfer-Encoding: chunked
@@ -595,79 +566,13 @@ window.addEventListener("message", function (e) {
 </body>
 </html>
 
-COOKIES [('docus_session', 'GYVW1J8KJWH9NQGkaVp2xo7xBA6FJ3mW')]
-PARSED {'forms': [], 'assets': ["data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"], 'links': ['/']}
+COOKIES [('docus_session', 'BJlV_9OhkdN6o0qzWGEhgQuuQiuau6J2')]
+TOKEN_FOR d1 YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU
 
-============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/share?doc=d1
-STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/share?doc=d1
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d2
+STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d2
 HEADERS
-Date: Sat, 31 Oct 2026 13:23:34 GMT
-Content-Type: text/html; charset=utf-8
-Connection: close
-Transfer-Encoding: chunked
-
-
-BODY
-<!doctype html>
-<html lang="ru">
-<head>
-<meta charset="utf-8">
-<title>Docus — Поделиться</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
-<style>/* omitted */</style>
-</head>
-<body>
-<header class="topbar"><div class="tb-main">
-  <div class="brand"><span class="brand-badge anim-glow">D</span>Docus <small>корпоративный портал документов</small></div>
-  <div class="tb-actions">
-    <span class="userbox"><span class="avatar">a</span>arena · arena-93aa1301@corp</span>
-    <form method="post" action="/logout" style="margin:0"><button class="btn" type="submit">Выйти</button></form>
-  </div>
-</div></header>
-<div class="layout">
-  <nav class="sidebar">
-    <h3>Папки</h3>
-<a class="nav-item active" href="/"><span class="icon">▣</span>Все документы</a><a class="nav-item" href="/shared"><span class="icon">✦</span>Мне расшарено</a>
-  </nav>
-  <main class="content">
-    <a class="back" href="/">← Ко всем документам</a>
-    <h2>Поделиться: arena-probe-document.txt</h2>
-    
-    <form class="share-form" method="post" action="/share/create">
-      <input type="hidden" name="doc" value="d1">
-      <input type="text" name="to" placeholder="почта коллеги, например petrov@corp" autocomplete="off">
-      <label><input type="checkbox" name="canedit"> может редактировать</label>
-      <button class="btn primary" type="submit">Поделиться</button>
-    </form>
-    <table class="share">
-      <thead><tr><th>Кому</th><th>Доступ</th><th>Статус</th><th></th></tr></thead>
-      <tbody>
-<tr><td colspan="4" class="empty">Пока ни с кем не расшарено</td></tr>
-      </tbody>
-    </table>
-  </main>
-</div>
-</body>
-</html>
-
-COOKIES [('docus_session', 'GYVW1J8KJWH9NQGkaVp2xo7xBA6FJ3mW')]
-PARSED {'forms': [{'action': '/logout', 'method': 'post', 'inputs': []}, {'action': '/share/create', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'hidden', 'name': 'doc', 'value': 'd1'}, {'tag': 'input', 'type': 'text', 'name': 'to', 'placeholder': 'почта коллеги, например petrov@corp', 'autocomplete': 'off'}, {'tag': 'input', 'type': 'checkbox', 'name': 'canedit'}]}], 'assets': ["data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"], 'links': ['/', '/shared', '/']}
-
-============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d0
-HTTP ERROR 404 Content-Type: text/plain; charset=utf-8
-X-Content-Type-Options: nosniff
-Date: Sat, 31 Oct 2026 13:23:35 GMT
-Content-Length: 19
-Connection: close
-
- 404 page not found
-
-PARSED {'forms': [], 'assets': [], 'links': []}
-
-============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d1
-STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d1
-HEADERS
-Date: Sat, 31 Oct 2026 13:23:35 GMT
+Date: Sat, 31 Oct 2026 13:26:05 GMT
 Content-Type: text/html; charset=utf-8
 Connection: close
 Transfer-Encoding: chunked
@@ -684,9 +589,9 @@ BODY
 </head>
 <body>
 <div class="editbar">
-  <span class="crumbs"><a href="/">Все документы</a> / <span class="doc-title">arena-probe-document.txt</span></span>
+  <span class="crumbs"><a href="/">Все документы</a> / <span class="doc-title">second-&lt;b&gt;probe&lt;/b&gt;.txt</span></span>
 </div>
-<iframe src="/browser/cc5614c67e/cool.html?WOPISrc=http%3A%2F%2Fwebapp%3A8000%2Fwopi%2Ffiles%2Fd1&access_token=YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU&permission=edit&closebutton=true" allow="clipboard-read; clipboard-write"></iframe>
+<iframe src="/browser/cc5614c67e/cool.html?WOPISrc=http%3A%2F%2Fwebapp%3A8000%2Fwopi%2Ffiles%2Fd2&access_token=KwCE-bJcqRbeTFpwBXLPEPgW2ZFZAiJytijx2OxfTIM&permission=edit&closebutton=true" allow="clipboard-read; clipboard-write"></iframe>
 <script>
 window.addEventListener("message", function (e) {
   var msg = e.data;
@@ -697,287 +602,25 @@ window.addEventListener("message", function (e) {
 </body>
 </html>
 
-COOKIES [('docus_session', 'GYVW1J8KJWH9NQGkaVp2xo7xBA6FJ3mW')]
-PARSED {'forms': [], 'assets': ["data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"], 'links': ['/']}
-WOPI d1 IFRAME /browser/cc5614c67e/cool.html?WOPISrc=http%3A%2F%2Fwebapp%3A8000%2Fwopi%2Ffiles%2Fd1&access_token=YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU&permission=edit&closebutton=true TOKEN_LENGTH 43
+COOKIES [('docus_session', 'BJlV_9OhkdN6o0qzWGEhgQuuQiuau6J2')]
+TOKEN_FOR d2 KwCE-bJcqRbeTFpwBXLPEPgW2ZFZAiJytijx2OxfTIM
+CROSS_TOKEN d1 -> d0
 
-============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?WOPISrc=http%3A%2F%2Fwebapp%3A8000%2Fwopi%2Ffiles%2Fd1&access_token=YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU&permission=edit&closebutton=true
-STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?WOPISrc=http%3A%2F%2Fwebapp%3A8000%2Fwopi%2Ffiles%2Fd1&access_token=YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU&permission=edit&closebutton=true
-HEADERS
-Cache-Control: no-store
-Content-Length: 10834
-Content-Security-Policy: media-src  'self' blob: http://njwqato3tpdz0t6k.instances.ctfcup.online; object-src  'self'; style-src  'self'; script-src  'self' 'unsafe-eval'; frame-ancestors  collabora:* webapp:* localhost:* njwqato3tpdz0t6k.instances.ctfcup.online:* webapp:* collabora:* webapp:* localhost:*; img-src  'self' data: https://www.collaboraoffice.com collabora:* webapp:* localhost:* njwqato3tpdz0t6k.instances.ctfcup.online:* webapp:*; connect-src  'self' https://www.zotero.org https://api.zotero.org ws://njwqato3tpdz0t6k.instances.ctfcup.online http://njwqato3tpdz0t6k.instances.ctfcup.online; frame-src  'self' https://rating.collaboraonline.com https://rating.collaboraonline.com blob:; font-src  'self'; default-src  'none';
-Content-Type: text/html
-Date: Sat, 31 Oct 2026 13:23:36
-Last-Modified: Sat, 31 Oct 2026 13:23:36
-Referrer-Policy: no-referrer
-Server: 
-X-Content-Type-Options: nosniff
-X-Xss-Protection: 1; mode=block
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d0?access_token=YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU
+HTTP ERROR 404 Content-Type: application/json
+Date: Sat, 31 Oct 2026 13:26:06 GMT
+Content-Length: 29
 Connection: close
 
+ {"error":"no such document"}
 
-BODY
-<!DOCTYPE html>
-<html ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!--
-  SPDX-License-Identifier: MPL-2.0
-
-  Copyright the Collabora Online contributors.
-  Copyright Collabora Productivity Limited.
-
-  This Source Code Form is subject to the terms of the Mozilla Public
-  License, v. 2.0. If a copy of the MPL was not distributed with this
-  file, You can obtain one at http://mozilla.org/MPL/2.0/.
--->
-<title>Online Editor</title>
-<meta charset="utf-8">
-
-  
-
-
-<meta name="previewImg" content="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyMDAgMjAwJz4KICAgPGNpcmNsZSB0cmFuc2Zvcm09J3JvdGF0ZSgwKScgdHJhbnNmb3JtLW9yaWdpbj0nY2VudGVyJyBmaWxsPSdub25lJyBzdHJva2U9JyNCNkI2QjYnIHN0cm9rZS13aWR0aD0nMTUnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWRhc2hhcnJheT0nMjMwIDEwMDAnIHN0cm9rZS1kYXNob2Zmc2V0PScwJyBjeD0nMTAwJyBjeT0nMTAwJyByPSc3MCc+CiAgICAgPGFuaW1hdGVUcmFuc2Zvcm0KICAgICAgICAgYXR0cmlidXRlTmFtZT0ndHJhbnNmb3JtJwogICAgICAgICB0eXBlPSdyb3RhdGUnCiAgICAgICAgIGZyb209JzAnCiAgICAgICAgIHRvPSczNjAnCiAgICAgICAgIGR1cj0nMicKICAgICAgICAgcmVwZWF0Q291bnQ9J2luZGVmaW5pdGUnPgogICAgICA8L2FuaW1hdGVUcmFuc2Zvcm0+CiAgIDwvY2lyY2xlPgo8L3N2Zz4=">
-<meta name="previewSmile" content="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyNHB4IiBmaWxsPSIjNWY2MzY4Ij48cGF0aCBkPSJtNDI0LTI5NiAyODItMjgyLTU2LTU2LTIyNiAyMjYtMTE0LTExNC01NiA1NiAxNzAgMTcwWm01NiAyMTZxLTgzIDAtMTU2LTMxLjVUMTk3LTE5N3EtNTQtNTQtODUuNS0xMjdUODAtNDgwcTAtODMgMzEuNS0xNTZUMTk3LTc2M3E1NC01NCAxMjctODUuNVQ0ODAtODgwcTgzIDAgMTU2IDMxLjVUNzYzLTc2M3E1NCA1NCA4NS41IDEyN1Q4ODAtNDgwcTAgODMtMzEuNSAxNTZUNzYzLTE5N3EtNTQgNTQtMTI3IDg1LjVUNDgwLTgwWm0wLTgwcTEzNCAwIDIyNy05M3Q5My0yMjdxMC0xMzQtOTMtMjI3dC0yMjctOTNxLTEzNCAwLTIyNyA5M3QtOTMgMjI3cTAgMTM0IDkzIDIyN3QyMjcgOTNabTAtMzIwWiIvPjwvc3ZnPg==">
-
-
-  <input type="hidden" id="init-welcome-url" value="https://rating.collaboraonline.com/Welcome/welcome.html" />
-  <input type="hidden" id="init-feedback-url" value="https://rating.collaboraonline.com/Rate/feedback.html" />
-  <input type="hidden" id="init-accessibility-statement-url" value="" />
-  <input type="hidden" id="init-buy-product-url" value="" />
-  <input type="hidden" id="init-app-type" value="browser" />
-  <input type="hidden" id="init-css-vars" value="" />
-  <input type="hidden" id="init-product-branding-url" value="" />
-  <input type="hidden" id="init-product-branding-name" value="" />
-  <input type="hidden" id="init-logo-url" value="" />
-
-
-
-<input type="hidden" id="init-uri-prefix" value="/browser/cc5614c67e/" />
-<input type="hidden" id="init-branding-name" value="" />
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/browser/cc5614c67e/bundle.css" />
-<link rel="stylesheet" href="/browser/cc5614c67e/branding.css"> <!-- add your logo here -->
-<link rel="localizations" href="/browser/cc5614c67e/l10n/localizations.json" type="application/vnd.oftn.l10n+json"/>
-   <link rel="localizations" href="/browser/cc5614c67e/l10n/help-localizations.json" type="application/vnd.oftn.l10n+json"/>
-   <link rel="localizations" href="/browser/cc5614c67e/l10n/uno-localizations.json" type="application/vnd.oftn.l10n+json"/>
-
-</head>
-
-  <body>
-    <!--The "controls" div holds map controls such as the Zoom button and
-        it's separated from the map in order to have the controls on the top
-        of the page all the time.
-
-        The "document-container" div is the actual display of the document, is
-        what the user sees and it should be no larger than the screen size.
-
-        The "map" div is the actual document and it has the document's size
-        and width, this being inside the smaller "document-container" will
-        cause the content to overflow, creating scrollbars -->
-
-    <dialog id="content-keeper">
-      <nav class="main-nav" role="navigation">
-        <!-- Mobile menu toggle button (hamburger/x icon) -->
-        <input id="main-menu-state" type="checkbox" tabindex="-1" aria-hidden="true" />
-        <ul id="main-menu" class="sm sm-simple lo-menu readonly"></ul>
-        <div id="document-titlebar">
-          <div class="document-title">
-            <label class="visuallyhidden" for="document-name-input">Document name</label>
-            <input id="document-name-input" type="text" spellcheck="false" disabled="true" />
-            <div class="loading-bar-container">
-              <div id="document-name-input-loading-bar"></div>
-            </div>
-            <progress id="document-name-input-progress-bar" class="progress-bar" value="0" max="99"></progress>
-          </div>
-        </div>
-
-        <div id="userListHeader">
-          <div id="followingChipBackground">
-            <div id="followingChip"></div>
-          </div>
-          <div id="userListSummaryBackground"><button id="userListSummaryButton"></button></div>
-        </div>
-        <div id="viewMode">
-        </div>
-        <div id="closebuttonwrapperseparator"></div>
-        <div id="closebuttonwrapper">
-          <button class="closebuttonimage" id="closebutton" accesskey="ZC"></button>
-        </div>
-      </nav>
-
-      <div id="toolbar-wrapper" role="toolbar" aria-orientation="horizontal">
-          <div id="toolbar-row" class="toolbar-row">
-            <div id="toolbar-logo"></div>
-            <div id="toolbar-mobile-back" class="editmode-off"></div>
-            <div class="jsdialog ui-spacer"></div>
-            <div id="toolbar-up"></div>
-            <div id="toolbar-hamburger">
-              <label class="main-menu-btn" for="main-menu-state" id="main-menu-btn" role="button" tabindex="0">
-                <span class="main-menu-btn-icon" id="main-menu-btn-icon"></span>
-              </label>
-            </div>
-          </div>
-        <div id="formulabar-row" class="hidden">
-          <div id="addressInput"></div>
-          <div id="formulabar"></div>
-        </div>
-        <progress id="mobile-progress-bar" class="progress-bar" value="0" max="99"></progress>
-      </div>
-
-      <input id="insertgraphic" aria-hidden="true" type="file" accept="image/*" tabindex="-1">
-      <input id="insertmultimedia" aria-hidden="true" type="file" accept="audio/*, video/*" tabindex="-1">
-      <input id="selectbackground" aria-hidden="true" type="file" accept="image/*" tabindex="-1">
-      <input id="comparedocuments" aria-hidden="true" type="file" accept="application/*" tabindex="-1">
-    </dialog>
-
-    <div id="main-document-content">
-      <nav id="navigation-sidebar">
-        <div id="presentation-controls-wrapper" class="readonly">
-          <div id="slide-sorter"></div>
-          <div id="presentation-toolbar"></div>
-        </div>
-        <div id="navigator-dock-wrapper">
-          <div id="navigator-panel" class="sidebar-panel"></div>
-        </div>
-        <div id="quickfind-dock-wrapper">
-          <div id="quickfind-panel" class="sidebar-panel"></div>
-        </div>
-      </nav>
-      <div id="navigator-floating-icon"></div>
-      <div id="document-container" class="readonly" dir="ltr">
-        <div id="map"></div>
-      </div>
-      <div id="sidebar-dock-wrapper">
-        <div id="sidebar-panel" class="sidebar-panel"></div>
-      </div>
-      <div id="aichat-dock-wrapper">
-        <div id="aichat-panel"></div>
-      </div>
-    </div>
-
-    <div id="spreadsheet-toolbar" class="hidden"></div>
-
-    <div id="mobile-edit-button">
-      <div id="mobile-edit-button-image"></div>
-    </div>
-
-    <div id="toolbar-down"></div>
-    <div id="toolbar-search"></div>
-    <div id="mobile-wizard">
-      <div id="mobile-wizard-tabs"></div>
-      <table id="mobile-wizard-titlebar" class="mobile-wizard-titlebar" width="100%">
-        <tr>
-          <td id="mobile-wizard-back" class="mobile-wizard-back"></td>
-          <td id="mobile-wizard-title" class="mobile-wizard-title ui-widget"></td>
-        </tr>
-      </table>
-      <div id="mobile-wizard-content"></div>
-    </div>
-
-    <!-- Remove if you don't want the About dialog -->
-    <dialog>
-      <div id="about-dialog" tabIndex="0">
-        <div id="about-dialog-header">
-          <fig id="integrator-logo"></fig>
-          <h1 id="product-name">Collabora Online</h1>
-        </div>
-        <hr/>
-        <div id="about-dialog-container">
-          <div id="about-dialog-logos">
-            <fig id="product-logo"></fig>
-          </div>
-          <div id="about-dialog-info-container">
-            <div id="about-dialog-info">
-            </div>
-          </div>
-        </div>
-      </div>
-    </dialog>
-
-
-      <input type="hidden" id="initial-variables"
-      data-access-header = ""
-      data-access-token = "YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU"
-      data-access-token-ttl = "0"
-      data-ai-ethical-rating-message = "true"
-      data-allow-update-notification = "true"
-      data-auto-show-feedback = "true"
-      data-auto-show-welcome = "true"
-      data-canvas-slideshow-enabled = "true"
-      data-check-file-info-override = "{}"
-      data-cool-logging = ""
-      data-coolwsd-version = "26.04.3.2"
-      data-copyright-year = 2026
-      data-deepl-enabled = "false"
-      data-document-signing-enabled = "true"
-      data-enable-accessibility = "false"
-      data-enable-debug = "false"
-      data-enable-experimental-features = "true"
-      data-enable-macros-execution = "false"
-      data-enable-welcome-message = "true"
-      data-extra-export-formats = ""
-      data-frame-ancestors = "%20collabora:%2A%20webapp:%2A%20localhost:%2A%20njwqato3tpdz0t6k.instances.ctfcup.online:%2A%20webapp:%2A"
-      data-geolocation-setup = "%GEOLOCATION_SETUP%"
-      data-hexify-url = "false"
-      data-hide-legacy-script-warning = "false"
-      data-host = "ws://njwqato3tpdz0t6k.instances.ctfcup.online"
-      data-idle-timeout-secs = "900"
-      data-indirection-url = ""
-      data-min-saved-message-timeout-secs = "6";
-      data-no-auth-header = ""
-      data-out-of-focus-timeout-secs = "300"
-      data-post-message-origin-ext = ""
-      data-protocol-debug = "false"
-      data-saved-ui-state = "true"
-      data-service-root = ""
-      data-socket-proxy = "false"
-      data-statusbar-save-indicator = "true"
-      data-ui-defaults = "e30="
-      data-use-integration-theme = "false"
-      data-user-interface-mode = "notebookbar"
-      data-vendor = "Collabora Productivity Limited"
-      data-version-path = "cc5614c67e"
-      data-wasm-enabled = "false"
-      data-wopi-host-id = ""
-      data-wopi-setting-base-url = ""
-      data-zotero-enabled = "true"
-      />
-    
-
-
-
-<script type="text/javascript" src="/browser/cc5614c67e/global.js"></script>
-
-
-<script type="text/javascript" src="/browser/cc5614c67e/templates/templates.js"></script>
-
-
-
-
-<script src="/browser/cc5614c67e/bundle.js" defer></script>
-        
-
-<script src="/browser/cc5614c67e/branding.js"></script> <!-- logo onclick handler -->
-</body></html>
-
-COOKIES [('docus_session', 'GYVW1J8KJWH9NQGkaVp2xo7xBA6FJ3mW')]
-PARSED {'forms': [], 'assets': ['/browser/cc5614c67e/bundle.css', '/browser/cc5614c67e/branding.css', '/browser/cc5614c67e/l10n/localizations.json', '/browser/cc5614c67e/l10n/help-localizations.json', '/browser/cc5614c67e/l10n/uno-localizations.json', '/browser/cc5614c67e/global.js', '/browser/cc5614c67e/templates/templates.js', '/browser/cc5614c67e/bundle.js', '/browser/cc5614c67e/branding.js'], 'links': []}
+CROSS_TOKEN d1 -> d1
 
 ============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d1?access_token=YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU
 STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d1?access_token=YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU
 HEADERS
 Content-Type: application/json
-Date: Sat, 31 Oct 2026 13:23:36 GMT
+Date: Sat, 31 Oct 2026 13:26:06 GMT
 Content-Length: 296
 Connection: close
 
@@ -985,28 +628,1075 @@ Connection: close
 BODY
 {"BaseFileName":"arena-probe-document.txt","DisableCopy":true,"DisableExport":true,"DisablePrint":true,"IsAnonymousUser":false,"LastModifiedTime":"2026-10-31T13:22:47.209487Z","OwnerId":"arena-93aa1301@corp","Size":0,"UserCanWrite":true,"UserFriendlyName":"arena","UserId":"arena-93aa1301@corp"}
 
-COOKIES [('docus_session', 'GYVW1J8KJWH9NQGkaVp2xo7xBA6FJ3mW')]
+COOKIES [('docus_session', 'BJlV_9OhkdN6o0qzWGEhgQuuQiuau6J2')]
+CROSS_TOKEN d1 -> d2
 
-============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d1/contents?access_token=YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU
-STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d1/contents?access_token=YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d2?access_token=YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU
+HTTP ERROR 401 Content-Type: application/json
+Date: Sat, 31 Oct 2026 13:26:07 GMT
+Content-Length: 33
+Connection: close
+
+ {"error":"invalid access token"}
+
+CROSS_TOKEN d1 -> d3
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d3?access_token=YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU
+HTTP ERROR 404 Content-Type: application/json
+Date: Sat, 31 Oct 2026 13:26:08 GMT
+Content-Length: 29
+Connection: close
+
+ {"error":"no such document"}
+
+CROSS_TOKEN d1 -> flag
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/flag?access_token=YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU
+HTTP ERROR 404 Content-Type: application/json
+Date: Sat, 31 Oct 2026 13:26:08 GMT
+Content-Length: 29
+Connection: close
+
+ {"error":"no such document"}
+
+CROSS_TOKEN d2 -> d0
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d0?access_token=KwCE-bJcqRbeTFpwBXLPEPgW2ZFZAiJytijx2OxfTIM
+HTTP ERROR 404 Content-Type: application/json
+Date: Sat, 31 Oct 2026 13:26:08 GMT
+Content-Length: 29
+Connection: close
+
+ {"error":"no such document"}
+
+CROSS_TOKEN d2 -> d1
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d1?access_token=KwCE-bJcqRbeTFpwBXLPEPgW2ZFZAiJytijx2OxfTIM
+HTTP ERROR 401 Content-Type: application/json
+Date: Sat, 31 Oct 2026 13:26:09 GMT
+Content-Length: 33
+Connection: close
+
+ {"error":"invalid access token"}
+
+CROSS_TOKEN d2 -> d2
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d2?access_token=KwCE-bJcqRbeTFpwBXLPEPgW2ZFZAiJytijx2OxfTIM
+STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d2?access_token=KwCE-bJcqRbeTFpwBXLPEPgW2ZFZAiJytijx2OxfTIM
 HEADERS
-Content-Type: text/plain; charset=utf-8
-Date: Sat, 31 Oct 2026 13:23:37 GMT
-Content-Length: 0
+Content-Type: application/json
+Date: Sat, 31 Oct 2026 13:26:10 GMT
+Content-Length: 315
 Connection: close
 
 
 BODY
+{"BaseFileName":"second-\u003cb\u003eprobe\u003c/b\u003e.txt","DisableCopy":true,"DisableExport":true,"DisablePrint":true,"IsAnonymousUser":false,"LastModifiedTime":"2026-10-31T13:26:04.581802Z","OwnerId":"arena-93aa1301@corp","Size":0,"UserCanWrite":true,"UserFriendlyName":"arena","UserId":"arena-93aa1301@corp"}
 
-COOKIES [('docus_session', 'GYVW1J8KJWH9NQGkaVp2xo7xBA6FJ3mW')]
+COOKIES [('docus_session', 'BJlV_9OhkdN6o0qzWGEhgQuuQiuau6J2')]
+CROSS_TOKEN d2 -> d3
 
-============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d2
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d3?access_token=KwCE-bJcqRbeTFpwBXLPEPgW2ZFZAiJytijx2OxfTIM
+HTTP ERROR 404 Content-Type: application/json
+Date: Sat, 31 Oct 2026 13:26:10 GMT
+Content-Length: 29
+Connection: close
+
+ {"error":"no such document"}
+
+CROSS_TOKEN d2 -> flag
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/flag?access_token=KwCE-bJcqRbeTFpwBXLPEPgW2ZFZAiJytijx2OxfTIM
+HTTP ERROR 404 Content-Type: application/json
+Date: Sat, 31 Oct 2026 13:26:10 GMT
+Content-Length: 29
+Connection: close
+
+ {"error":"no such document"}
+
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/hosting/discovery
+STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/hosting/discovery
+HEADERS
+Cache-Control: no-cache
+Content-Length: 48635
+Content-Type: text/xml
+Date: Sat, 31 Oct 2026 13:26:11
+Last-Modified: Sat, 31 Oct 2026 13:26:11
+Server: 
+X-Content-Type-Options: nosniff
+Connection: close
+
+
+BODY
+<wopi-discovery>
+    <net-zone name="external-http">
+
+        <!-- Writer documents -->
+        <app favIconUrl="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/images/x-office-document.svg" name="writer">
+            <action default="true" ext="sxw" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="odt" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="odt" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="odt" name="editnew" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="fodt" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="fodt" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="fodt" name="editnew" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <!-- Text template documents -->
+            <action default="true" ext="stw" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="ott" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="ott" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="ott" name="editnew" newext="odt" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <!-- MS Word -->
+            <action default="true" ext="doc" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="doc" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="dot" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <!-- OOXML wordprocessing -->
+            <action default="true" ext="docx" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="docx" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="docx" name="editnew" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="docm" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="docm" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="dotx" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="dotx" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="dotx" name="editnew" newext="docx" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="dotm" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="dotm" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <!-- Others -->
+            <action default="true" ext="wpd" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="pdb" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="hwp" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="wps" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="wri" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="lrf" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="mw" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="rtf" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="rtf" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="rtf" name="editnew" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="md" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="md" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="md" name="editnew" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="txt" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="txt" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="txt" name="editnew" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="fb2" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="cwk" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="pages" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="abw" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="602" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <app name="writer-global">
+            <!-- Text master documents -->
+            <action default="true" ext="sxg" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="odm" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="odm" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="odm" name="editnew" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <!-- Writer master document templates -->
+            <action default="true" ext="otm" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <app name="writer-web">
+            <action default="true" ext="oth" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="oth" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- Calc documents -->
+        <app favIconUrl="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/images/x-office-spreadsheet.svg" name="calc">
+            <action default="true" ext="sxc" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="ods" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="ods" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="ods" name="editnew" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="fods" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="fods" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="fods" name="editnew" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <!-- Spreadsheet template documents -->
+            <action default="true" ext="stc" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="ots" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="ots" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="ots" name="editnew" newext="ods" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <!-- MS Excel -->
+            <action default="true" ext="xls" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="xls" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="xla" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="xla" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <!-- OOXML spreadsheet -->
+            <action default="true" ext="xltx" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="xltx" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="xltm" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="xltm" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="xlsx" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="xlsx" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="xlsx" name="editnew" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="xlsb" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="xlsb" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="xlsm" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="xlsm" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <!-- Others -->
+            <action default="true" ext="dif" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="dif" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="slk" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="slk" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="csv" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="csv" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="csv" name="editnew" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="tsv" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="tsv" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="dbf" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="dbf" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="wk1" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="wks" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="xlr" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="123" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="qpw" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="wb1" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="wq1" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="wq2" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="gnumeric" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="numbers" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- Impress documents -->
+        <app favIconUrl="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/images/x-office-presentation.svg" name="impress">
+            <action default="true" ext="sxi" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="odp" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="odp" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="odp" name="editnew" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="fodp" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="fodp" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="fodp" name="editnew" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <!-- Presentation template documents -->
+            <action default="true" ext="sti" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="otp" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="otp" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="otp" name="editnew" newext="odp" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <!-- MS PowerPoint -->
+            <action default="true" ext="ppt" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="ppt" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="pot" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <!-- OOXML presentation -->
+            <action default="true" ext="pptx" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="pptx" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="pptx" name="editnew" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="pptm" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="pptm" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="potx" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="potx" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="potm" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="potm" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="ppsx" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="ppsx" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <!-- Others -->
+            <action default="true" ext="cgm" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="key" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- Draw documents -->
+        <app name="draw">
+            <action default="true" ext="sxd" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="odg" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="odg" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="fodg" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="fodg" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="fodg" name="editnew" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <!-- Drawing template documents -->
+            <action default="true" ext="std" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="otg" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="otg" name="editnew" newext="odg" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <!-- Others -->
+            <action ext="svg" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="dxf" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="emf" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="wmf" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="cdr" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="vsd" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="vsdx" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="vss" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="pub" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="p65" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="wpg" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="fh" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="bmp" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="png" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="gif" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="tiff" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="jpg" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="jpeg" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action ext="pdf" name="view_comment" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- Math documents -->
+        <!-- In fact Math documents are not supported at all.
+             See: https://bugs.documentfoundation.org/show_bug.cgi?id=97006
+        <app name="math">
+            <action name="view" default="true" ext="sxm"/>
+            <action name="edit" default="true" ext="odf"/>
+        </app>
+        -->
+
+        <!-- Legacy MIME-type actions (compatibility) -->
+
+        <app name="image/svg+xml">
+            <action ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.ms-powerpoint">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.ms-excel">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- Writer documents -->
+        <app name="application/vnd.sun.xml.writer">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.oasis.opendocument.text">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.oasis.opendocument.text-flat-xml">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- Calc documents -->
+        <app name="application/vnd.sun.xml.calc">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.oasis.opendocument.spreadsheet">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.oasis.opendocument.spreadsheet-flat-xml">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- Impress documents -->
+        <app name="application/vnd.sun.xml.impress">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.oasis.opendocument.presentation">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.oasis.opendocument.presentation-flat-xml">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- Draw documents -->
+        <app name="application/vnd.sun.xml.draw">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.oasis.opendocument.graphics">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.oasis.opendocument.graphics-flat-xml">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- Chart documents -->
+        <app name="application/vnd.oasis.opendocument.chart">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- Text master documents -->
+        <app name="application/vnd.sun.xml.writer.global">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.oasis.opendocument.text-master">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- Math documents -->
+        <!-- In fact Math documents are not supported at all.
+             See: https://bugs.documentfoundation.org/show_bug.cgi?id=97006
+        <app name="application/vnd.sun.xml.math">
+            <action name="view" default="true" ext=""/>
+        </app>
+        <app name="application/vnd.oasis.opendocument.formula">
+            <action name="edit" default="true" ext=""/>
+        </app>
+        -->
+        <!-- Text template documents -->
+        <app name="application/vnd.sun.xml.writer.template">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.oasis.opendocument.text-template">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- Writer master document templates -->
+        <app name="application/vnd.oasis.opendocument.text-master-template">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- Spreadsheet template documents -->
+        <app name="application/vnd.sun.xml.calc.template">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.oasis.opendocument.spreadsheet-template">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- Presentation template documents -->
+        <app name="application/vnd.sun.xml.impress.template">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.oasis.opendocument.presentation-template">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- Drawing template documents -->
+        <app name="application/vnd.sun.xml.draw.template">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.oasis.opendocument.graphics-template">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- MS Word -->
+        <app name="application/msword">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/msword">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- MS Excel -->
+        <app name="application/vnd.ms-excel">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- MS PowerPoint -->
+        <app name="application/vnd.ms-powerpoint">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- OOXML wordprocessing -->
+        <app name="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.ms-word.document.macroEnabled.12">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.openxmlformats-officedocument.wordprocessingml.template">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.ms-word.template.macroEnabled.12">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- OOXML spreadsheet -->
+        <app name="application/vnd.openxmlformats-officedocument.spreadsheetml.template">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.ms-excel.template.macroEnabled.12">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.ms-excel.sheet.binary.macroEnabled.12">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.ms-excel.sheet.macroEnabled.12">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- OOXML presentation -->
+        <app name="application/vnd.openxmlformats-officedocument.presentationml.presentation">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.ms-powerpoint.presentation.macroEnabled.12">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.openxmlformats-officedocument.presentationml.template">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.ms-powerpoint.template.macroEnabled.12">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- Others -->
+        <app name="application/vnd.wordperfect">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/x-aportisdoc">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/x-hwp">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.ms-works">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.ms-office">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/x-mswrite">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/x-dif-document">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="text/spreadsheet">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="text/csv">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/x-dbase">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.lotus-1-2-3">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="image/cgm">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="image/vnd.dxf">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="image/x-emf">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="image/x-wmf">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/coreldraw">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.visio2013">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.visio">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.ms-visio.drawing">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/x-mspublisher">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/x-sony-bbeb">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/x-gnumeric">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/macwriteii">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/x-iwork-numbers-sffnumbers">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.oasis.opendocument.text-web">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/x-pagemaker">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="text/rtf">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="text/markdown">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="text/plain">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/x-fictionbook+xml">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/clarisworks">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="image/x-wpg">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/x-iwork-pages-sffpages">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.openxmlformats-officedocument.presentationml.slideshow">
+            <action default="true" ext="" name="edit" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/x-iwork-keynote-sffkey">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/x-abiword">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="image/x-freehand">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/vnd.sun.xml.chart">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/x-t602">
+            <action default="true" ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="image/bmp">
+            <action ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="image/png">
+            <action ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="image/gif">
+            <action ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="image/tiff">
+            <action ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="image/jpg">
+            <action ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="image/jpeg">
+            <action ext="" name="view" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+        <app name="application/pdf">
+            <action ext="" name="view_comment" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?"/>
+        </app>
+
+        <!-- End of legacy MIME-type actions -->
+
+        <app name="Settings">
+            <action ext="" name="iframe" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/adminIntegratorSettings.html"/>
+        </app>
+        <app name="Capabilities">
+            <action ext="" name="getinfo" urlsrc="http://njwqato3tpdz0t6k.instances.ctfcup.online/hosting/capabilities"/>
+        </app>
+    </net-zone>
+</wopi-discovery>
+COOKIES [('docus_session', 'BJlV_9OhkdN6o0qzWGEhgQuuQiuau6J2')]
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/hosting/capabilities
+STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/hosting/capabilities
+HEADERS
+Cache-Control: no-cache
+Content-Length: 503
+Content-Type: application/json
+Date: Sat, 31 Oct 2026 13:26:11
+Last-Modified: Sat, 31 Oct 2026 13:26:11
+Server: 
+X-Content-Type-Options: nosniff
+Connection: close
+
+
+BODY
+{"convert-to":{"available":true,"endpoint":"/cool/convert-to"},"hasDocumentSigningSupport":true,"hasMobileSupport":true,"hasProxyPrefix":false,"hasSettingIframeSupport":true,"hasTemplateSaveAs":false,"hasTemplateSource":true,"hasWASMSupport":false,"hasWopiAccessCheck":true,"hasZoteroSupport":true,"productKitVersion":"26.04.3.2","productKitVersionHash":"cc5614c6","productName":"Collabora Online Development Edition","productVersion":"26.04.3.2","productVersionHash":"cc5614c67e","serverId":"85671772"}
+COOKIES [('docus_session', 'BJlV_9OhkdN6o0qzWGEhgQuuQiuau6J2')]
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/cool/convert-to
+HTTP ERROR 400 Content-Length: 0
+Date: Sat, 31 Oct 2026 13:26:12
+Server: 
+Connection: close
+
+ 
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/metrics
 HTTP ERROR 404 Content-Type: text/plain; charset=utf-8
 X-Content-Type-Options: nosniff
-Date: Sat, 31 Oct 2026 13:23:38 GMT
+Date: Sat, 31 Oct 2026 13:26:12 GMT
 Content-Length: 19
 Connection: close
 
  404 page not found
 
-PARSED {'forms': [], 'assets': [], 'links': []}
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/debug/pprof/
+HTTP ERROR 404 Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Sat, 31 Oct 2026 13:26:12 GMT
+Content-Length: 19
+Connection: close
+
+ 404 page not found
+
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/debug/pprof/cmdline
+HTTP ERROR 404 Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Sat, 31 Oct 2026 13:26:13 GMT
+Content-Length: 19
+Connection: close
+
+ 404 page not found
+
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/admin
+HTTP ERROR 404 Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Sat, 31 Oct 2026 13:26:13 GMT
+Content-Length: 19
+Connection: close
+
+ 404 page not found
+
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/flag
+HTTP ERROR 404 Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Sat, 31 Oct 2026 13:26:14 GMT
+Content-Length: 19
+Connection: close
+
+ 404 page not found
+
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/flag.txt
+HTTP ERROR 404 Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Sat, 31 Oct 2026 13:26:14 GMT
+Content-Length: 19
+Connection: close
+
+ 404 page not found
+
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/internal/flag
+HTTP ERROR 404 Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Sat, 31 Oct 2026 13:26:14 GMT
+Content-Length: 19
+Connection: close
+
+ 404 page not found
+
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/health
+HTTP ERROR 404 Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Sat, 31 Oct 2026 13:26:15 GMT
+Content-Length: 19
+Connection: close
+
+ 404 page not found
+
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/api
+HTTP ERROR 404 Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Sat, 31 Oct 2026 13:26:15 GMT
+Content-Length: 19
+Connection: close
+
+ 404 page not found
+
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/register
+STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/register
+HEADERS
+Date: Sat, 31 Oct 2026 13:26:16 GMT
+Content-Type: text/html; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+
+
+BODY
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Docus — регистрация</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+<style>/* omitted */</style>
+</head>
+<body>
+<div class="login-wrap">
+  <div class="login-card">
+    <h1>Docus</h1>
+    <p class="sub">Новая учётная запись сотрудника</p>
+    
+    <form method="post" action="/register">
+      <div class="field">
+        <label for="email">Рабочая почта</label>
+        <input id="email" name="email" type="text" value="" placeholder="ivanov@corp" autofocus autocomplete="username">
+      </div>
+      <div class="field">
+        <label for="name">Как показывать имя коллегам</label>
+        <input id="name" name="name" type="text" value="" placeholder="Иван Иванов" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="password">Пароль</label>
+        <input id="password" name="password" type="password" autocomplete="new-password">
+      </div>
+      <button class="btn primary login-btn" type="submit">Создать учётную запись</button>
+    </form>
+    <div class="hint">Уже есть доступ? <a href="/login">Войти</a></div>
+  </div>
+</div>
+</body>
+</html>
+
+COOKIES []
+PARSED {'forms': [{'action': '/register', 'method': 'post', 'inputs': [{'tag': 'input', 'id': 'email', 'name': 'email', 'type': 'text', 'value': '', 'placeholder': 'ivanov@corp', 'autofocus': None, 'autocomplete': 'username'}, {'tag': 'input', 'id': 'name', 'name': 'name', 'type': 'text', 'value': '', 'placeholder': 'Иван Иванов', 'autocomplete': 'name'}, {'tag': 'input', 'id': 'password', 'name': 'password', 'type': 'password', 'autocomplete': 'new-password'}]}], 'assets': ["data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"], 'links': ['/login']}
+
+============================== REQUEST POST http://njwqato3tpdz0t6k.instances.ctfcup.online/register
+FORM {'email': 'admin@corp', 'name': 'admin', 'password': '<redacted>'}
+STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/
+HEADERS
+Date: Sat, 31 Oct 2026 13:26:16 GMT
+Content-Type: text/html; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+
+
+BODY
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Docus — Документы</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+<style>/* omitted */</style>
+</head>
+<body>
+<header class="topbar"><div class="tb-main">
+  <div class="brand"><span class="brand-badge anim-glow">D</span>Docus <small>корпоративный портал документов</small></div>
+  <div class="tb-actions">
+    <span class="userbox"><span class="avatar">a</span>admin · admin@corp</span>
+    <form method="post" action="/logout" style="margin:0"><button class="btn" type="submit">Выйти</button></form>
+  </div>
+</div></header>
+<div class="layout">
+  <nav class="sidebar">
+    <h3>Папки</h3>
+<a class="nav-item active" href="/"><span class="icon">▣</span>Все документы</a><a class="nav-item" href="/shared"><span class="icon">✦</span>Мне расшарено</a>
+    <form class="newfolder" method="post" action="/folders/create">
+      <input type="text" name="name" placeholder="Новая папка…" autocomplete="off">
+      <button class="btn" type="submit" title="Создать папку">+</button>
+    </form>
+  </nav>
+  <main class="content">
+    <div class="content-head">
+      <h2>Все документы</h2>
+      <form method="post" action="/docs/create">
+        <input type="hidden" name="folder" value="">
+        <input type="text" name="title" placeholder="Новый документ…" autocomplete="off">
+        <button class="btn primary" type="submit">Создать</button>
+      </form>
+    </div>
+    
+    <div class="docs anim-fade">
+<div class="doc-row anim-slide-row" style="animation-delay:14ms"><a class="doc-link" href="/edit/d1"><span class="doc-icon">TXT</span><span><span class="doc-name">arena-probe-document.txt</span><br><span class="doc-sub">arena-93aa1301@corp</span></span><span class="doc-meta">изменён 2026-10-31</span></a></div><div class="doc-row anim-slide-row" style="animation-delay:14ms"><a class="doc-link" href="/edit/d2"><span class="doc-icon">TXT</span><span><span class="doc-name">second-&lt;b&gt;probe&lt;/b&gt;.txt</span><br><span class="doc-sub">arena-93aa1301@corp</span></span><span class="doc-meta">изменён 2026-10-31</span></a></div>
+    </div>
+  </main>
+</div>
+<footer class="statusbar">
+  <span class="saved">Все изменения сохранены</span>
+  <span class="sep">|</span>
+  <span>Русский (Россия)</span>
+  <div class="right">
+    <span>Совместное редактирование: включено</span>
+    <span class="sep">|</span>
+    <span>100%</span>
+  </div>
+</footer>
+</body>
+</html>
+
+COOKIES [('docus_session', 'uvQCEeln3ZbuzViXfBM8TVvdVlTqDsBs')]
+PARSED {'forms': [{'action': '/logout', 'method': 'post', 'inputs': []}, {'action': '/folders/create', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'text', 'name': 'name', 'placeholder': 'Новая папка…', 'autocomplete': 'off'}]}, {'action': '/docs/create', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'hidden', 'name': 'folder', 'value': ''}, {'tag': 'input', 'type': 'text', 'name': 'title', 'placeholder': 'Новый документ…', 'autocomplete': 'off'}]}], 'assets': ["data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"], 'links': ['/', '/shared', '/edit/d1', '/edit/d2']}
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/login
+STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/login
+HEADERS
+Date: Sat, 31 Oct 2026 13:26:17 GMT
+Content-Type: text/html; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+
+
+BODY
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Docus — вход</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+<style>/* omitted */</style>
+</head>
+<body>
+<div class="login-wrap">
+  <div class="login-card">
+    <h1>Docus</h1>
+    <p class="sub">Войдите корпоративной учётной записью</p>
+    
+    <form method="post" action="/login">
+      <div class="field">
+        <label for="email">Рабочая почта</label>
+        <input id="email" name="email" type="text" value="" autofocus autocomplete="username">
+      </div>
+      <div class="field">
+        <label for="password">Пароль</label>
+        <input id="password" name="password" type="password" autocomplete="current-password">
+      </div>
+      <button class="btn primary login-btn" type="submit">Войти</button>
+    </form>
+    <div class="hint">Нет учётки? <a href="/register">Зарегистрируйтесь</a> — внутренний портал, любая почта <code>@corp</code>.</div>
+  </div>
+</div>
+</body>
+</html>
+
+COOKIES [('docus_session', 'uvQCEeln3ZbuzViXfBM8TVvdVlTqDsBs')]
+PARSED {'forms': [{'action': '/login', 'method': 'post', 'inputs': [{'tag': 'input', 'id': 'email', 'name': 'email', 'type': 'text', 'value': '', 'autofocus': None, 'autocomplete': 'username'}, {'tag': 'input', 'id': 'password', 'name': 'password', 'type': 'password', 'autocomplete': 'current-password'}]}], 'assets': ["data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"], 'links': ['/register']}
+
+============================== REQUEST POST http://njwqato3tpdz0t6k.instances.ctfcup.online/login
+FORM {'email': 'admin@corp', 'password': '<redacted>'}
+STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/
+HEADERS
+Date: Sat, 31 Oct 2026 13:26:18 GMT
+Content-Type: text/html; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+
+
+BODY
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Docus — Документы</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+<style>/* omitted */</style>
+</head>
+<body>
+<header class="topbar"><div class="tb-main">
+  <div class="brand"><span class="brand-badge anim-glow">D</span>Docus <small>корпоративный портал документов</small></div>
+  <div class="tb-actions">
+    <span class="userbox"><span class="avatar">a</span>admin · admin@corp</span>
+    <form method="post" action="/logout" style="margin:0"><button class="btn" type="submit">Выйти</button></form>
+  </div>
+</div></header>
+<div class="layout">
+  <nav class="sidebar">
+    <h3>Папки</h3>
+<a class="nav-item active" href="/"><span class="icon">▣</span>Все документы</a><a class="nav-item" href="/shared"><span class="icon">✦</span>Мне расшарено</a>
+    <form class="newfolder" method="post" action="/folders/create">
+      <input type="text" name="name" placeholder="Новая папка…" autocomplete="off">
+      <button class="btn" type="submit" title="Создать папку">+</button>
+    </form>
+  </nav>
+  <main class="content">
+    <div class="content-head">
+      <h2>Все документы</h2>
+      <form method="post" action="/docs/create">
+        <input type="hidden" name="folder" value="">
+        <input type="text" name="title" placeholder="Новый документ…" autocomplete="off">
+        <button class="btn primary" type="submit">Создать</button>
+      </form>
+    </div>
+    
+    <div class="docs anim-fade">
+<div class="doc-row anim-slide-row" style="animation-delay:14ms"><a class="doc-link" href="/edit/d1"><span class="doc-icon">TXT</span><span><span class="doc-name">arena-probe-document.txt</span><br><span class="doc-sub">arena-93aa1301@corp</span></span><span class="doc-meta">изменён 2026-10-31</span></a></div><div class="doc-row anim-slide-row" style="animation-delay:14ms"><a class="doc-link" href="/edit/d2"><span class="doc-icon">TXT</span><span><span class="doc-name">second-&lt;b&gt;probe&lt;/b&gt;.txt</span><br><span class="doc-sub">arena-93aa1301@corp</span></span><span class="doc-meta">изменён 2026-10-31</span></a></div>
+    </div>
+  </main>
+</div>
+<footer class="statusbar">
+  <span class="saved">Все изменения сохранены</span>
+  <span class="sep">|</span>
+  <span>Русский (Россия)</span>
+  <div class="right">
+    <span>Совместное редактирование: включено</span>
+    <span class="sep">|</span>
+    <span>100%</span>
+  </div>
+</footer>
+</body>
+</html>
+
+COOKIES [('docus_session', '4O18uBTlHqxcnus4JAdPFibUBOr1GAqF')]
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/
+STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/
+HEADERS
+Date: Sat, 31 Oct 2026 13:26:18 GMT
+Content-Type: text/html; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+
+
+BODY
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Docus — Документы</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+<style>/* omitted */</style>
+</head>
+<body>
+<header class="topbar"><div class="tb-main">
+  <div class="brand"><span class="brand-badge anim-glow">D</span>Docus <small>корпоративный портал документов</small></div>
+  <div class="tb-actions">
+    <span class="userbox"><span class="avatar">a</span>admin · admin@corp</span>
+    <form method="post" action="/logout" style="margin:0"><button class="btn" type="submit">Выйти</button></form>
+  </div>
+</div></header>
+<div class="layout">
+  <nav class="sidebar">
+    <h3>Папки</h3>
+<a class="nav-item active" href="/"><span class="icon">▣</span>Все документы</a><a class="nav-item" href="/shared"><span class="icon">✦</span>Мне расшарено</a>
+    <form class="newfolder" method="post" action="/folders/create">
+      <input type="text" name="name" placeholder="Новая папка…" autocomplete="off">
+      <button class="btn" type="submit" title="Создать папку">+</button>
+    </form>
+  </nav>
+  <main class="content">
+    <div class="content-head">
+      <h2>Все документы</h2>
+      <form method="post" action="/docs/create">
+        <input type="hidden" name="folder" value="">
+        <input type="text" name="title" placeholder="Новый документ…" autocomplete="off">
+        <button class="btn primary" type="submit">Создать</button>
+      </form>
+    </div>
+    
+    <div class="docs anim-fade">
+<div class="doc-row anim-slide-row" style="animation-delay:14ms"><a class="doc-link" href="/edit/d1"><span class="doc-icon">TXT</span><span><span class="doc-name">arena-probe-document.txt</span><br><span class="doc-sub">arena-93aa1301@corp</span></span><span class="doc-meta">изменён 2026-10-31</span></a></div><div class="doc-row anim-slide-row" style="animation-delay:14ms"><a class="doc-link" href="/edit/d2"><span class="doc-icon">TXT</span><span><span class="doc-name">second-&lt;b&gt;probe&lt;/b&gt;.txt</span><br><span class="doc-sub">arena-93aa1301@corp</span></span><span class="doc-meta">изменён 2026-10-31</span></a></div>
+    </div>
+  </main>
+</div>
+<footer class="statusbar">
+  <span class="saved">Все изменения сохранены</span>
+  <span class="sep">|</span>
+  <span>Русский (Россия)</span>
+  <div class="right">
+    <span>Совместное редактирование: включено</span>
+    <span class="sep">|</span>
+    <span>100%</span>
+  </div>
+</footer>
+</body>
+</html>
+
+COOKIES [('docus_session', '4O18uBTlHqxcnus4JAdPFibUBOr1GAqF')]
