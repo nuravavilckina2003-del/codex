@@ -1,12 +1,17 @@
+ODS_BYTES 9691
 
-=== TOKEN_INJECTION_WRITABLE {'infilterOptions': 'x readonly=0 enableMacrosExecution=true macroSecurityLevel=0'}
-STATUS 200 BYTES 21 RESPONSE ﻿ORIGINAL_DOCUMENT
-
-
-=== TOKEN_INJECTION_READONLY {'infilterOptions': 'x enableMacrosExecution=true macroSecurityLevel=0'}
-STATUS 200 BYTES 21 RESPONSE ﻿ORIGINAL_DOCUMENT
+=== CONTROL INFILTER None
+STATUS 200 BYTES 8 RESPONSE #VALUE!
 
 
-=== FILTER_AND_READONLY {'infilterOptions': 'EnableMacrosExecution=true,MacroSecurityLevel=0 readonly=0'}
-STATUS 200 BYTES 21 RESPONSE ﻿ORIGINAL_DOCUMENT
+=== ORIGINAL_CHAIN INFILTER 'EnableMacrosExecution=true,MacroSecurityLevel=0'
+STATUS 200 BYTES 8 RESPONSE #VALUE!
+
+
+=== LOAD_TOKEN_INJECTION INFILTER 'x enableMacrosExecution=true macroSecurityLevel=0'
+STATUS 200 BYTES 8 RESPONSE #VALUE!
+
+
+=== LOAD_TOKEN_INJECTION_WRITABLE INFILTER 'x readonly=0 enableMacrosExecution=true macroSecurityLevel=0'
+STATUS 200 BYTES 8 RESPONSE #VALUE!
 
