@@ -1,21 +1,22 @@
-FLAT_MACRO_BYTES 1627
+FLAT_MACRO_BYTES 1627 ZIP_MACRO_BYTES 3174
 
 === NO_OPTIONS {}
 STATUS 200 BYTES 21 RESPONSE ﻿ORIGINAL_DOCUMENT
 
 
-=== MACRO_SHORT_4 {'infilterOptions': '{"MacroExecutionMode":{"type":"short","value":"4"}}'}
+=== EXACT_MACRO_CHAIN_FLAT {'infilterOptions': 'EnableMacrosExecution=true,MacroSecurityLevel=0'}
 STATUS 200 BYTES 21 RESPONSE ﻿ORIGINAL_DOCUMENT
 
 
-=== MACRO_AND_UPDATE {'infilterOptions': '{"MacroExecutionMode":{"type":"short","value":"4"},"UpdateDocMode":{"type":"short","value":"3"}}'}
+=== REVERSED_MACRO_CHAIN_FLAT {'infilterOptions': 'MacroSecurityLevel=0,EnableMacrosExecution=true'}
 STATUS 200 BYTES 21 RESPONSE ﻿ORIGINAL_DOCUMENT
 
 
-=== MACRO_LONG_4 {'infilterOptions': '{"MacroExecutionMode":{"type":"long","value":"4"}}'}
-STATUS 200 BYTES 21 RESPONSE ﻿ORIGINAL_DOCUMENT
+=== EXACT_MACRO_CHAIN_ZIP {'infilterOptions': 'EnableMacrosExecution=true,MacroSecurityLevel=0'}
+STATUS 200 BYTES 22 RESPONSE ﻿ORIGINAL_DOCUMENT
 
 
-=== MACRO_LEGACY {'infilterOptions': 'MacroExecutionMode=4'}
+
+=== MACRO_CHAIN_AND_UPDATE {'infilterOptions': 'EnableMacrosExecution=true,MacroSecurityLevel=0,UpdateDocMode=3'}
 STATUS 200 BYTES 21 RESPONSE ﻿ORIGINAL_DOCUMENT
 
