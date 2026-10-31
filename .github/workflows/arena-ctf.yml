@@ -6,7 +6,8 @@ on:
       - arena/93aa1301-codex
   workflow_dispatch:
 
-permissions: contents: read
+permissions:
+  contents: read
 
 jobs:
   probe:
