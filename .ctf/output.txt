@@ -1,7 +1,7 @@
 WOPI POST STATUS 200 BYTES 3 BODY {}
 
 
-=== EXFIL_MACRO_CHAIN {'infilterOptions': 'EnableMacrosExecution=true,MacroSecurityLevel=0'}
+=== LOAD_TOKEN_INJECTION_EXFIL {'infilterOptions': 'x enableMacrosExecution=true macroSecurityLevel=0'}
 STATUS 200 BYTES 21 RESPONSE ﻿ORIGINAL_DOCUMENT
 
 WOPI GET STATUS 200 BYTES 17 BODY WAITING_FOR_MACRO
