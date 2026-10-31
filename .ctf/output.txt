@@ -1,89 +1,56 @@
 HTTP POST /login STATUS 200 BYTES 15621 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/
 HTTP GET /edit/d4 STATUS 200 BYTES 10706 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d4
-HTTP GET /edit/d6 STATUS 200 BYTES 10704 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d6
-HTTP POST /cool/convert-to/csv STATUS 200 BYTES 563 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/cool/convert-to/csv
+HTTP GET /edit/d5 STATUS 200 BYTES 10705 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d5
+HTTP POST /docs/create STATUS 200 BYTES 10707 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d8
+HTTP GET /edit/d8 STATUS 200 BYTES 10707 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d8
+HTTP POST /wopi/files/d8/contents?access_token=2zmKCM-sb5x4jFip1fQaQVXElD_7w-ou1-L4AguZ4F0 STATUS 200 BYTES 3 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d8/contents?access_token=2zmKCM-sb5x4jFip1fQaQVXElD_7w-ou1-L4AguZ4F0
+ODB proc1-root DOCID d8 DIRECTORY /proc/1/root PUT_STATUS 200 PUT_BODY {}
 
-=== PIVOT_CSV STATUS 200 ===
-#REF!,677
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
-#REF!,
+HTTP POST /docs/create STATUS 200 BYTES 10706 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d9
+HTTP GET /edit/d9 STATUS 200 BYTES 10706 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d9
+HTTP POST /wopi/files/d9/contents?access_token=hkNXPX76BocmgNbl29FpBDW6fr3kSZlJneZmpV9JeUk STATUS 200 BYTES 3 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d9/contents?access_token=hkNXPX76BocmgNbl29FpBDW6fr3kSZlJneZmpV9JeUk
+ODB proc-self DOCID d9 DIRECTORY /proc/self PUT_STATUS 200 PUT_BODY {}
 
-PIVOT_CODES [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
-PIVOT_DECODED ????????????????????????????????????????????????????????????????????????????????
+HTTP POST /docs/create STATUS 200 BYTES 10706 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d10
+HTTP GET /edit/d10 STATUS 200 BYTES 10706 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d10
+HTTP POST /wopi/files/d10/contents?access_token=KKSrg6Fw8I7WmQQRvoHFbrDyztCqDZEXYiwZ5DXJRMA STATUS 200 BYTES 3 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d10/contents?access_token=KKSrg6Fw8I7WmQQRvoHFbrDyztCqDZEXYiwZ5DXJRMA
+ODB proc-one DOCID d10 DIRECTORY /proc/1 PUT_STATUS 200 PUT_BODY {}
+
+HTTP POST /docs/create STATUS 200 BYTES 10707 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d11
+HTTP GET /edit/d11 STATUS 200 BYTES 10707 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d11
+HTTP POST /wopi/files/d11/contents?access_token=pg52zUXM8dqr5Bjh6JCwE5zefLI6mogQevy46Z2YbLs STATUS 200 BYTES 3 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d11/contents?access_token=pg52zUXM8dqr5Bjh6JCwE5zefLI6mogQevy46Z2YbLs
+ODB tmp-files DOCID d11 DIRECTORY /tmp PUT_STATUS 200 PUT_BODY {}
+
+HTTP POST /docs/create STATUS 200 BYTES 10707 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d12
+HTTP GET /edit/d12 STATUS 200 BYTES 10707 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d12
+HTTP POST /wopi/files/d12/contents?access_token=qQRPYGti7wiqAG8asEOur6f5yTsExM4UJ998RNy17NQ STATUS 200 BYTES 3 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d12/contents?access_token=qQRPYGti7wiqAG8asEOur6f5yTsExM4UJ998RNy17NQ
+ODB app-files DOCID d12 DIRECTORY /app PUT_STATUS 200 PUT_BODY {}
+
+HTTP POST /cool/convert-to/csv STATUS 200 BYTES 3456 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/cool/convert-to/csv
+
+=== SEARCH_CSV STATUS 200 ===
+#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!
+#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!
+#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!
+#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!
+#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!
+#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!
+#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!
+#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!
+#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!
+#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!
+#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!
+#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!,#REF!
+
+SEARCH_RESULT root-flag.txt CODES [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1] DECODED ????????????????????????????????????????????????
+SEARCH_RESULT root-FLAG CODES [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1] DECODED ????????????????????????????????????????????????
+SEARCH_RESULT proc1-root-flag CODES [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1] DECODED ????????????????????????????????????????????????
+SEARCH_RESULT proc-self-environ CODES [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1] DECODED ????????????????????????????????????????????????
+SEARCH_RESULT proc1-environ CODES [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1] DECODED ????????????????????????????????????????????????
+SEARCH_RESULT etc-environment CODES [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1] DECODED ????????????????????????????????????????????????
+SEARCH_RESULT etc-flag CODES [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1] DECODED ????????????????????????????????????????????????
+SEARCH_RESULT etc-flag.txt CODES [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1] DECODED ????????????????????????????????????????????????
+SEARCH_RESULT tmp-flag CODES [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1] DECODED ????????????????????????????????????????????????
+SEARCH_RESULT tmp-flag.txt CODES [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1] DECODED ????????????????????????????????????????????????
+SEARCH_RESULT app-flag CODES [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1] DECODED ????????????????????????????????????????????????
+SEARCH_RESULT app-flag.txt CODES [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1] DECODED ????????????????????????????????????????????????
