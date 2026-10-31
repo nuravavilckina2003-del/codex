@@ -1,8 +1,8 @@
 # «Уроки» — writeup
 
 Задание: *«Заведите урок, приложите файл — и ждите звонка.»*
-Флаг: `ctfcup{...}` (в материалах `uroki.zip` лежит только заглушка `ctfcup{test_flag}` из `Dockerfile`,
-поэтому против живого инстанса нужно запускать `exploit.py http://HOST:PORT`).
+**Флаг: `ctfcup{v53_ur0k1_5d3l4ny_5_0gyrc0m_d2c2798c444e66f0}`**
+(в архиве `uroki.zip` лежит только заглушка `ctfcup{test_flag}` из `Dockerfile`).
 
 ## Что в задании
 
@@ -168,4 +168,38 @@ Payload: `chmod 404 /flag.txt; echo ok > /data/pwned; chmod 644 /data/pwned` —
 Гонка: старый beat при остановке делает `close() → sync()` и может перезаписать наш файл, поэтому
 скрипт параллельно «спамит» загрузку payload'а и дважды дёргает рестарт.
 
-Результат прогона на живом инстансе: см. ниже.
+### Прогон на живом инстансе
+
+```
+[*] lessons: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+[*] db injected: 303
+[*] schedule file (gnu): 200  ndbm: 500  flag: 500     <- beat использует gdbm
+[*] uploading beat payload: 303
+[*] restart celery: 0                                  <- воркер завис в supervisorctl
+[*] restart celery: 303
+[*] try 0: flag=200 pwned=200                          <- RCE сработал, права вернули
+
+[+] FLAG: ctfcup{v53_ur0k1_5d3l4ny_5_0gyrc0m_d2c2798c444e66f0}
+```
+
+## Полная цепочка (кратко)
+
+1. **Произвольная запись файла** — `storage.clean_name()` пропускает абсолютные пути:
+   имя вложения `/data/uroki.db` перезаписывает саму БД (`os.path.join` не ограничивает).
+2. **Произвольное чтение** — `download_attachment()` делает `send_file(lesson["file_path"])` без
+   проверки; читаем `/entrypoint.sh`, `/data/web.err.log`, `/etc/supervisord.conf`.
+3. **Из `entrypoint.sh`** узнаём: флаг в `/flag.txt`, `chown app:app`, `chmod 0000` → 500 при чтении,
+   но владелец `app` может вернуть себе права.
+4. **RCE под `app`** — `/data/celerybeat-schedule` (shelve/gdbm) читается beat'ом после
+   `supervisorctl restart celery`; подменяем файл на свой gdbm с pickle-payload'ом
+   (`chmod 404 /flag.txt`), и `send_file` отдаёт флаг.
+
+## Фикс
+
+* `secure_filename`/UUID + `realpath`-проверка, что путь остаётся в `/data/uploads`.
+* Не хранить произвольные пути в БД, отдавать вложения по id записи.
+* `/data` не должен быть общим каталогом: beat-schedule и БД — только владельцу-процессу,
+  каталог вложений — отдельно.
+* Флаг не должен принадлежать пользователю приложения: `chown root:root /flag.txt` + `chmod 400`
+  (тогда `chmod` от `app` уже не поможет).
+
