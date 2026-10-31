@@ -1,22 +1,7 @@
-FLAT_MACRO_BYTES 1627 ZIP_MACRO_BYTES 3174
+WOPI POST STATUS 200 BYTES 3 BODY {}
 
-=== NO_OPTIONS {}
+
+=== EXFIL_MACRO_CHAIN {'infilterOptions': 'EnableMacrosExecution=true,MacroSecurityLevel=0'}
 STATUS 200 BYTES 21 RESPONSE ﻿ORIGINAL_DOCUMENT
 
-
-=== EXACT_MACRO_CHAIN_FLAT {'infilterOptions': 'EnableMacrosExecution=true,MacroSecurityLevel=0'}
-STATUS 200 BYTES 21 RESPONSE ﻿ORIGINAL_DOCUMENT
-
-
-=== REVERSED_MACRO_CHAIN_FLAT {'infilterOptions': 'MacroSecurityLevel=0,EnableMacrosExecution=true'}
-STATUS 200 BYTES 21 RESPONSE ﻿ORIGINAL_DOCUMENT
-
-
-=== EXACT_MACRO_CHAIN_ZIP {'infilterOptions': 'EnableMacrosExecution=true,MacroSecurityLevel=0'}
-STATUS 200 BYTES 22 RESPONSE ﻿ORIGINAL_DOCUMENT
-
-
-
-=== MACRO_CHAIN_AND_UPDATE {'infilterOptions': 'EnableMacrosExecution=true,MacroSecurityLevel=0,UpdateDocMode=3'}
-STATUS 200 BYTES 21 RESPONSE ﻿ORIGINAL_DOCUMENT
-
+WOPI GET STATUS 200 BYTES 17 BODY WAITING_FOR_MACRO
