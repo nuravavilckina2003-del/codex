@@ -57,7 +57,8 @@ def request(path, data=None, max_body=120000):
             text = raw.decode("utf-8", "replace")
             print("STATUS", r.status, "FINAL", r.url, flush=True)
             print("HEADERS\n" + str(r.headers), flush=True)
-            print("BODY\n" + text, flush=True)
+            shown = re.sub(r"<style\b[^>]*>.*?</style>", "<style>/* omitted */</style>", text, flags=re.S | re.I)
+            print("BODY\n" + shown, flush=True)
             print("COOKIES", [(c.name, c.value) for c in jar], flush=True)
             return text, r.url
     except urllib.error.HTTPError as e:
@@ -128,7 +129,19 @@ if p.forms:
         parse(text)
 
 home, final = request("/", max_body=150000)
-p = parse(home)
-for asset in dict.fromkeys(p.assets):
-    if re.search(r"\.(?:js|mjs)(?:\?|$)|/_next/|/assets/", asset):
-        request(asset, max_body=250000)
+parse(home)
+shared, _ = request("/shared", max_body=100000)
+parse(shared)
+created, final = request("/docs/create", {"folder": "", "title": "arena-probe-document"}, max_body=150000)
+p = parse(created)
+print("CREATED_FINAL", final, flush=True)
+seen = set()
+for page in (created, shared, home):
+    links = parse(page).links
+    for link in links:
+        if link in seen or link in ("/", "/shared") or "delete" in link or "logout" in link:
+            continue
+        if link.startswith("/"):
+            seen.add(link)
+            body, _ = request(link, max_body=150000)
+            parse(body)
