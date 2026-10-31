@@ -29,6 +29,7 @@ jobs:
           git config user.name 'arena-ctf-probe'
           git config user.email 'arena-ctf-probe@users.noreply.github.com'
           git add .ctf/output.txt
+          find .ctf -maxdepth 1 -name 'thumb_*.png' -exec git add {} +
           if ! git diff --cached --quiet; then
             git commit -m 'chore: update CTF probe output [skip ci]'
             git push origin HEAD:arena/93aa1301-codex

