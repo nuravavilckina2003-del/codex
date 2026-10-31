@@ -40,5 +40,9 @@ def inject(url):
 
 
 thumbnail("", "control")
-thumbnail(inject("file:///etc/passwd"), "passwd")
-thumbnail(inject("file:///flag"), "flag")
+thumbnail(inject("/etc/passwd"), "abs_passwd")
+thumbnail(inject("/flag"), "abs_flag")
+thumbnail(inject("/etc/passwd#x.txt"), "fragment_passwd")
+thumbnail(inject("/flag#x.txt"), "fragment_flag")
+thumbnail(inject("/etc/passwd\\u0000.txt"), "nul_passwd")
+thumbnail(inject("/flag\\u0000.txt"), "nul_flag")
