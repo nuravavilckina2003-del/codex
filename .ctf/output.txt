@@ -1,46 +1,26 @@
+MACRO_ODT_BYTES 3174
 
-=== FLAT_ODT 'flat.fodt'
-STATUS 200 BYTES 17 RESPONSE ﻿ARENA_MARKER
-
-
-
-=== FLAT_ODT 'flat.txt'
-STATUS 200 BYTES 567 RESPONSE ﻿<?xml version="1.0" encoding="UTF-8"?>
-<office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" office:version="1.2" office:mimetype="application/vnd.oasis.opendocument.text">
-<office:body><office:text><text:p>ARENA_MARKER</text:p><text:section text:name="s"><text:section-source xlink:href="file:///etc/passwd" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad"/></text:section></office:text></office:body></office:document>
-
-
-=== FLAT_ODT 'flat.xml'
-STATUS 200 BYTES 17 RESPONSE ﻿ARENA_MARKER
+=== NO_OPTIONS {}
+STATUS 200 BYTES 22 RESPONSE ﻿ORIGINAL_DOCUMENT
 
 
 
-=== HTML_MARKER 'html.html'
-STATUS 200 BYTES 16 RESPONSE ﻿ARENA_MARKER
+=== MACRO_SHORT_4 {'infilterOptions': '{"MacroExecutionMode":{"type":"short","value":"4"}}'}
+STATUS 200 BYTES 22 RESPONSE ﻿ORIGINAL_DOCUMENT
 
 
-=== HTML_MARKER 'html.txt'
-STATUS 200 BYTES 57 RESPONSE ﻿<!doctype html><html><body>ARENA_MARKER</body></html>
+
+=== MACRO_AND_UPDATE {'infilterOptions': '{"MacroExecutionMode":{"type":"short","value":"4"},"UpdateDocMode":{"type":"short","value":"3"}}'}
+STATUS 200 BYTES 22 RESPONSE ﻿ORIGINAL_DOCUMENT
 
 
-=== HTML_FILE_INCLUDE 'include.txt'
-STATUS 200 BYTES 124 RESPONSE ﻿<!doctype html><html><body>ARENA_MARKER<iframe src="file:///etc/passwd" width="600" height="400"></iframe></body></html>
+
+=== MACRO_LONG_4 {'infilterOptions': '{"MacroExecutionMode":{"type":"long","value":"4"}}'}
+STATUS 200 BYTES 22 RESPONSE ﻿ORIGINAL_DOCUMENT
 
 
-=== HTML_FILE_INCLUDE 'include.txt'
-STATUS 200 BYTES 143 RESPONSE ﻿<!doctype html><html><body>ARENA_MARKER<object data="file:///etc/passwd" type="text/plain" width="600" height="400"></object></body></html>
 
+=== MACRO_LEGACY {'infilterOptions': 'MacroExecutionMode=4'}
+STATUS 200 BYTES 22 RESPONSE ﻿ORIGINAL_DOCUMENT
 
-=== HTML_FILE_INCLUDE 'include.txt'
-STATUS 200 BYTES 110 RESPONSE ﻿<!doctype html><html><body>ARENA_MARKER<frameset><frame src="file:///etc/passwd"></frameset></body></html>
-
-
-=== FLAT_ODT_FLAG 'flat.txt'
-STATUS 200 BYTES 561 RESPONSE ﻿<?xml version="1.0" encoding="UTF-8"?>
-<office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" office:version="1.2" office:mimetype="application/vnd.oasis.opendocument.text">
-<office:body><office:text><text:p>ARENA_MARKER</text:p><text:section text:name="s"><text:section-source xlink:href="file:///flag" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad"/></text:section></office:text></office:body></office:document>
-
-
-=== HTML_FLAG 'include.txt'
-STATUS 200 BYTES 106 RESPONSE ﻿<!doctype html><html><body><iframe src="file:///flag" width="600" height="400"></iframe></body></html>
 
