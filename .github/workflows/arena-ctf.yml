@@ -16,9 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run isolated CTF probe
-        run: |
-          python3 -m pip install --quiet pypdf
-          python3 .ctf/probe.py > .ctf/output.txt 2>&1
+        run: python3 .ctf/probe.py > .ctf/output.txt 2>&1
         env:
           # Explicitly do not pass the repository token to the probe.
           GH_TOKEN: ""
