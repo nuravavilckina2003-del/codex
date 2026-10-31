@@ -2,7 +2,7 @@
 ============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/register
 STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/register
 HEADERS
-Date: Sat, 31 Oct 2026 13:22:38 GMT
+Date: Sat, 31 Oct 2026 13:23:30 GMT
 Content-Type: text/html; charset=utf-8
 Connection: close
 Transfer-Encoding: chunked
@@ -49,7 +49,7 @@ PARSED {'forms': [{'action': '/register', 'method': 'post', 'inputs': [{'tag': '
 
 ============================== REQUEST POST http://njwqato3tpdz0t6k.instances.ctfcup.online/register
 FORM {'email': 'arena-93aa1301@corp', 'name': 'arena', 'password': '<redacted>'}
-HTTP ERROR 409 Date: Sat, 31 Oct 2026 13:22:39 GMT
+HTTP ERROR 409 Date: Sat, 31 Oct 2026 13:23:31 GMT
 Content-Type: text/html; charset=utf-8
 Connection: close
 Transfer-Encoding: chunked
@@ -322,7 +322,7 @@ PARSED {'forms': [{'action': '/register', 'method': 'post', 'inputs': [{'tag': '
 ============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/login
 STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/login
 HEADERS
-Date: Sat, 31 Oct 2026 13:22:41 GMT
+Date: Sat, 31 Oct 2026 13:23:31 GMT
 Content-Type: text/html; charset=utf-8
 Connection: close
 Transfer-Encoding: chunked
@@ -367,7 +367,7 @@ PARSED {'forms': [{'action': '/login', 'method': 'post', 'inputs': [{'tag': 'inp
 FORM {'email': 'arena-93aa1301@corp', 'password': '<redacted>'}
 STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/
 HEADERS
-Date: Sat, 31 Oct 2026 13:22:43 GMT
+Date: Sat, 31 Oct 2026 13:23:32 GMT
 Content-Type: text/html; charset=utf-8
 Connection: close
 Transfer-Encoding: chunked
@@ -410,7 +410,7 @@ BODY
     </div>
     
     <div class="docs anim-fade">
-<div class="empty">В этой папке пока нет документов</div>
+<div class="doc-row anim-slide-row" style="animation-delay:14ms"><a class="doc-link" href="/edit/d1"><span class="doc-icon">TXT</span><span><span class="doc-name">arena-probe-document.txt</span><br><span class="doc-sub">arena-93aa1301@corp</span></span><span class="doc-meta">изменён 2026-10-31</span></a><a class="share-btn" href="/share?doc=d1" title="Поделиться">Поделиться</a><form method="post" action="/docs/delete"><input type="hidden" name="id" value="d1"><input type="hidden" name="folder" value=""><button class="del" type="submit" title="Удалить документ">×</button></form></div>
     </div>
   </main>
 </div>
@@ -427,13 +427,13 @@ BODY
 </body>
 </html>
 
-COOKIES [('docus_session', 'V5T7vzHxM67Y_vs_7hZwom3S9Dw7fJ9E')]
-PARSED {'forms': [{'action': '/logout', 'method': 'post', 'inputs': []}, {'action': '/folders/create', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'text', 'name': 'name', 'placeholder': 'Новая папка…', 'autocomplete': 'off'}]}, {'action': '/docs/create', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'hidden', 'name': 'folder', 'value': ''}, {'tag': 'input', 'type': 'text', 'name': 'title', 'placeholder': 'Новый документ…', 'autocomplete': 'off'}]}], 'assets': ["data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"], 'links': ['/', '/shared']}
+COOKIES [('docus_session', 'GYVW1J8KJWH9NQGkaVp2xo7xBA6FJ3mW')]
+PARSED {'forms': [{'action': '/logout', 'method': 'post', 'inputs': []}, {'action': '/folders/create', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'text', 'name': 'name', 'placeholder': 'Новая папка…', 'autocomplete': 'off'}]}, {'action': '/docs/create', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'hidden', 'name': 'folder', 'value': ''}, {'tag': 'input', 'type': 'text', 'name': 'title', 'placeholder': 'Новый документ…', 'autocomplete': 'off'}]}, {'action': '/docs/delete', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'hidden', 'name': 'id', 'value': 'd1'}, {'tag': 'input', 'type': 'hidden', 'name': 'folder', 'value': ''}]}], 'assets': ["data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"], 'links': ['/', '/shared', '/edit/d1', '/share?doc=d1']}
 
 ============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/
 STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/
 HEADERS
-Date: Sat, 31 Oct 2026 13:22:44 GMT
+Date: Sat, 31 Oct 2026 13:23:32 GMT
 Content-Type: text/html; charset=utf-8
 Connection: close
 Transfer-Encoding: chunked
@@ -476,7 +476,7 @@ BODY
     </div>
     
     <div class="docs anim-fade">
-<div class="empty">В этой папке пока нет документов</div>
+<div class="doc-row anim-slide-row" style="animation-delay:14ms"><a class="doc-link" href="/edit/d1"><span class="doc-icon">TXT</span><span><span class="doc-name">arena-probe-document.txt</span><br><span class="doc-sub">arena-93aa1301@corp</span></span><span class="doc-meta">изменён 2026-10-31</span></a><a class="share-btn" href="/share?doc=d1" title="Поделиться">Поделиться</a><form method="post" action="/docs/delete"><input type="hidden" name="id" value="d1"><input type="hidden" name="folder" value=""><button class="del" type="submit" title="Удалить документ">×</button></form></div>
     </div>
   </main>
 </div>
@@ -493,13 +493,13 @@ BODY
 </body>
 </html>
 
-COOKIES [('docus_session', 'V5T7vzHxM67Y_vs_7hZwom3S9Dw7fJ9E')]
-PARSED {'forms': [{'action': '/logout', 'method': 'post', 'inputs': []}, {'action': '/folders/create', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'text', 'name': 'name', 'placeholder': 'Новая папка…', 'autocomplete': 'off'}]}, {'action': '/docs/create', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'hidden', 'name': 'folder', 'value': ''}, {'tag': 'input', 'type': 'text', 'name': 'title', 'placeholder': 'Новый документ…', 'autocomplete': 'off'}]}], 'assets': ["data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"], 'links': ['/', '/shared']}
+COOKIES [('docus_session', 'GYVW1J8KJWH9NQGkaVp2xo7xBA6FJ3mW')]
+PARSED {'forms': [{'action': '/logout', 'method': 'post', 'inputs': []}, {'action': '/folders/create', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'text', 'name': 'name', 'placeholder': 'Новая папка…', 'autocomplete': 'off'}]}, {'action': '/docs/create', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'hidden', 'name': 'folder', 'value': ''}, {'tag': 'input', 'type': 'text', 'name': 'title', 'placeholder': 'Новый документ…', 'autocomplete': 'off'}]}, {'action': '/docs/delete', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'hidden', 'name': 'id', 'value': 'd1'}, {'tag': 'input', 'type': 'hidden', 'name': 'folder', 'value': ''}]}], 'assets': ["data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"], 'links': ['/', '/shared', '/edit/d1', '/share?doc=d1']}
 
 ============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/shared
 STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/shared
 HEADERS
-Date: Sat, 31 Oct 2026 13:22:45 GMT
+Date: Sat, 31 Oct 2026 13:23:33 GMT
 Content-Type: text/html; charset=utf-8
 Connection: close
 Transfer-Encoding: chunked
@@ -559,14 +559,13 @@ BODY
 </body>
 </html>
 
-COOKIES [('docus_session', 'V5T7vzHxM67Y_vs_7hZwom3S9Dw7fJ9E')]
+COOKIES [('docus_session', 'GYVW1J8KJWH9NQGkaVp2xo7xBA6FJ3mW')]
 PARSED {'forms': [{'action': '/logout', 'method': 'post', 'inputs': []}, {'action': '/folders/create', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'text', 'name': 'name', 'placeholder': 'Новая папка…', 'autocomplete': 'off'}]}, {'action': '', 'method': 'get', 'inputs': [{'tag': 'input', 'type': 'hidden', 'name': 'folder', 'value': ''}, {'tag': 'input', 'type': 'text', 'name': 'title', 'placeholder': 'Новый документ…', 'autocomplete': 'off'}]}], 'assets': ["data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"], 'links': ['/', '/shared']}
 
-============================== REQUEST POST http://njwqato3tpdz0t6k.instances.ctfcup.online/docs/create
-FORM {'folder': '', 'title': 'arena-probe-document'}
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d1
 STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d1
 HEADERS
-Date: Sat, 31 Oct 2026 13:22:47 GMT
+Date: Sat, 31 Oct 2026 13:23:34 GMT
 Content-Type: text/html; charset=utf-8
 Connection: close
 Transfer-Encoding: chunked
@@ -596,9 +595,418 @@ window.addEventListener("message", function (e) {
 </body>
 </html>
 
-COOKIES [('docus_session', 'V5T7vzHxM67Y_vs_7hZwom3S9Dw7fJ9E')]
+COOKIES [('docus_session', 'GYVW1J8KJWH9NQGkaVp2xo7xBA6FJ3mW')]
 PARSED {'forms': [], 'assets': ["data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"], 'links': ['/']}
-CREATED_FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d1
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/share?doc=d1
+STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/share?doc=d1
+HEADERS
+Date: Sat, 31 Oct 2026 13:23:34 GMT
+Content-Type: text/html; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+
+
+BODY
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Docus — Поделиться</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+<style>/* omitted */</style>
+</head>
+<body>
+<header class="topbar"><div class="tb-main">
+  <div class="brand"><span class="brand-badge anim-glow">D</span>Docus <small>корпоративный портал документов</small></div>
+  <div class="tb-actions">
+    <span class="userbox"><span class="avatar">a</span>arena · arena-93aa1301@corp</span>
+    <form method="post" action="/logout" style="margin:0"><button class="btn" type="submit">Выйти</button></form>
+  </div>
+</div></header>
+<div class="layout">
+  <nav class="sidebar">
+    <h3>Папки</h3>
+<a class="nav-item active" href="/"><span class="icon">▣</span>Все документы</a><a class="nav-item" href="/shared"><span class="icon">✦</span>Мне расшарено</a>
+  </nav>
+  <main class="content">
+    <a class="back" href="/">← Ко всем документам</a>
+    <h2>Поделиться: arena-probe-document.txt</h2>
+    
+    <form class="share-form" method="post" action="/share/create">
+      <input type="hidden" name="doc" value="d1">
+      <input type="text" name="to" placeholder="почта коллеги, например petrov@corp" autocomplete="off">
+      <label><input type="checkbox" name="canedit"> может редактировать</label>
+      <button class="btn primary" type="submit">Поделиться</button>
+    </form>
+    <table class="share">
+      <thead><tr><th>Кому</th><th>Доступ</th><th>Статус</th><th></th></tr></thead>
+      <tbody>
+<tr><td colspan="4" class="empty">Пока ни с кем не расшарено</td></tr>
+      </tbody>
+    </table>
+  </main>
+</div>
+</body>
+</html>
+
+COOKIES [('docus_session', 'GYVW1J8KJWH9NQGkaVp2xo7xBA6FJ3mW')]
+PARSED {'forms': [{'action': '/logout', 'method': 'post', 'inputs': []}, {'action': '/share/create', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'hidden', 'name': 'doc', 'value': 'd1'}, {'tag': 'input', 'type': 'text', 'name': 'to', 'placeholder': 'почта коллеги, например petrov@corp', 'autocomplete': 'off'}, {'tag': 'input', 'type': 'checkbox', 'name': 'canedit'}]}], 'assets': ["data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"], 'links': ['/', '/shared', '/']}
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d0
+HTTP ERROR 404 Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Sat, 31 Oct 2026 13:23:35 GMT
+Content-Length: 19
+Connection: close
+
+ 404 page not found
+
+PARSED {'forms': [], 'assets': [], 'links': []}
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d1
+STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d1
+HEADERS
+Date: Sat, 31 Oct 2026 13:23:35 GMT
+Content-Type: text/html; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+
+
+BODY
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Docus — редактор</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+<style>/* omitted */</style>
+</head>
+<body>
+<div class="editbar">
+  <span class="crumbs"><a href="/">Все документы</a> / <span class="doc-title">arena-probe-document.txt</span></span>
+</div>
+<iframe src="/browser/cc5614c67e/cool.html?WOPISrc=http%3A%2F%2Fwebapp%3A8000%2Fwopi%2Ffiles%2Fd1&access_token=YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU&permission=edit&closebutton=true" allow="clipboard-read; clipboard-write"></iframe>
+<script>
+window.addEventListener("message", function (e) {
+  var msg = e.data;
+  if (typeof msg === "string") { try { msg = JSON.parse(msg); } catch (err) { return; } }
+  if (msg && msg.MessageId === "close") { location.href = "/"; }
+});
+</script>
+</body>
+</html>
+
+COOKIES [('docus_session', 'GYVW1J8KJWH9NQGkaVp2xo7xBA6FJ3mW')]
 PARSED {'forms': [], 'assets': ["data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"], 'links': ['/']}
-PARSED {'forms': [{'action': '/logout', 'method': 'post', 'inputs': []}, {'action': '/folders/create', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'text', 'name': 'name', 'placeholder': 'Новая папка…', 'autocomplete': 'off'}]}, {'action': '', 'method': 'get', 'inputs': [{'tag': 'input', 'type': 'hidden', 'name': 'folder', 'value': ''}, {'tag': 'input', 'type': 'text', 'name': 'title', 'placeholder': 'Новый документ…', 'autocomplete': 'off'}]}], 'assets': ["data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"], 'links': ['/', '/shared']}
-PARSED {'forms': [{'action': '/logout', 'method': 'post', 'inputs': []}, {'action': '/folders/create', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'text', 'name': 'name', 'placeholder': 'Новая папка…', 'autocomplete': 'off'}]}, {'action': '/docs/create', 'method': 'post', 'inputs': [{'tag': 'input', 'type': 'hidden', 'name': 'folder', 'value': ''}, {'tag': 'input', 'type': 'text', 'name': 'title', 'placeholder': 'Новый документ…', 'autocomplete': 'off'}]}], 'assets': ["data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230082c9'/%3E%3Ctext x='8' y='11.5' font-size='8' font-weight='700' font-family='Arial' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"], 'links': ['/', '/shared']}
+WOPI d1 IFRAME /browser/cc5614c67e/cool.html?WOPISrc=http%3A%2F%2Fwebapp%3A8000%2Fwopi%2Ffiles%2Fd1&access_token=YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU&permission=edit&closebutton=true TOKEN_LENGTH 43
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?WOPISrc=http%3A%2F%2Fwebapp%3A8000%2Fwopi%2Ffiles%2Fd1&access_token=YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU&permission=edit&closebutton=true
+STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/browser/cc5614c67e/cool.html?WOPISrc=http%3A%2F%2Fwebapp%3A8000%2Fwopi%2Ffiles%2Fd1&access_token=YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU&permission=edit&closebutton=true
+HEADERS
+Cache-Control: no-store
+Content-Length: 10834
+Content-Security-Policy: media-src  'self' blob: http://njwqato3tpdz0t6k.instances.ctfcup.online; object-src  'self'; style-src  'self'; script-src  'self' 'unsafe-eval'; frame-ancestors  collabora:* webapp:* localhost:* njwqato3tpdz0t6k.instances.ctfcup.online:* webapp:* collabora:* webapp:* localhost:*; img-src  'self' data: https://www.collaboraoffice.com collabora:* webapp:* localhost:* njwqato3tpdz0t6k.instances.ctfcup.online:* webapp:*; connect-src  'self' https://www.zotero.org https://api.zotero.org ws://njwqato3tpdz0t6k.instances.ctfcup.online http://njwqato3tpdz0t6k.instances.ctfcup.online; frame-src  'self' https://rating.collaboraonline.com https://rating.collaboraonline.com blob:; font-src  'self'; default-src  'none';
+Content-Type: text/html
+Date: Sat, 31 Oct 2026 13:23:36
+Last-Modified: Sat, 31 Oct 2026 13:23:36
+Referrer-Policy: no-referrer
+Server: 
+X-Content-Type-Options: nosniff
+X-Xss-Protection: 1; mode=block
+Connection: close
+
+
+BODY
+<!DOCTYPE html>
+<html ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+  SPDX-License-Identifier: MPL-2.0
+
+  Copyright the Collabora Online contributors.
+  Copyright Collabora Productivity Limited.
+
+  This Source Code Form is subject to the terms of the Mozilla Public
+  License, v. 2.0. If a copy of the MPL was not distributed with this
+  file, You can obtain one at http://mozilla.org/MPL/2.0/.
+-->
+<title>Online Editor</title>
+<meta charset="utf-8">
+
+  
+
+
+<meta name="previewImg" content="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyMDAgMjAwJz4KICAgPGNpcmNsZSB0cmFuc2Zvcm09J3JvdGF0ZSgwKScgdHJhbnNmb3JtLW9yaWdpbj0nY2VudGVyJyBmaWxsPSdub25lJyBzdHJva2U9JyNCNkI2QjYnIHN0cm9rZS13aWR0aD0nMTUnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWRhc2hhcnJheT0nMjMwIDEwMDAnIHN0cm9rZS1kYXNob2Zmc2V0PScwJyBjeD0nMTAwJyBjeT0nMTAwJyByPSc3MCc+CiAgICAgPGFuaW1hdGVUcmFuc2Zvcm0KICAgICAgICAgYXR0cmlidXRlTmFtZT0ndHJhbnNmb3JtJwogICAgICAgICB0eXBlPSdyb3RhdGUnCiAgICAgICAgIGZyb209JzAnCiAgICAgICAgIHRvPSczNjAnCiAgICAgICAgIGR1cj0nMicKICAgICAgICAgcmVwZWF0Q291bnQ9J2luZGVmaW5pdGUnPgogICAgICA8L2FuaW1hdGVUcmFuc2Zvcm0+CiAgIDwvY2lyY2xlPgo8L3N2Zz4=">
+<meta name="previewSmile" content="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyNHB4IiBmaWxsPSIjNWY2MzY4Ij48cGF0aCBkPSJtNDI0LTI5NiAyODItMjgyLTU2LTU2LTIyNiAyMjYtMTE0LTExNC01NiA1NiAxNzAgMTcwWm01NiAyMTZxLTgzIDAtMTU2LTMxLjVUMTk3LTE5N3EtNTQtNTQtODUuNS0xMjdUODAtNDgwcTAtODMgMzEuNS0xNTZUMTk3LTc2M3E1NC01NCAxMjctODUuNVQ0ODAtODgwcTgzIDAgMTU2IDMxLjVUNzYzLTc2M3E1NCA1NCA4NS41IDEyN1Q4ODAtNDgwcTAgODMtMzEuNSAxNTZUNzYzLTE5N3EtNTQgNTQtMTI3IDg1LjVUNDgwLTgwWm0wLTgwcTEzNCAwIDIyNy05M3Q5My0yMjdxMC0xMzQtOTMtMjI3dC0yMjctOTNxLTEzNCAwLTIyNyA5M3QtOTMgMjI3cTAgMTM0IDkzIDIyN3QyMjcgOTNabTAtMzIwWiIvPjwvc3ZnPg==">
+
+
+  <input type="hidden" id="init-welcome-url" value="https://rating.collaboraonline.com/Welcome/welcome.html" />
+  <input type="hidden" id="init-feedback-url" value="https://rating.collaboraonline.com/Rate/feedback.html" />
+  <input type="hidden" id="init-accessibility-statement-url" value="" />
+  <input type="hidden" id="init-buy-product-url" value="" />
+  <input type="hidden" id="init-app-type" value="browser" />
+  <input type="hidden" id="init-css-vars" value="" />
+  <input type="hidden" id="init-product-branding-url" value="" />
+  <input type="hidden" id="init-product-branding-name" value="" />
+  <input type="hidden" id="init-logo-url" value="" />
+
+
+
+<input type="hidden" id="init-uri-prefix" value="/browser/cc5614c67e/" />
+<input type="hidden" id="init-branding-name" value="" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/browser/cc5614c67e/bundle.css" />
+<link rel="stylesheet" href="/browser/cc5614c67e/branding.css"> <!-- add your logo here -->
+<link rel="localizations" href="/browser/cc5614c67e/l10n/localizations.json" type="application/vnd.oftn.l10n+json"/>
+   <link rel="localizations" href="/browser/cc5614c67e/l10n/help-localizations.json" type="application/vnd.oftn.l10n+json"/>
+   <link rel="localizations" href="/browser/cc5614c67e/l10n/uno-localizations.json" type="application/vnd.oftn.l10n+json"/>
+
+</head>
+
+  <body>
+    <!--The "controls" div holds map controls such as the Zoom button and
+        it's separated from the map in order to have the controls on the top
+        of the page all the time.
+
+        The "document-container" div is the actual display of the document, is
+        what the user sees and it should be no larger than the screen size.
+
+        The "map" div is the actual document and it has the document's size
+        and width, this being inside the smaller "document-container" will
+        cause the content to overflow, creating scrollbars -->
+
+    <dialog id="content-keeper">
+      <nav class="main-nav" role="navigation">
+        <!-- Mobile menu toggle button (hamburger/x icon) -->
+        <input id="main-menu-state" type="checkbox" tabindex="-1" aria-hidden="true" />
+        <ul id="main-menu" class="sm sm-simple lo-menu readonly"></ul>
+        <div id="document-titlebar">
+          <div class="document-title">
+            <label class="visuallyhidden" for="document-name-input">Document name</label>
+            <input id="document-name-input" type="text" spellcheck="false" disabled="true" />
+            <div class="loading-bar-container">
+              <div id="document-name-input-loading-bar"></div>
+            </div>
+            <progress id="document-name-input-progress-bar" class="progress-bar" value="0" max="99"></progress>
+          </div>
+        </div>
+
+        <div id="userListHeader">
+          <div id="followingChipBackground">
+            <div id="followingChip"></div>
+          </div>
+          <div id="userListSummaryBackground"><button id="userListSummaryButton"></button></div>
+        </div>
+        <div id="viewMode">
+        </div>
+        <div id="closebuttonwrapperseparator"></div>
+        <div id="closebuttonwrapper">
+          <button class="closebuttonimage" id="closebutton" accesskey="ZC"></button>
+        </div>
+      </nav>
+
+      <div id="toolbar-wrapper" role="toolbar" aria-orientation="horizontal">
+          <div id="toolbar-row" class="toolbar-row">
+            <div id="toolbar-logo"></div>
+            <div id="toolbar-mobile-back" class="editmode-off"></div>
+            <div class="jsdialog ui-spacer"></div>
+            <div id="toolbar-up"></div>
+            <div id="toolbar-hamburger">
+              <label class="main-menu-btn" for="main-menu-state" id="main-menu-btn" role="button" tabindex="0">
+                <span class="main-menu-btn-icon" id="main-menu-btn-icon"></span>
+              </label>
+            </div>
+          </div>
+        <div id="formulabar-row" class="hidden">
+          <div id="addressInput"></div>
+          <div id="formulabar"></div>
+        </div>
+        <progress id="mobile-progress-bar" class="progress-bar" value="0" max="99"></progress>
+      </div>
+
+      <input id="insertgraphic" aria-hidden="true" type="file" accept="image/*" tabindex="-1">
+      <input id="insertmultimedia" aria-hidden="true" type="file" accept="audio/*, video/*" tabindex="-1">
+      <input id="selectbackground" aria-hidden="true" type="file" accept="image/*" tabindex="-1">
+      <input id="comparedocuments" aria-hidden="true" type="file" accept="application/*" tabindex="-1">
+    </dialog>
+
+    <div id="main-document-content">
+      <nav id="navigation-sidebar">
+        <div id="presentation-controls-wrapper" class="readonly">
+          <div id="slide-sorter"></div>
+          <div id="presentation-toolbar"></div>
+        </div>
+        <div id="navigator-dock-wrapper">
+          <div id="navigator-panel" class="sidebar-panel"></div>
+        </div>
+        <div id="quickfind-dock-wrapper">
+          <div id="quickfind-panel" class="sidebar-panel"></div>
+        </div>
+      </nav>
+      <div id="navigator-floating-icon"></div>
+      <div id="document-container" class="readonly" dir="ltr">
+        <div id="map"></div>
+      </div>
+      <div id="sidebar-dock-wrapper">
+        <div id="sidebar-panel" class="sidebar-panel"></div>
+      </div>
+      <div id="aichat-dock-wrapper">
+        <div id="aichat-panel"></div>
+      </div>
+    </div>
+
+    <div id="spreadsheet-toolbar" class="hidden"></div>
+
+    <div id="mobile-edit-button">
+      <div id="mobile-edit-button-image"></div>
+    </div>
+
+    <div id="toolbar-down"></div>
+    <div id="toolbar-search"></div>
+    <div id="mobile-wizard">
+      <div id="mobile-wizard-tabs"></div>
+      <table id="mobile-wizard-titlebar" class="mobile-wizard-titlebar" width="100%">
+        <tr>
+          <td id="mobile-wizard-back" class="mobile-wizard-back"></td>
+          <td id="mobile-wizard-title" class="mobile-wizard-title ui-widget"></td>
+        </tr>
+      </table>
+      <div id="mobile-wizard-content"></div>
+    </div>
+
+    <!-- Remove if you don't want the About dialog -->
+    <dialog>
+      <div id="about-dialog" tabIndex="0">
+        <div id="about-dialog-header">
+          <fig id="integrator-logo"></fig>
+          <h1 id="product-name">Collabora Online</h1>
+        </div>
+        <hr/>
+        <div id="about-dialog-container">
+          <div id="about-dialog-logos">
+            <fig id="product-logo"></fig>
+          </div>
+          <div id="about-dialog-info-container">
+            <div id="about-dialog-info">
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+
+      <input type="hidden" id="initial-variables"
+      data-access-header = ""
+      data-access-token = "YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU"
+      data-access-token-ttl = "0"
+      data-ai-ethical-rating-message = "true"
+      data-allow-update-notification = "true"
+      data-auto-show-feedback = "true"
+      data-auto-show-welcome = "true"
+      data-canvas-slideshow-enabled = "true"
+      data-check-file-info-override = "{}"
+      data-cool-logging = ""
+      data-coolwsd-version = "26.04.3.2"
+      data-copyright-year = 2026
+      data-deepl-enabled = "false"
+      data-document-signing-enabled = "true"
+      data-enable-accessibility = "false"
+      data-enable-debug = "false"
+      data-enable-experimental-features = "true"
+      data-enable-macros-execution = "false"
+      data-enable-welcome-message = "true"
+      data-extra-export-formats = ""
+      data-frame-ancestors = "%20collabora:%2A%20webapp:%2A%20localhost:%2A%20njwqato3tpdz0t6k.instances.ctfcup.online:%2A%20webapp:%2A"
+      data-geolocation-setup = "%GEOLOCATION_SETUP%"
+      data-hexify-url = "false"
+      data-hide-legacy-script-warning = "false"
+      data-host = "ws://njwqato3tpdz0t6k.instances.ctfcup.online"
+      data-idle-timeout-secs = "900"
+      data-indirection-url = ""
+      data-min-saved-message-timeout-secs = "6";
+      data-no-auth-header = ""
+      data-out-of-focus-timeout-secs = "300"
+      data-post-message-origin-ext = ""
+      data-protocol-debug = "false"
+      data-saved-ui-state = "true"
+      data-service-root = ""
+      data-socket-proxy = "false"
+      data-statusbar-save-indicator = "true"
+      data-ui-defaults = "e30="
+      data-use-integration-theme = "false"
+      data-user-interface-mode = "notebookbar"
+      data-vendor = "Collabora Productivity Limited"
+      data-version-path = "cc5614c67e"
+      data-wasm-enabled = "false"
+      data-wopi-host-id = ""
+      data-wopi-setting-base-url = ""
+      data-zotero-enabled = "true"
+      />
+    
+
+
+
+<script type="text/javascript" src="/browser/cc5614c67e/global.js"></script>
+
+
+<script type="text/javascript" src="/browser/cc5614c67e/templates/templates.js"></script>
+
+
+
+
+<script src="/browser/cc5614c67e/bundle.js" defer></script>
+        
+
+<script src="/browser/cc5614c67e/branding.js"></script> <!-- logo onclick handler -->
+</body></html>
+
+COOKIES [('docus_session', 'GYVW1J8KJWH9NQGkaVp2xo7xBA6FJ3mW')]
+PARSED {'forms': [], 'assets': ['/browser/cc5614c67e/bundle.css', '/browser/cc5614c67e/branding.css', '/browser/cc5614c67e/l10n/localizations.json', '/browser/cc5614c67e/l10n/help-localizations.json', '/browser/cc5614c67e/l10n/uno-localizations.json', '/browser/cc5614c67e/global.js', '/browser/cc5614c67e/templates/templates.js', '/browser/cc5614c67e/bundle.js', '/browser/cc5614c67e/branding.js'], 'links': []}
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d1?access_token=YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU
+STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d1?access_token=YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU
+HEADERS
+Content-Type: application/json
+Date: Sat, 31 Oct 2026 13:23:36 GMT
+Content-Length: 296
+Connection: close
+
+
+BODY
+{"BaseFileName":"arena-probe-document.txt","DisableCopy":true,"DisableExport":true,"DisablePrint":true,"IsAnonymousUser":false,"LastModifiedTime":"2026-10-31T13:22:47.209487Z","OwnerId":"arena-93aa1301@corp","Size":0,"UserCanWrite":true,"UserFriendlyName":"arena","UserId":"arena-93aa1301@corp"}
+
+COOKIES [('docus_session', 'GYVW1J8KJWH9NQGkaVp2xo7xBA6FJ3mW')]
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d1/contents?access_token=YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU
+STATUS 200 FINAL http://njwqato3tpdz0t6k.instances.ctfcup.online/wopi/files/d1/contents?access_token=YXrBj3uDqR0HhhxMzwbDwQotzNZf9Ykj1bisU4BU4OU
+HEADERS
+Content-Type: text/plain; charset=utf-8
+Date: Sat, 31 Oct 2026 13:23:37 GMT
+Content-Length: 0
+Connection: close
+
+
+BODY
+
+COOKIES [('docus_session', 'GYVW1J8KJWH9NQGkaVp2xo7xBA6FJ3mW')]
+
+============================== REQUEST GET http://njwqato3tpdz0t6k.instances.ctfcup.online/edit/d2
+HTTP ERROR 404 Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Sat, 31 Oct 2026 13:23:38 GMT
+Content-Length: 19
+Connection: close
+
+ 404 page not found
+
+PARSED {'forms': [], 'assets': [], 'links': []}
